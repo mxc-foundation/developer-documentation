@@ -10,23 +10,16 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'mxc-foundation', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      // "light" | "dark"
-      defaultMode: 'light',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
-      disableSwitch: false,
-
-      // Should we use the prefers-color-scheme media-query,
-      // using user system preferences, instead of the hardcoded defaultMode
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'MXC Developer Documentation',
+      title: 'Developer Documentation',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
