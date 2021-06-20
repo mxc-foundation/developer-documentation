@@ -125,7 +125,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/mxc-foundation/developer-documentation/edit/main/website/',
+            'https://github.com/mxc-foundation/developer-documentation/edit/main/',
         },
         blog: {
           showReadingTime: true,
