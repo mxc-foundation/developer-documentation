@@ -27,9 +27,21 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'tutorials/intro',
           position: 'left',
           label: 'Docs',
+        },
+        {
+          type: 'doc',
+          docId: 'api/intro',
+          position: 'left',
+          label: 'API',
+        },
+        {
+          type: 'doc',
+          docId: 'whitepapers/intro',
+          position: 'left',
+          label: 'Whitepapers',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -46,20 +58,16 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Introduction',
-              to: '/docs/intro',
+              label: 'Tutorials',
+              to: '/docs/tutorial/intro',
             },
             {
-              label: 'M2 Pro Miner',
-              to: '/docs/m2-pro/intro',
+              label: 'API',
+              to: '/docs/api/intro',
             },
             {
-              label: 'Devices',
-              to: '/docs/devices/intro',
-            },
-            {
-              label: 'Supernode',
-              to: '/docs/supernode/intro',
+              label: 'Whitepapers',
+              to: '/docs/whitepapers/intro',
             },
           ],
         },

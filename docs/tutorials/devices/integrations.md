@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: integrations
+title: Integrations
 ---
 
 # Device Integrations

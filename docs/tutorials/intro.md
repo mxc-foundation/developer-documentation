@@ -24,7 +24,7 @@ In order to increase security of the entire network, we've worked with MatchX to
 1. Users will be able to deploy devices without any additional hassle
 1. Improve device data integration and compatibility
 
-You can discover more about device provisioning for the MXProtocol in [Devices](devices/intro.md).
+You can discover more about device provisioning for the MXProtocol in Devices.
 
 ## Reporting Issues
 Even though we attempt to do rigorous QA before every release, some pesky bugs still slip through. Actively reporting bugs is an extremely important form of participation, and helps us to improve the stability of the entire network. 
