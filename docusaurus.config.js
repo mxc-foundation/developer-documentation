@@ -92,12 +92,20 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
+              label: 'Developer Blog',
               to: '/blog',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/mxc-foundation/',
+            },
+            {
+              label: 'MXC Website',
+              to: 'https://www.mxc.org',
+            },
+            {
+              label: 'User Documentation',
+              to: 'https://www.mxc.wiki',
             },
           ],
         },
