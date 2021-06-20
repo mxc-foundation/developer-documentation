@@ -125,13 +125,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/mxc-foundation/developer-documentation/edit/master/website/',
+            'https://github.com/mxc-foundation/developer-documentation/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/mxc-foundation/developer-documentation/edit/master/website/blog/',
+            'https://github.com/mxc-foundation/developer-documentation/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
