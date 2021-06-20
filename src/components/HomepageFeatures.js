@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Build the Devices',
+    title: 'Connect Devices',
     Svg: require('../../static/img/undraw_Internet_on_the_go_re_vben.svg')
       .default,
     description: (
