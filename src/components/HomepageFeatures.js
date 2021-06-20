@@ -4,34 +4,30 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Deploy the Network',
+    Svg: require('../../static/img/undraw_connected_world_wuay.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Leverage the MXProtocol on LPWAN Miners to build the free Global IoT
+        Network.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Build the Devices',
+    Svg: require('../../static/img/undraw_Internet_on_the_go_re_vben.svg')
+      .default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Configure your LPWAN devices and sensors to use the MXProtocol's unique
+        provisioning method providing your users with a turnkey experience.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'Analyze the Data',
+    Svg: require('../../static/img/undraw_instat_analysis_ajld.svg').default,
+    description: <>Connect to your LPWAN devices with data analysis tools.</>,
   },
 ];
 

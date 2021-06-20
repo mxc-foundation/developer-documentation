@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'MXC Developer Documentation',
-  tagline: 'Keeping you Informed',
+  tagline: 'You Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -46,8 +46,20 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'the Docs',
+              label: 'Introduction',
               to: '/docs/intro',
+            },
+            {
+              label: 'M2 Pro Miner',
+              to: '/docs/m2-pro/intro',
+            },
+            {
+              label: 'Devices',
+              to: '/docs/devices/intro',
+            },
+            {
+              label: 'Supernode',
+              to: '/docs/supernode/intro',
             },
           ],
         },
