@@ -62,7 +62,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorials',
-              to: '/docs/tutorial/intro',
+              to: '/docs/tutorials/intro',
             },
             {
               label: 'API',
