@@ -7,6 +7,14 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'de', 'zh-CN', 'zh-TW'],
   },
+  plugins: [
+    [
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      },
+    ],
+  ],
   title: 'MXC Developer Documentation',
   tagline: 'You Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
