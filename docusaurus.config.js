@@ -107,6 +107,14 @@ module.exports = {
               label: 'User Documentation',
               to: 'https://www.mxc.wiki',
             },
+            {
+              label: 'Imprint',
+              to: 'https://www.mxc.org/imprint',
+            },
+            {
+              label: 'Privacy Policy',
+              to: 'https://www.mxc.org/privacy-policy',
+            },
           ],
         },
       ],
