@@ -7,7 +7,7 @@ module.exports = {
   tagline: 'You Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
   baseUrl: '/',
-  projectName: 'mxc-foundation.github.io',
+  projectName: 'developer-documentation',
   organizationName: 'mxc-foundation',
   trailingSlash: false,
   onBrokenLinks: 'throw',
@@ -62,7 +62,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorials',
-              to: '/docs/tutorial/intro',
+              to: '/docs/tutorials/intro',
             },
             {
               label: 'API',
