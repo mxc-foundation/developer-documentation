@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3 
+sidebar_position: 3
 title: Integrations
 ---
 
@@ -7,9 +7,7 @@ title: Integrations
 
 By default supernode provides MQTT broker service for users to subscribe or pushlish events on their devices.
 
-Users can subscribe to MQTT broker under topics in the servers after authentication. Before that, you need to make sure
-you have mosquitto package installed. Use the package manager apt to install these dependencies on the Ubuntu 18.04 LTS
-server:
+Users can subscribe to MQTT broker under topics in the servers after authentication. Before that, you need to make sure you have mosquitto package installed. Use the package manager apt to install these dependencies on the Ubuntu 18.04 LTS server:
 
 ```
 sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
@@ -220,5 +218,4 @@ The message format should be as follow:
 - `confirmed`: whether the payload must be sent as confirmed data down or not
 - `fPort`: FPort to use (must be > 0)
 - `data`: base64 encoded data (plaintext, will be encrypted by Network Server)
-- `object`: decoded object (when application codec has been configured), when providing the 'object', you can omit '
-  data'
+- `object`: decoded object (when application codec has been configured), when providing the 'object', you can omit ' data'
