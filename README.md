@@ -1,5 +1,5 @@
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fc3e1479-6362-47a2-8b07-d55e0a371a1f/deploy-status)](https://app.netlify.com/sites/lucid-davinci-85c04a/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc3e1479-6362-47a2-8b07-d55e0a371a1f/deploy-status)](https://app.netlify.com/sites/lucid-davinci-85c04a/deploys) [![Crowdin](https://badges.crowdin.net/mxc-documentation/localized.svg)](https://crowdin.com/project/mxc-documentation)
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern
