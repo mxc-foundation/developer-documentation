@@ -7,8 +7,11 @@ module.exports = {
   tagline: 'You Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
   baseUrl: '/',
+  projectName: 'mxc-foundation.github.io',
+  organizationName: 'mxc-foundation',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'mxc-foundation', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
