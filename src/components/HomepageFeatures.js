@@ -2,14 +2,18 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 
+import Translate, {translate} from '@docusaurus/Translate';
+
 const FeatureList = [
   {
     title: 'Deploy the Network',
     Svg: require('../../static/img/undraw_connected_world_wuay.svg').default,
     description: (
       <>
-        Leverage the MXProtocol on LPWAN Miners to build the free Global IoT
-        Network.
+        <Translate>
+          Leverage the MXProtocol on LPWAN Miners to build the free Global IoT
+          Network.
+        </Translate>
       </>
     ),
   },
@@ -19,15 +23,24 @@ const FeatureList = [
       .default,
     description: (
       <>
-        Configure your LPWAN devices and sensors to use the MXProtocol's unique
-        provisioning method providing your users with a turnkey experience.
+        <Translate>
+          Configure your LPWAN devices and sensors to use the MXProtocol's
+          unique provisioning method providing your users with a turnkey
+          experience.
+        </Translate>
       </>
     ),
   },
   {
     title: 'Analyze the Data',
     Svg: require('../../static/img/undraw_instat_analysis_ajld.svg').default,
-    description: <>Connect to your LPWAN devices with data analysis tools.</>,
+    description: (
+      <>
+        <Translate>
+          Connect to your LPWAN devices with data analysis tools.
+        </Translate>
+      </>
+    ),
   },
 ];
 

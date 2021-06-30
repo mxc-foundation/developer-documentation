@@ -3,6 +3,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de', 'zh-CN', 'zh-TW'],
+  },
   title: 'MXC Developer Documentation',
   tagline: 'You Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
@@ -44,6 +48,10 @@ module.exports = {
           label: 'Whitepapers',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/mxc-foundation/developer-documentation',
           label: 'GitHub',
