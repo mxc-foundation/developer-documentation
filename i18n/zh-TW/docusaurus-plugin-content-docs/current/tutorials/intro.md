@@ -12,7 +12,9 @@ We have a number of public repos with active issues that could use assistance. O
 
 Here is an updated list of repos that could use assistance.
 * [DataDash App](https://github.com/mxc-foundation/supernode-app) [Flutter / Dart]
+  * [Translate the DataDash](https://crowdin.com/project/mxc-mobile-app)
 * [Developer Documentation](https://github.com/mxc-foundation/developer-documentation) [Markdown, Javascript]
+  * [Translate the Docs Today](https://crowdin.com/project/mxc-documentation)
 
 We will continue to add repositories to this list as we work to increase transparency with our code and development process.
 
