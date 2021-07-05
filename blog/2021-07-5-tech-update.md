@@ -26,4 +26,7 @@ We've been working hard to improve the technical support services provided by bo
 ## Cleaning up the DataDash
 Over the past two weeks our DataDash team has focused primarily on solving some pesky issues with the app. We also added support for DHX in the in-app address book. Just another feature to make life a little easier for you. 
 
+## Contributing to DataHighway
+Team members Luke, Ayush and Christian updated the DataHighway blockchain to add multisig functionality. They also made a number of improvements, and fixed issues with the Harbour testnet. You can review the full release notes [here](https://github.com/DataHighway-DHX/node/releases/tag/v3.0.5).
+
 That's the newest from Tech, and I'll be sure to update this post with that API link as soon as it goes live. 
