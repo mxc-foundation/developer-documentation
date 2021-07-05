@@ -1,0 +1,523 @@
+---
+sidebar_position: 4
+sidebar_label: Device Provisioning
+---
+
+# Device Provisioning
+
+## What is Device Provisioning?
+
+Device Provisioning is a process of exchanging sensitive information between a device and a server. This process will store the encryption keys required for LoRaWAN communication on the device and the server. The whole process will be completed through LoRa communication. Therefore, no additional hardware is required on the device.
+
+In terms of security, Elliptic-curve Diffie-Hellman is used as the key exchange, which enables subsequent sensitive data to be exchanged between the device and the server in a secure manner.
+
+
+## What is the advantage of it?
+
+With the provisioning is done and the key is ready on both server and device. The operation on the user side will become simple. The user needs only a few steps to register the device to the system. He/She just needs to use our DataDash mobile APP to scan the QR-code label on the device. Then enter a few more information about the device, such as name. After that the device will start to join the network. The user didn’t need to enter any keys that the traditional way needs. During production no keys need to be sent to the assembly house, further improving the security by preventing unwanted compromise of the keys by the 3rd party.
+
+
+## What about the QR-code label?
+
+The QR-code label stored the identity of the device. There is no sensitive information on it, just an ID code (called Provision ID). A minimal label just needs the Provision ID. The mobile APP will use this Provision ID to register the device to the system. It is a secure way to do the task which no encryption keys content appears during the whole process.
+
+Here is an example of a minimal label.
+
+
+<table>
+    <tr>
+        <td>
+            <img src="/img/provisioning/lora-provisioning-minimal-label.png" width="" alt="alt_text" title="image_tooltip" />
+        </td>
+        <td><code>PID:PROVISIONIDOOOOOOOOO</code></td>
+    </tr>
+</table>
+
+
+For a big device that has more space for the label, a long version label could be used to store more information.
+
+
+<table>
+<tr>
+    <td>
+        <img src="/img/provisioning/lora-provisioning-label.png" alt="lora provisioning label" title="image_tooltip" />
+    </td>
+</tr>
+</table>
+
+```
+{
+  "PROVID": "PROVISIONIDOOOOOOOOO",
+  "BRAND": "MatchX",
+  "MODEL": "MX1234",
+  "SN": "S123456"
+}
+
+```
+
+
+## What device developer needs to do?
+
+The firmware needs to implement the flow device provisioning. It is a two steps process and needs to be done for a new produced device. The details of this process is listed on the later part of this document.
+
+During the device provisioning, it required the Provision ID to identify the device. We suggest the device firmware add an interface to let the manufacturer set this information at the end of the quality assurance (QA) procedure.
+
+An example method is to use a UART interface to program the information. Our example device uses an “AT” command to achieve this. But any other serial protocol should be fine.
+
+
+![alt_text](/img/provisioning/lora-provisioning-stack.png "image_tooltip")
+
+
+## What device manufacturer needs to do?
+
+To successfully provision a device, it required the information of Provision ID. The manufacturer needs to request it from us, MatchX. We will prepare a spreadsheet that has the assigned Provision ID and related information for the manufacturer. The Manufacturer needs to make sure the information is set to the device with the correct matched QR-Code label.
+
+We suggest the manufacturer to add an extra step at their quality assurance (QA) procedure. The step included setting the Provision ID to the device with a matched QR-Code label. Then verify the device is being provisioned, that means it exchanged key information with the server.
+
+
+![alt_text](/img/provisioning/lora-provisioning-steps.png "image_tooltip")
+
+
+
+
+
+## Device Provisioning Implementation Details
+
+Source code of our example device: TBD
+
+
+### Provision ID
+
+The Provision ID is a unique string for each device. During the provisioning, it is used as an identity at the provisioning server to access the device information. The Provision ID is 20 characters long and uses the RFC4648 Base32 alphabet.
+
+
+### Hash of Provision ID
+
+It is the result of the SHA256 hash on the Provision ID. The device provisioning process uses this value when doing authentication with the server. To minimize the complexity of the device implementation, we suggest the device also store this value to its FLASH, instead of calculating it by itself.
+
+
+```
+provisionIdHash = SHA256(provisionId | '.MatchX')
+```
+
+
+For example:
+
+
+```
+PID = 'TESTPIDOOOOOOOOOOOOO'
+HASH = 'c8c7564b46b91c91ef6c4f37bcca8cf7e81baac6eb869dcc62e5fafdd0242497'
+```
+
+
+
+### Message integrity code (MIC)
+
+The message integrity code (MIC) value at LoRa PHYPayload for HELLO and AUTH messages is calculated as below.
+
+
+```
+FixedKey[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
+
+cmac = aes128_cmac(FixedKey, message)
+MIC = cmac[0..3]
+```
+
+
+### Verification Code
+
+The verification code is used when the device authenticates with the server. The calculation is shown below.
+
+
+```
+    FixedKey[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+    0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
+
+    cal_buf = provisionId + nonce;
+    verifyCode = aes128_cmac(FixedKey, cal_buf)
+```
+
+Example:
+
+
+```
+// Input
+    privisionid = "SERIALNUMBEROOOOOOOO";
+    servernonce = {0x01, 0x02, 0x03, 0x04};
+
+// Output
+    verifyCode = {0x2E, 0x69, 0xBB, 0x5E, 0xD7, 0x8B, 0x5E, 0xE8,
+    0x0C, 0x6A, 0x8A, 0xDC, 0x81, 0x91, 0xDD, 0xF8};
+```
+
+
+
+### AES
+
+The encryption scheme used in aes128_encrypt() and aes128_cmac() are the same as LoRaWAN specification. This approach will minimize the need for extra code on the device side.
+
+
+### LoRa
+
+The device provisioning using the “Proprietary” LoRa frame for communication, it means the MType on MHDR is set to ‘111’.
+
+The receiving windows using RX1 and delay is 5s.
+
+Data Rate:
+
+
+<table>
+      <tr>
+       <td>Region
+       </td>
+       <td>Data Rate
+       </td>
+       <td>Configuration
+       </td>
+      </tr>
+      <tr>
+       <td>EU868
+       </td>
+       <td>3
+       </td>
+       <td>Up and Down: SF9 / 125 kHz
+       </td>
+      </tr>
+      <tr>
+       <td>US915
+       </td>
+       <td>3
+       </td>
+       <td>Up: SF7 / 125 kHz
+    <p>
+    Down: SF7 / 500 kHz
+    </p>
+       </td>
+      </tr>
+      <tr>
+       <td>CN470
+       </td>
+       <td>3
+       </td>
+       <td>Up and Down: SF9 / 125 kHz
+       </td>
+      </tr>
+    </table>
+
+
+
+
+
+### Sequence Diagram
+
+The device provisioning has two steps. First, it is a ECDH key exchange process, called “Hello” by us. The device and the server will exchange their public key on this step. Then the next step is the authentication. The device will submit its hashed Provision ID to the server. If it is a valid ID on the server, the server will accept the request and send back the EUI information.
+
+The keys used for LoRaWAN OTAA are derived from the ECDH shared key. All this information will not appear on the communication message.
+
+![alt_text](/img/provisioning/lora-device-provisioning-sequence.png "image_tooltip")
+
+
+### Message format
+
+The messages shown below are the content of the MACPayload of the Proprietary MAC message of LoRaWAN.
+
+LoRaWAN PHYPayload:
+
+
+<table>
+      <tr>
+       <td>MHDR
+       </td>
+       <td>MACPayload
+    <p>
+     (Hello / Auth)
+    </p>
+       </td>
+       <td>MIC
+       </td>
+      </tr>
+    </table>
+
+
+
+##### Hello message
+
+
+```
+    | Type | rDevEUI | devPubKey    | version |
+    | 0x01 | 8 bytes | 64 bytes     | 1 byte  |
+```
+
+
+
+##### Hello response
+
+
+```
+    | Type | rDevEUI | serverPubKey | serverNonce |
+    | 0x81 | 8 bytes | 64 bytes     | 4 bytes     |
+```
+
+
+
+##### Auth request
+
+
+```
+    | Type | rDevEUI | Encrypted Payload |
+    | 0x11 | 8 bytes | 52 bytes          |
+
+    | provisionIdHash | verifyCode | devNonce |
+    | 32 bytes        | 16 bytes   | 4 bytes |
+```
+
+
+
+##### Auth accepted
+
+
+```
+    | Type | rDevEUI | Encrypted Payload |
+    | 0x91 | 8 bytes | 32 bytes          |
+    ​
+    | devEUI  | appEUI  | verifyCode |
+    | 8 bytes | 8 bytes | 16 bytes   |
+```
+
+
+
+##### Auth rejected
+
+
+```
+    | Type | rDevEUI |
+    | 0x92 | 8 bytes |
+```
+
+
+
+
+
+<table>
+      <tr>
+       <td><strong>Message field</strong>
+       </td>
+       <td><strong>Description</strong>
+       </td>
+      </tr>
+      <tr>
+       <td>Type
+       </td>
+       <td>Message type. 1 byte value.
+       </td>
+      </tr>
+      <tr>
+       <td>rDevEUI
+       </td>
+       <td>A random device EUI for the current device. 8 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>devPubKey
+       </td>
+       <td>The ECDH public key generated by device. 64 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>serverPubKey
+       </td>
+       <td>The ECDH public key generated by the server. 64 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>version
+       </td>
+       <td>Protocol version. Value is 0x01. 1 byte value.
+       </td>
+      </tr>
+      <tr>
+       <td>provisionIdHash
+       </td>
+       <td>Hashed Provision ID. 32 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>serverNonce
+       </td>
+       <td>Random value for verifyCode generation. 4 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>devNonce
+       </td>
+       <td>Random value for verifyCode generation. 4 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>devEUI
+       </td>
+       <td>The assigned Device EUI for the device. 8 bytes long.
+       </td>
+      </tr>
+      <tr>
+       <td>verifyCode
+       </td>
+       <td>Verification code. 16 bytes long.
+       </td>
+      </tr>
+    </table>
+
+
+
+### ECDH
+
+In our example device source code, we used the following C source at GitHub for the ECDH.
+
+https://github.com/kokke/tiny-ECDH-c
+
+The compiled size is as small as 1.4KiB for ARM Thumb Code. It minimized the extra cost for fitting into an MCU.
+
+The ECDH key exchange will use the NIST K-233 curve. Private key size is 32 bytes, public key size is 64 bytes.
+
+
+### Key generation
+
+The keys used for LoRaWAN are generated inside the device instead of sending via the air. After the ECDH key exchange (Hello message), both device and server will hold a sharedKey in the same value. Then it will use the following calculation to derive to several keys.
+
+When the authentication is done, the derived AppKey and NwkKey should be stored in FLASH for later LoRaWAN OTAA use.
+
+
+```
+    AppKey = aes128_encrypt (sharedKey[0..15], rDevEUI | pad 0x01)
+
+    NwkKey = aes128_encrypt (sharedKey[32..47], rDevEUI | pad 0x02)
+
+    ProvKey = aes128_encrypt (sharedKey[16..23] | sharedKey[48..55], rDevEUI | pad 0x03)
+```
+
+
+AppKey and NwkKey are the keys for OTAA on LoRa communication.
+
+For 1.0.x LoRa, NwkKey will be used as AppKey for OTAA.
+
+ProvKey is used as the key for payload encryption of Auth messages and responses.
+
+Example:
+
+
+```
+// Input
+    sharedkey = {0x57, 0x57, 0x3A, 0x81, 0xE2, 0x7E, 0x48, 0x26, 0xFA, 0x8E, 0x18, 0x70, 0xCD,
+    0x6B, 0x66, 0x40, 0xF3, 0x90, 0x5D, 0x98, 0x40, 0xF4, 0x12, 0xFA, 0xAE, 0x74,
+    0x0B, 0x12, 0xE0, 0x01, 0x00, 0x00, 0xC4, 0xD8, 0x27, 0xA9, 0x37, 0x49, 0xEE,
+    0x44, 0xEA, 0x1B, 0xAC, 0x1C, 0x18, 0x8C, 0x03, 0xAA, 0x6B, 0x02, 0xDA, 0x1C,
+    0x68, 0xE9, 0xE8, 0xE6, 0xCA, 0xB9, 0xD1, 0xED, 0x91, 0x01, 0x00, 0x00};
+
+// Output
+    appkey  = {0xFC, 0x3B, 0xDD, 0x59, 0x22, 0x87, 0xD9, 0x73
+    0x48, 0xC0, 0x0B, 0xAC, 0x46, 0xB3, 0x05, 0x79};
+    nwkkey  = {0x5B, 0x87, 0x83, 0xAF, 0x06, 0xFF, 0xB3, 0x62,
+    0x9D, 0x03, 0x77, 0x9B, 0xF3, 0x4E, 0x12, 0x89};
+    provkey = {0x29, 0x53, 0x01, 0x98, 0x2D, 0x35, 0xC7, 0x2F,
+    0x71, 0x42, 0xB9, 0xDD, 0x07, 0xFE, 0x1D, 0xEF};
+```
+
+
+
+
+
+## Request for Provision ID (CSV file)
+
+This is the CSV file you need to send to us to request for the Provision ID.
+
+
+```
+    MatchX Device Provisioning,,,,,
+    manufacturerName,MatchX GmbH,,,,
+    provisionId,model,serialNumber,fixedDevEUI,devEUI,appEUI
+    ,M-1234,S000000,Y,000000fffe000000,0000000000000000
+    ,M-1234,S000001,Y,000000fffe000001,0000000000000000
+    ,M-1234,S000002,Y,000000fffe000002,0000000000000000
+    ,M-1234,S000003,Y,000000fffe000003,0000000000000000
+    ,M-1234,S000004,Y,000000fffe000004,0000000000000000
+    ,M-1234,S000005,Y,000000fffe000005,0000000000000000
+    ,M-1234,S000006,Y,000000fffe000006,0000000000000000
+    ,M-1234,S000007,Y,000000fffe000007,0000000000000000
+```
+
+
+The first line is the signature, please don’t modify it.
+
+The second line is the name of the device manufacturer. Modify it to your company name.
+
+The third line is the header, please don’t modify it.
+
+Starting from the fourth line, it is the list of device information you need for a Provision ID.
+
+“provisionId” is the Provision ID, we will generate one for you if it is blank.
+
+“model” is the model number of your device.
+
+“serialNumber” is the serial number of your device.
+
+When your device has its own MAC address and is willing to use it as the Device EUI on LoRa, you should set the “fixedDevEUI” to “Y” and fill the “fixedDevEUI”.
+
+“appEUI” is not used at the moment, please fill it with “0000000000000000”.
+
+Here is the view when you use a spreadsheet program to edit the file.
+
+
+
+
+
+![alt_text](/img/provisioning/lora-provisioning-spreadsheet-view.png "image_tooltip")
+
+
+48-bits MAC to 64-bits EUI
+
+To convert a 48-bits MAC address into a 64-bits EUI, you need to insert a “0xff 0xfe” in the middle of it.
+
+For example:
+
+
+```
+    MAC = 01 02 03 04 05 06
+    EUI = 01 02 03 ff fe 04 05 06
+```
+
+
+
+
+After the request is approved, we will send you back the report file in CSV format. Here is an example for the report that is viewed with a spreadsheet program.
+
+
+![alt_text](/img/provisioning/device-provisioning-report.png "image_tooltip")
+
+
+The important parts are the “provisionId” and “provisionIdHash”. You need to program this information to the device. For the device with MAC and using fixed Device EUI, you need to take care of the “devEUI” and make sure the Provision ID is programmed to the corresponding device.
+
+Here is an example CSV file for the device that will use a random Device EUI. The “fixedDevEUI” will set to “N” and “deviceEUI” is blank. A random device EUI will assign to the device after provisioning.
+
+
+```
+    MatchX Device Provisioning,,,,,
+    manufacturerName,MatchX GmbH,,,,
+    provisionId,model,serialNumber,fixedDevEUI,devEUI,appEUI
+    ,M-1234,S000000,N,,0000000000000000
+    ,M-1234,S000001,N,,0000000000000000
+    ,M-1234,S000002,N,,0000000000000000
+    ,M-1234,S000003,N,,0000000000000000
+    ,M-1234,S000004,N,,0000000000000000
+    ,M-1234,S000005,N,,0000000000000000
+    ,M-1234,S000006,N,,0000000000000000
+    ,M-1234,S000007,N,,0000000000000000
+```
+
+
+
+
+
+
+![alt_text](/img/provisioning/lora-provisioning-spreadsheet-view-1.png "image_tooltip")
+
