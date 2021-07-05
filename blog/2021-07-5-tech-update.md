@@ -13,7 +13,7 @@ Welcome to the very first MXC tech update!
 This week the tech team has been extremely busy. Throughout the past sprint we've focused on closing any and all ongoing projects. That brought us back to a few "low hanging" items that will add some EPIC value to our users -- especially those interested in connecting LoRa devices. 
 
 ## Device Provisioning
-Our very own backend engineer Lixuan took a deep dive in device provisioning to ensure that it was ready to be added with our live code. She solved a number of conflicts (device provisioning has been *ready* since January!), then ran it through a round of rigorous testing. This was done in callaboration with MatchX embedded software engineer Ian. They did some great work, and you'll see device provisioning going live early this week. In the meantime, you can check out the technical documentation here: [Device Provisioning FAQ](/tutorials/deviceds/provisioning)
+Our very own backend engineer Lixuan took a deep dive in device provisioning to ensure that it was ready to be added with our live code. She solved a number of conflicts (device provisioning has been *ready* since January!), then ran it through a round of rigorous testing. This was done in callaboration with MatchX embedded software engineer Ian. They did some great work, and you'll see device provisioning going live early this week. In the meantime, you can check out the technical documentation here: [Device Provisioning FAQ](/docs/tutorials/devices/provisioning)
 
 As part of our focus on devices during the past two weeks, Lixuan also solved an issue which kept users from adding new devices on a supernode. We should be in ship-shape, and ready for some developer interaction. Feel free to send us your feedback! :) 
 
