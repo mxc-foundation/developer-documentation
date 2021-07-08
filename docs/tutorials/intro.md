@@ -10,12 +10,16 @@ There are a number of ways for developers to interact with the MXC ecosystem. Th
 ## Direct Participation
 
 ### Beta Testing
-At the moment we have an open "closed beta" DataDash group for both iOS and Android. To participate as a beta tester follow the following steps:
-1. Join our [Discord Community](https://mxc.news/discord)
-1. Use the #bot-talk channel to send one of the following commands:
-   * `!role ios`
-   * `!role andorid`
-1. You will then see a new channel in the `develompent` category. Follow the steps in the message at the top of the channel to join your selected test group.
+Beta testing new features before they are released is a great way to help us improve the overall user experience with our products. Here are beta opportunities currently available:
+
+| Product | Beta Type | How to Participate |
+| ------- | --------- | ------------------ |
+| DataDash | Closed | [Instructions](tutorials/datadash/beta.md) |
+| MXC Controller | Closed | *Coming Soon* |
+| M2 Pro (MatchX) | Open | *Coming Soon* |
+
+*A beta version is pre-release and considered unstable. This means that you may experience some issues. Normally these will be minimal, however participating in an M2 Pro beta could potentially affect your mining. MXC Controller and DataDash betas will not have any influence on your overall mining potential.*
+
 
 ### Coding and Translating
 We have a number of public repos with active issues that could use assistance. Our team is still growing, and community support is always appreciated, encouraged and in some cases rewarded.
