@@ -1,22 +1,22 @@
 ---
-slug: 2021-07-05-tech-update
-title: Tech Update - July 5, 2021
+slug: 07-07-2021-05-Mise à jour technique
+title: Mise à jour Tech - 5 Juillet 2021
 author: Jeff Stahlnecker
-author_title: Head of Development @ MXC Foundation
+author_title: Responsable du développement à la Fondation MXC
 author_url: https://github.com/jeffstahlnecker
-author_image_url: https://avatars.githubusercontent.com/u/45363541?v=4
+author_image_url: https://avatars.githubusercontent.com/u/16069751
 tags:
-  - tech update
+  - mise à jour technique
   - datadash
   - supernode
   - dhx
 ---
 
-Welcome to the very first MXC tech update!
+Bienvenue à la toute première mise à jour MXC tech !
 
-This week the tech team has been extremely busy. Throughout the past sprint we've focused on closing any and all ongoing projects. That brought us back to a few "low hanging" items that will add some EPIC value to our users -- especially those interested in connecting LoRa devices.
+Cette semaine, l'équipe technique a été extrêmement occupée. Tout au long du sprint passé, nous nous sommes concentrés sur la réussite de tous les projets en cours. Cela nous a ramenés à quelques éléments « à faible accroche » qui ajouteront une valeur EPIC à nos utilisateurs — en particulier ceux qui sont intéressés par la connexion de périphériques LoRa.
 
-## Device Provisioning
+## Approvisionnement de l'appareil
 Our very own backend engineer Lixuan took a deep dive to test the device provisioning system built by Ian to ensure that it was ready to be added with our live code. She solved a number of conflicts (device provisioning has been *ready* since January!), then ran it through a round of rigorous testing. This was done in collaboration with MatchX embedded software engineer Ian. They did some great work, and you'll see device provisioning going live early this week. In the meantime, you can check out the technical documentation here: [Device Provisioning FAQ](/docs/tutorials/devices/provisioning)
 
 As part of our focus on devices during the past two weeks, Lixuan also solved an issue which kept users from adding new devices on a supernode. We should be in ship-shape, and ready for some developer interaction. Feel free to send us your feedback! :)
