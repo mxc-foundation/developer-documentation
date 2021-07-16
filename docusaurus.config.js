@@ -16,7 +16,7 @@ module.exports = {
     ],
   ],
   title: 'MXC Dev Docs',
-  tagline: 'You Guide to the MXC Ecosystem',
+  tagline: 'Your Guide to the MXC Ecosystem',
   url: 'https://dev.mxc.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
