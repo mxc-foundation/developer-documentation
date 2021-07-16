@@ -3,17 +3,23 @@ sidebar_position: 5
 ---
 
 # Troubleshooting
-Experiencing a problem with your M2 Pro? The guides here will help you find the problem. Naturally you can also ask for help in one of our communities, or reach out for manufacturer support by writing [support@matchx.io](mailto:support@matchx.io).
+Experiencing a problem with your M2 Pro? This tutorial will help you find the problem. Naturally you can also ask for help in one of our communities, or reach out for manufacturer support by writing [support@matchx.io](mailto:support@matchx.io).
 
 ## Connectivity (uptime)
 If your uptime is taking a hit, there's an easy way to find out if the miner is at fault, or your local network connection. To do that follow the following steps:
 ### 1. Access the M2 Pro Miner web interface 
 You can find the interface here: `http://yourSerialNumber.local`
-   * Your computer or phone must be on the same network as the M2 Pro Miner
-   * This URL works only on iOS, Win10 and Linux. It doesn't work on Android.
+
+* **Username:** `admin`
+* **Password:** your `serial number` using all caps
+  * Your computer or phone must be on the same network as the M2 Pro Miner
+  * This URL works only on iOS, Win10 and Linux. It doesn't work on Android.
+
 ### 2. Download the miner logs:
-   TODO: Add how to access miner logs for users
-1. Decompress and un-tar the file and the file. You should see several files like this:
+1. After logging in, you can view or download your logs by clicking on `SysLog` in the menu
+   ![log file structure](/img/troubleshooting/sysLog.png)
+   * If you're having an ongoing issue, you may want to download your logs regularly. The miner can only store logs for the past 48 hours, so if additional troubleshooting is needed, you should download your logs once every two days.
+1. If you download your logs, decompress and un-tar the file and the file. You should see several files like this:
     ![log file structure](/img/troubleshooting/logs-files.png)
    * info.txt contains the model, version, serial number and mac address for reference.
    * messages, messages.0, messages.1 are the system log files.
