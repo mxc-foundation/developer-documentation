@@ -11,8 +11,8 @@ To participate as a beta tester follow the following steps:
 1. Join our [Discord Community](https://mxc.news/discord)
 1. Use the #bot-talk channel to send one of the following commands:
     * `!role ios`
-    * `!role andorid`
-1. You will then see a new channel in the `develompent` category. Follow the steps outlined at the top of the channel to join your selected test group.
+    * `!role android`
+1. You will then see a new channel in the `development` category. Follow the steps outlined at the top of the channel to join your selected test group.
 
 ## DataDash Closed Beta
 Before a major release, we will do a call for closed beta participants. This will have a limited number of available seats per operating system, and will only be available to current beta testers who actively submit feedback.
