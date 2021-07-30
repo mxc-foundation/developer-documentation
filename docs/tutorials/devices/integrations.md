@@ -161,7 +161,7 @@ Response
 Call
 
 ```shell
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' -d '{ "organizationId": "{{ .ORG_ID }}"}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/login'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' -d '{ "organizationId": "{{ .ORG_ID }}", "ttlInSeconds": "{{ .TIME_TO_LIVE_IN_SECONDS }}"}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/login'
 ```
 
 Response
