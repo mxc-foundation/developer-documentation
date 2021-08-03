@@ -25,14 +25,6 @@ module.exports = {
   organizationName: 'mxc-foundation', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    announcementBar: {
-      id: 'weekly_AMA', // Any value that will identify this message.
-      content:
-        'Join the weekly tech AMA Tuesdays at 17:00 CEST <a target="_blank" rel="noopener noreferrer" href="https://mxc.news/discord">live on Discord</a>.',
-      backgroundColor: '#fafbfc', // Defaults to `#fff`.
-      textColor: '#091E42', // Defaults to `#000`.
-      isCloseable: false, // Defaults to `true`.
-    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
