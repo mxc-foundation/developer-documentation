@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## Table of Contents
 
-- [Machine eXchange Protocol: Premium Network Infrastructure, Infinite Data Stream](#machine-exchange-protocol-premium-network-infrastructure-infinite-data-stream)
+- [Machine eXchange Protocol: Open and Free Network Infrastructure, Secure and Private Data Stream](#machine-exchange-protocol-openfree-network-infrastructure-secureprivate-data-stream)
   - [1. MXC Vision](#1-mxc-vision)
   - [2. Background](#2-background)
     - [2.1 LPWAN vs other technologies](#21-lpwan-vs-other-technologies)
