@@ -3,7 +3,7 @@ title: MXProtocol
 sidebar_position: 2
 ---
 
-# MXProtocol (Machine eXchange Protocol): Premium Network Infrastructure, Infinite Data Stream
+# MXProtocol (Machine eXchange Protocol): Open and Free Network Infrastructure, Secure and Private Data Stream
 
 ## Table of Contents
 
