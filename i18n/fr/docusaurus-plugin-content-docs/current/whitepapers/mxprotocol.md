@@ -78,7 +78,7 @@ The fact is, current implementations for data networks are extremely expensive a
 <a name="fig1"> </a>
 
 <figure>
-  <img src="./images/fig1_lpwan_comparison.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig1_lpwan_comparison.png" alt="LPWAN" width="70%" />
 </figure>
 
 ### 2.1 LPWAN vs other technologies
@@ -187,7 +187,7 @@ As the flow in [Figure 2](#fig2) demonstrates, LPWAN Gateways connect to each ot
 
 <a name="fig2"> </a>
 <figure>
-  <img src="./images/fig2_dataflow.png" alt="dataflow" width="70%" />
+  <img src="/img/mxprotocol/fig2_dataflow.png" alt="dataflow" width="70%" />
 </figure>
 
 MXProtocol facilitates the data and value flow of the LPWAN. Inside this ecosystem, each sensor or end device has a MXC wallet address assigned to an individual user. This is required in order to both pay for the network usage and to receive money from selling the data and services. The sensor wallet is stored in the cloud in order to maintain the LPWAN low-power requirements. This is also due to the fact that the CPU is usually resource-constrained. The same wallet is used as the Gateway wallet (also found in a user account and stored in the cloud). This wallet will receive coins from uploading/downloading the data from the cloud to the sensor and assists in paying for the other LPWAN’s resource or data.
@@ -197,7 +197,7 @@ Coinciding with the current LPWAN infrastructure protocol, the data link between
 <a name="fig3"> </a>
 <figure>
   <img
-    src="./images/fig3_MXProtocol_stack.png"
+    src="/img/mxprotocol/fig3_MXProtocol_stack.png"
     alt="dataflow-mxprotocol"
     width="50%"
   />
@@ -262,7 +262,7 @@ Usually one Gateway offers eight channels for the sensors/end devices to bid and
 
 <figure>
   <img
-    src="./images/fig4_mxp_smart_bidding.png"
+    src="/img/mxprotocol/fig4_mxp_smart_bidding.png"
     alt="MXP-smart-bidding"
     width="70%"
   />
@@ -363,7 +363,7 @@ The design of the Anti-Collision Coordinator is illustrated in [Figure 5](#fig5)
 <a name="fig5"> </a>
 <figure>
   <img
-    src="./images/fig5_anti_collision_coordinator.png"
+    src="/img/mxprotocol/fig5_anti_collision_coordinator.png"
     alt="anti-collision-coordinator"
     width="70%"
   />
@@ -387,7 +387,7 @@ A light node connects to the full node to assign the LPWAN a wallet for sending 
 
 <figure>
   <img
-    src="./images/fig6_anti_collision_integration.png"
+    src="/img/mxprotocol/fig6_anti_collision_integration.png"
     alt="anti-collision-third-party-integration"
     width="70%"
   />
@@ -421,7 +421,7 @@ The MXProtocol Inter-Chain Data Market provides an effective method to feed the 
 <a name="fig7"> </a>
 <figure>
   <img
-    src="./images/fig7_inter_chain_market.png"
+    src="/img/mxprotocol/fig7_inter_chain_market.png"
     alt="inter-chain-data-market"
     width="70%"
   />
@@ -451,7 +451,7 @@ Both the European and U.S. radio committees impose regulations on the spectrum a
 
 <a name="fig8"></a>
 <figure>
-  <img src="./images/fig8_LPWAN.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig8_LPWAN.png" alt="LPWAN" width="70%" />
 </figure>
 
 Currently, the downlink resource is distributed on a “first come first served” basis, which can lead to many potential problems for various devices. For example, if an electricity monitoring meter were to get downlink priority over a door lock, the door lock in turn doesn’t receive the confirmation to unlock the door. The MXProtocol Smart Bidding solves this problem as covered in the following two aspects:
