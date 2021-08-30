@@ -134,7 +134,7 @@ cost data transmissions.
 <a name="fig1"> </a>
 
 <figure>
-  <img src="./images/fig1_lpwan_comparison.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig1_lpwan_comparison.png" alt="LPWAN" width="70%" />
 </figure>
 
 ### 2.1 LPWAN vs other technologies
@@ -370,7 +370,7 @@ can start sending and receiving messages.
 
 <a name="fig2"> </a>
 <figure>
-  <img src="./images/fig2_dataflow.png" alt="dataflow" width="70%" />
+  <img src="/img/mxprotocol/fig2_dataflow.png" alt="dataflow" width="70%" />
 </figure>
 
 MXProtocol facilitates the data and value flow of the LPWAN. Inside this
@@ -397,7 +397,7 @@ delivering the ultimate user experience to SMEs and MNCs.
 <a name="fig3"> </a>
 <figure>
   <img
-    src="./images/fig3_MXProtocol_stack.png"
+    src="/img/mxprotocol/fig3_MXProtocol_stack.png"
     alt="dataflow-mxprotocol"
     width="50%"
   />
@@ -528,7 +528,7 @@ alternatively, the willingness of the sensors.
 
 <figure>
   <img
-    src="./images/fig4_mxp_smart_bidding.png"
+    src="/img/mxprotocol/fig4_mxp_smart_bidding.png"
     alt="MXP-smart-bidding"
     width="70%"
   />
@@ -681,7 +681,7 @@ obvious. The solution would be that the Anti-Collision.
 <a name="fig5"> </a>
 <figure>
   <img
-    src="./images/fig5_anti_collision_coordinator.png"
+    src="/img/mxprotocol/fig5_anti_collision_coordinator.png"
     alt="anti-collision-coordinator"
     width="70%"
   />
@@ -725,7 +725,7 @@ the Anti-Collision Coordinator and its APIs for LoRaWAN servers.
 
 <figure>
   <img
-    src="./images/fig6_anti_collision_integration.png"
+    src="/img/mxprotocol/fig6_anti_collision_integration.png"
     alt="anti-collision-third-party-integration"
     width="70%"
   />
@@ -782,7 +782,7 @@ other smart contracts with LPWAN data captured by sensors or end devices.
 <a name="fig7"> </a>
 <figure>
   <img
-    src="./images/fig7_inter_chain_market.png"
+    src="/img/mxprotocol/fig7_inter_chain_market.png"
     alt="inter-chain-data-market"
     width="70%"
   />
@@ -841,7 +841,7 @@ minutes depending on the data rate and number of bytes being sent.
 
 <a name="fig8"></a>
 <figure>
-  <img src="./images/fig8_LPWAN.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig8_LPWAN.png" alt="LPWAN" width="70%" />
 </figure>
 
 Currently, the downlink resource is distributed on a “first come first served”
