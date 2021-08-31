@@ -14,23 +14,24 @@ sidebar_position: 2
       - [2.1.1 LoRaWAN](#211-lorawan)
       - [2.1.2 NB-IoT](#212-nb-iot)
       - [2.1.3 Deployment considerations](#213-deployment-considerations)
+    - [2.2 5.5G networks](#22-5-5g)
   - [MXC economy](#mxc-economy)
-    - [3.1 Commerce network effect](#31-commerce-network-effect)
+    - [3.1 Edge AI platform](#31-edge-ai)
     - [3.2 Blockchain Non-Fungible Token](#32-non-fungible-token)
     - [3.3 Data bloom](#33-data-bloom)
-      - [3.3.1 MXC-assisted garbage collection](#331-mxc-assisted-garbage-collection)
-      - [3.3.2 MXC-assisted car sharing](#332-mxc-assisted-car-sharing)
+      - [3.3.1 MXC-assisted parking](#331-mxc-assisted-parking)
+      - [3.3.2 MXC-assisted IoT NFT](#332-mxc-assisted-iot-nft)
   - [4. MXProtocol stack](#4-mxprotocol-stack)
-    - [4.1 Permissionless Blockchain](#41-permissionless-blockchain)
+    - [4.1 Blockchain Supernodes](#41-blockchain-supernode)
       - [4.1.1 Features](#411-features)
       - [4.1.2 Security and efficiency](#412-security-and-efficiency)
       - [4.1.3 Long-term adoptions](#413-long-term-adoptions)
+      - [4.1.4 Staking](#413-staking)
   - [5. Miner Health](#5-miner-health)
     - [5.1 Goals of design](#51-goals-of-design)
     - [5.2 Design and implementation](#52-design-and-implementation)
-    - [5.3 Gateway status](#53-gateway-status)
-    - [5.4 Smart Bidding strategy](#54-smart-bidding-strategy)
-    - [5.5 Sensor Smart Bidding code](#55-sensor-smart-bidding-code)
+    - [5.3 Health metrics](#53-health-metrics)
+    - [5.4 Mining strategy](#54-mining-strategy)
   - [6. Anti-Collision Coordinator](#6-anti-collision-coordinator)
     - [6.1 Goals of the design](#61-goals-of-the-design)
     - [6.2 Design and implementation](#62-design-and-implementation)
@@ -38,29 +39,28 @@ sidebar_position: 2
   - [7. Inter-Chain Data Market](#7-inter-chain-data-market)
     - [7.1 Goals of the design](#71-goals-of-the-design)
     - [7.2 Design and implementation](#72-design-and-implementation)
-    - [7.3 Polkadot and Aeternity](#73-polkadot-and-aeternity)
-  - [8. Smart Bidding use cases](#8-smart-bidding-use-cases)
-    - [8.1 Downlink resource auction](#81-downlink-resource-auction)
-    - [8.2 Network coverage market](#82-network-coverage-market)
-    - [8.3 Service market](#83-service-market)
+    - [7.3 Polkadot parachain](#73-polkadot-parachain)
+  - [8. Device Provisioning](#8-device-provisioning)
+    - [8.1 Goals of design](#81-goals-of-design)
+    - [8.2 Design and implementation](#82-design-and-implementation)
+    - [8.3 MXC Controller](#83-mxc-controller)
   - [9. Development progress](#9-development-progress)
   - [10. References](#10-references)
 
 ## 1. MXC Vision
 
 > The MXC vision is to introduce a systematic process to both simplify and
-> increase IoT data transactions.
+> increase data transactions for AI and blockchain devices.
 
 The decentralized infrastructure upon which MXC’s system is based is the future
 of Low Power Wide Access Network (LPWAN) and the Machine eXchange Protocol
 (MXProtocol). Utilizing this solid device network foundation, MXC is introducing
-an extraordinarily unique coin offering, Machine eXchange Coin (MXC), which
+an extraordinarily unique token, MXC, which
 allows for increased data transactions and an idiosyncratic data flow
-monetization within the mammoth data market.
+monetization within the mammoth AI and blockchain markets.
 
 MXProtocol places a keen focus on reducing collision between networks,
-constructing an inter-chain data market, developing a market for network
-coverage and introducing an independent Quality of Services (QoS) framework for
+constructing an inter-chain data market, provisioning devices with lower costs and introducing GDPR-safe AI and blockchain NFT for
 both data providers and receivers. For the first time ever, individual network
 users, corporations and enterprises can all participate in the construction of
 decentralized, ubiquitous and secure LPWAN. Simply by connecting “anything” to
@@ -68,50 +68,47 @@ the network, adopters will be able to profit and trade MXC.
 
 The trading network is built on the premise of the “sharing economy.” Therefore,
 it is uniquely and exclusively owned by users — both individuals and enterprises
-— who take advantage of the monetization of the network in two ways:
+— who take advantage of the monetization of the network in three ways:
 
-1. By increasing uplink and downlink coverage via a Gateway, e.g. a MatchBox
-   LPWAN Gateway, Cisco LPWAN Gateway
+1. By increasing coverage via a Miner, e.g. a M2Pro
+   LPWAN Gateway Miner, Cisco LPWAN Gateway
 2. By unleashing access to a massive network
    of published and traded data to the marketplace which is securely traded using
    blockchain technology
+3. By creating unique NFTs in MXC LPWAN and trade it on popular NFT exchanges
 
-Both sensors and connected devices bid (via the integrated QoS) for the downlink
-network resource to, for example, unlock a door or, alternatively, shut down a
-faulty radiator, subsequently offering a market-devised price for the uncovered
-regions. This ultimately increases data network coverage. “Things” can
-autonomously pay each other with MXC tokens and get accredited by sharing the
-data with different users/marketplaces.
+
+Both sensors and connected devices joining the network through device provisioning tags to use the unlimited downlinks and uplink resources in MXC LPWAN. This ultimately increates LPWAN coverage. "Things" can autonomously access to LPWAN with MXC tokens and get accredited by sharing data or creating unique values on Blockchain.
 
 There has been a phenomenal increase in the sourcing, collection and
-transmission of big data within the past five years. Additionally, the
-increasing use of artificial intelligence feeding off this data has assisted
+transmission of big data within the past few years. Additionally, the
+increasing use of AI feeding off this data has assisted
 people to simplify tedious tasks and to make better informed decisions on
-everything from projecting a weather forecast, to saving household energy, to
-even choosing the right music to play at home. The tone has now been set for
-decades to come. Machines interacting with one another has seen a significant
+everything from projecting a weather forecast, to track a lost pet, to
+find the parking lots alongside the street. The tone has now been set for
+decades to come. AI and Blockchain devices interacting with one another has seen a significant
 increase over such a short period. This will only increase as our
 interdependency on machines and machine learning grows and becomes ever more
 significant in day to day life.
 
-Whether for individuals or big companies, the need for a specified network
+Whether for individuals or big companies, the need for a privacy focused network
 concentrating on machines and machine data is here to stay. It will play a
 bigger part in supporting both individuals and businesses than ever before.
-MXProtocol introduces the next generation of LPWAN with a superior IoT data
+MXProtocol introduces the next generation of LPWAN with a superior AI and Blockchain data
 platform and a premium network experience, allowing for a simplified and
-expedited way to create a secure and efficient solution for IoT.
+expedited way to create a secure and efficient solution for AI and Blockchain devices.
 
 The following sections elaborate on the unique advantages of MXProtocol,
-including its components — permissionless blockchain, Smart Bidding,
-Anti-Collision Coordinator and Inter-Chain Data Market — that make it a truly
-innovative technology.
+including its components — Blockchain Supernodes,  Miner Health,
+Anti-Collision Coordinator,Inter-Chain Data Market and Device Provisioning — that make it a truly
+innovative design.
 
 ## 2. Background
 
 MXC is a German non-profit organization based in the country’s start-up and
 blockchain capital, Berlin. MXC is partnering with various LPWAN companies.
 MXProtocol is a revolutionary design that solves the problem of LPWAN and
-bridges the data gap between different infrastructures.
+bridges the AI and Blockchain data gap between different infrastructures.
 
 IoT is a hot topic that has been intently discussed for over a decade. The one
 focus and premise of the IoT network is connecting “things” to the Internet and
@@ -123,13 +120,13 @@ using 3G/4G consumes a significant amount of power, thus reducing effective
 battery life and increasing maintenance costs significantly. The fact is,
 current implementations for data networks are extremely expensive and offer very
 low usability. The need for a new technology is here and the need for LPWAN will
-only increase as it solves the current problems of low range/high cost data
+only increase as it solves the current problems of  AI and Blockchain device data
 transmissions.
 
 The fact is, current implementations for data networks are extremely expensive
-and offer very low usability. The need for a new technology is here and the need
+and offer very low usability for AI and Blokchain devices. The need for a new technology is here and the need
 for LPWAN will only increase as it solves the current problems of low range/high
-cost data transmissions.
+cost, insecure data transmissions.
 
 <a name="fig1"> </a>
 
@@ -148,8 +145,8 @@ times. The new LPWAN technology offers aspects where others simply can’t
 compete:
 
 - 10 year sensor battery life
-- 20 km data reach with just a single Gateway
-- Offers an extreme amount of connection points (over 60,000 for a single network
+- 40 km data reach with just a single Gateway Miner
+- Offers an extreme amount of connection points (over 240,000 for a single network
   cell) supported by LPWAN Gateways at an extremely low cost
 
 Now, when compared to the current wireless network, it’s easy to see the
