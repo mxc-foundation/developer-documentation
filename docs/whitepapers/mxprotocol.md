@@ -15,6 +15,8 @@ sidebar_position: 2
       - [2.1.2 NB-IoT](#212-nb-iot)
       - [2.1.3 Deployment considerations](#213-deployment-considerations)
     - [2.2 5.5G networks](#22-5-5g)
+      - [2.2.1 802.11ax](#221-80211ax)
+      - [2.2.2 Deployment considerations](#221-deployment)
   - [MXC economy](#mxc-economy)
     - [3.1 Edge AI platform](#31-edge-ai)
     - [3.2 Blockchain Non-Fungible Token](#32-non-fungible-token)
@@ -151,19 +153,19 @@ compete:
 
 Now, when compared to the current wireless network, it’s easy to see the
 superior advancements that the MXC solutions offer. As illustrated in Figure 1,
-LoRa and NB-IoT are simply the most potent solutions on the LPWAN market.
+LoRa and NB-IoT are simply the most potent solutions on the LPWAN market. While covering local indoor areas, MXC also offers 5.5G that all the mobile devices support for trasmitting more data.
 
 #### 2.1.1 LoRaWAN
 
 LoRaWAN is an open-source protocol defined by the LoRa Alliance, which is
 already supported by industrial giants such as Cisco, Alibaba, Comcast, IBM and
-SK Telecom and many more. Advantages of LoRaWAN are 20 km open space coverage,
+SK Telecom and many more. Advantages of LoRaWAN are 40 km open space coverage,
 low data rates (low-level kbps) and ultra-low power, allowing for 10 years
 continued operation on a single battery.
 
 Both the Gateways and end sensor devices use the LoRaWAN protocol. In fact,
 devices of any brand are supported and can be connected to the network as long
-as they are LoRa/LPWAN compatible.
+as they are LoRa/LPWAN compatible. MXProtocol is an improved version of LoRaWAN in many ways. All the LoRaWAN devices can easily connect to MXC provisioning server to join the network.
 
 #### 2.1.2 NB-IoT
 
@@ -223,9 +225,19 @@ MXC has designed this next generation LPWAN infrastructure using MXProtocol in
 order to significantly boost the applications of blockchain and IoT within the real-world
 context.
 
+### 2.2 5.5G networks
+LPWAN contains mostly low data-rate technologies like NB-IoT and LoRa, however MXProtocol supports 5.5G network that is low power and reaches few kilometers. As a great complementary to the low data-rate technologies, 5.5G acts as a data channel for devices to use internet applications would make the LPWAN much more versatile.
+
+#### 2.2.1 802.11ax
+The 802.11 ax standards is designed by IEEE committe to facilitate the low power fast throughput of the network, will take users up to and beyond Gigabit throughput while keeping the power consumption as 1/10 of what 5G delivered. MXProtocol integrates 802.11 ax as a part of LPWAN to deliver comprehensive data regimes to wider public and more devices.
+
+#### 2.2.2 Deployment considerations
+As a home device which access your local internet, usually users won't let someone else to access their home network. How to isolate the 5.5G network from user's home network is critical and the user agreements about the data transferred has no business or personal relationship with the device owner is important. Usually 5.5G with Omnidirectional antenna can only reach less than 100 meters, how to use a highly dierectional antenna to make sure the network is acessessable from few kilometers away is considerred thoroughly by MXProtocol.
+
+
 ## MXC economy
 
-Machine eXchange Coin (MXC) offers a unique and specifically designed decentralized
+MXC offers a unique and specifically designed decentralized
 technological “Data Trade Network” to the global Token economy. Data can be shared on a
 mass scale whilst ensuring complete end to end privacy. The MXC intends to be distributed
 amongst data owners, data receivers and data network hosts, allowing for a facilitated
