@@ -238,45 +238,48 @@ As a home device which access your local internet, usually users won't let someo
 ## MXC economy
 
 MXC offers a unique and specifically designed decentralized
-technological “Data Trade Network” to the global Token economy. Data can be shared on a
+technological “Open and Free Network” to the global AI and Blockchain economy. Data can be shared on a
 mass scale whilst ensuring complete end to end privacy. The MXC intends to be distributed
 amongst data owners, data receivers and data network hosts, allowing for a facilitated
-cross-over from a “commodity” based Coin into an everyday trading Coin currency.
+cross-over from a “commodity” based token into an everyday trading currency.
 
-### 3.1 Commerce network effect
+### 3.1 Edge AI platform
 
-Machine eXchange Coin is the first Token designed to bridge current commodity-based
-trading of cryptocurrency tokens and the cash-based global economy. Utilizing the “sharing
+MXC is the first Token designed to bridge current commodity-based
+trading of cryptocurrency tokens and the device connected global economy. Utilizing the “sharing
 economy,” MXC uses this as an axis, allowing large businesses, SMEs and individuals to
-borrow or rent assets owned by someone else.
+collect GPDR/CCPA-safe data from daily senarios using Edge AI.
 
-Individuals place LoRa-based protocol hardware in opportune positions in order to benefit
-and profit from their locations and their decentralized LoRaWAN network. Businesses
-benefit by using these user-based networks to send sensor/device data, building a new
-“sharing economy.” Wallets are stored in the cloud allowing individuals to profit from
-businesses sending sensor data via their LoRaWAN LPWAN. The coins are then sent and
-traded from the sensor holders that MXProtocol addresses to the Gateway distributor.
+MXProtocol builts an Edge AI platform that connects all the devices that equipped with hardware Neural Network capacity to analyze the data patterns, and only send the end results through MXProtocol to users. Thus the GDPR and CCPA are fulfilled when the privacy related patterns like human faces or paces are not pre-trained in the platform. No any personal or privacy data will be collected as they are ignored by the hardware Neural Networks.
 
-MXProtocol gives network participants incentives to use, deploy and trade their network
+Individuals place LoRa-based Edge AI hardware and their LPWAN miner in opportune positions in order to benefit
+from their GDPR-safe data and their decentralized LoRaWAN network. Businesses
+benefit by using these user-based networks to send the pre-processed Edge AI data, building a new
+“sharing economy.” Wallets are stored in the cloud allowing individuals to benefit from
+businesses Edge AI processed data via their LPWAN. The tokens are then sent from the device owners that MXProtocol addresses to Supernodes.
+
+MXProtocol gives network participants incentives to use, deploy and trade their Edge AI devices and network
 elements. In addition to that, it is a people-owned secure and private network that won’t
-suffer from public congestion like what Ethereum encountered with cryptokitties.
+suffer from GDPR and CCPA accusations about collecting personal data.
 
-### 3.2 Asset-Backed Securitization
+### 3.2 Blockchain Non-Fungible Token
 
 MXC has been highly successful with regards to the design and production of high-end
-LPWAN hardware. Using the coins and sharing economy will allow for a massive influx
-of shared sensor data amongst individuals and companies, giving better insights into consumer behavior, environmental impacts and machine-based optimizations.
+LPWAN hardware. Using the tokens and sharing economy will allow for a massive influx
+of Non-Fungible Token(NFT) amongst individuals and companies, giving better accesses into artworks, agricultural products, luxury items and unique creations.
 
-With MXC, Asset-Backed Securitization (ABS) adds a completely new way for individuals
-and companies to both trade and manage their data and physical assets. Current methods
-see sensitive data easily being passed and reproduced to a number of parties without any
+With MXC, LPWAN NFT adds a completely new way for individuals
+and companies to both trade and manage their unique assets. Current methods
+see commodities easily being pirated and reproduced to a number of parties without any
 of them knowing that the data has potentially already been corrupted, seen and/or shared
-amongst potential competitors/untrusted parties. MXC makes it possible for corporations
-and individuals to track both physical goods and intangible data, ensuring that buyers/
+amongst potential competitors/untrusted parties. LPWAN NFT makes it possible for corporations
+and individuals to track both physical goods and tangible data, ensuring that buyers/
 receivers of the goods are the only party who have received the data/physical good, and for
 this information to come from a qualified and reliable source.
 
-By applying ABS, the individual data is allocated to one dedicated source. In contrast, a
+LPWAN NFT is also a bridge between digital world and real world assets since each item can have its unique identity on blockchains like Ethereum through MXProtocol. This addes great usability to the current NFT exchanges that only support digital products.
+
+By applying LPWAN NFT, the individual items is allocated to one dedicated source. In contrast, a
 buyer of a tangible paper certificate, for example, has no way of knowing that the same
 certificate hasn’t been sold/reproduced and assigned to potentially multiple parties.
 
