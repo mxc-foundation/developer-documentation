@@ -277,7 +277,7 @@ and individuals to track both physical goods and tangible data, ensuring that bu
 receivers of the goods are the only party who have received the data/physical good, and for
 this information to come from a qualified and reliable source.
 
-LPWAN NFT is also a bridge between digital world and real world assets since each item can have its unique identity on blockchains like Ethereum through MXProtocol. This addes great usability to the current NFT exchanges that only support digital products.
+LPWAN NFT is also a bridge between digital world and real world assets since each item can have its unique identity on blockchains like Ethereum through MXProtocol. This added great usability to the current NFT exchanges that only support digital products.
 
 By applying LPWAN NFT, the individual items is allocated to one dedicated source. In contrast, a
 buyer of a tangible paper certificate, for example, has no way of knowing that the same
@@ -285,10 +285,10 @@ certificate hasn’t been sold/reproduced and assigned to potentially multiple p
 
 ### 3.3 Data bloom
 
-MXC is a blockchain-based decentralized platform designed to revolutionize three core
-functions based around the basic financial theory: Lend, Send and Spend.
+MXC is a blockchain-based decentralized AI and Blokchain platform designed to revolutionize three core
+functions based around the Smart City industry: Data collection, Data transaction, Data Visualization.
 
-#### 3.3.1 MXC-assisted garbage collection
+#### 3.3.1 MXC-assisted parking
 
 The future is here. The one constant in everyone’s life from now on will be the data
 surrounding all of us. In the past such a statement referred to “people-generated data.”
@@ -297,72 +297,61 @@ rate.
 
 The beauty of machine-based data, when compared with human-based data, is it doesn’t
 sleep. Machine-based data is constant and it’s reliability is unmatched when compared with
-any people-generated data. So why is this important?
+any people-generated data. MXProtocol brought the unparalleled Edge AI platform that can process the data according to the pre-trained patterns, and protect data privacy since all the data patterns that are not trained will be ignored.
 
-Take, for example, a local city council. Their task is to ensure safety, security and general
-well-being of the local city. One of these responsibilities includes simple tasks such as
-garbage collection. The simple act of emptying city trash may seem like a monotonous task,
-but it in fact requires planning and chain management: When do collections occur? How
-often should trash collections occur? How many employees are required to empty garbage
-cans across the city? MXC simplifies such tasks using MXProtocol.
+Take, for example, a navigation app like Google Maps or Here Map route people to the street parking. One of their app features is to show how many parking lots will be available at the final destination. The simple act of reporting parking lots may seem like an impossible task,
+but it in fact requires planning and partner management: When do cars leave? How
+often should the parking management report? How many employees are required to report parking lots across the city? MXC simplifies such tasks using MXProtocol.
 
-Using sensor/end devices situated in garbage cans and allowing them to transmit device
-data via a Gateway allows the city council to detect the levels of garbage built up within the
-can. What does this mean for the council?
+Using Edge AI camera situated above the streets and allowing them to analyze parking data in real time and send via a M2Pro miner allows the app to report the street parking lots in real time but never violate GDPR or CCPA regulations. What does this mean for the public?
 
-- Saving fuel: The council only needs to send out garbage trucks when necessary,
-  as opposed to sending out trucks to check cans, irrespective of whether they are full
-  or even completely empty.
-- Saving wages: By only sending out employees at the moment a garbage can
-  needs to be emptied, the council can then reallocate human resources, thus saving
-  employee wages.
-- Reducing traffic congestion: Garbage trucks are often frustrating for commuters.
-  When parked on the side of the road, they can increase general traffic significantly.
-  Being aware of the need for garbage removal in certain areas can reduce the need
+- Saving fuel: The cars looking for parking will plan the route ahead,
+  as opposed to travel around the place to seek for a slot, irrespective of whether the street is full or someone is waiting for a slot.
+- Business insights: By collecting useful information about parking like how many brands of cars and how often the cars park, how many people passing by, businesses can gain insights about how the activities and compositions of the neighborhood and plan their products and promotions targeting the neighbors better.
+- Reducing traffic congestion: Parking cars are often frustrating for commuters.
+  When searching parking lots on the side of the road, they can increase general traffic significantly.
+  Being aware of the availability of parking lots in certain areas can reduce the need
   for trucks and allow for smoother traffic flows.
 
 Many of these highlighted aspects make up the chain of events associated with what are
-deemed to be “menial tasks” but, as shown, the flow on effect is quite significant. MXC IoT
+deemed to be “menial tasks” but, as shown, the flow on effect is quite significant. MXProtocol and Edge AI
 is ready to solve such issues, allowing for simple tasks to be categorized and ensuring exact
 resources are allocated only when needed.
 
-#### 3.3.1 MXC-assisted car sharing
+#### 3.3.1 MXC-assisted IoT NFT
 
-Using LoRaWAN sensor/end devices and Gateways can also reduce the cost of car sharing
-partners.
+Using LoRaWAN tags and Gateways Miners M2Pro can also boost the usability of blockchain NFTs.
 
-Covering an entire city center in LPWAN allows individuals to simply build their own
-completely independent network, free from telecommunications companies and net-
-works charging exorbitant costs.
+Add LPWAN tags on any item like artworks and luxury goods allows individuals to simply build their own
+IoT NFT, free from third party firms and networks charging exorbitant costs. IoT NFTs are also blockchain certificates of offline items, that can't be duplicated or eliminated.
 
-The benefits of doing this for a company such as a “car sharing” company allows them
-to track their vehicles without the need to depend on Telecommunication coverage. Using
-LPWAN significantly reduces the costs, especially when compared with the costs of tracking
+The benefits of doing this for an artist is to allow them to issue their own artwork NFT without the need to understand Ethereum, Gas fee and decentralized wallet. Using
+LPWAN significantly reduces the costs, especially when compared with the costs of issuing IoT NFT
 using a SIM card.
 
-In addition to GPS tracking, car doors can be locked and unlocked using LPWAN, increasing
-security for users, all at a very low cost compared to current methods.
+In addition to artworks, luxury products and expensive machines can be made with NFT using LPWAN, increasing
+security, traceability and authenticity for users, all at a very low cost compared to current methods.
 
 By bringing such key services, MXC provides transparency and greatly enhances customer
 experience. MXC’s mission is to intensify data sharing whilst forging a unity between
-those with finance and data service needs and those without finance but who have private
+those with blockchain and data service needs and those without finance but who have 
 access to network integration and distribution, thus eliminating borders, intermediaries
 and prejudices.
 
 MXProtocol focuses on three foundational pillars:
 
-- Extend and support the massive device data economy
+- Extend and support the massive AI and Blockchain data economy
 - Utilize the decentralized “sharing economy”
-- Trade of assets within the current coin economy
+- Exchange of assets within the current blockchain economy
 
 MXProtocol connects “things” utilizing a market-based economy, which adds a plethora
 of new transmission points allowing more data to be shared, traded, sold and analyzed for
 data mining.
 
 Within the new decentralized MXC economy, everyone can profit from the sharing of
-data; end to end encryption grants authorized usage of the data; and entire communities can
+data; end to end encryption grants authorized usage of the NFT data; and entire communities can
 benefit from using their locations to act as a network facility to transport this data — trading
-assets, profiting from the coin economy.
+assets, profiting from the blockchain economy.
 
 ## 4. MXProtocol stack
 
