@@ -355,19 +355,20 @@ assets, profiting from the blockchain economy.
 
 ## 4. MXProtocol stack
 
-MXProtocol infrastructure consists of both sensor and end devices, Gateway and cloud.
-Sensors and end devices collect data from “things,” and send to the cloud via the Gateway.
+MXProtocol infrastructure consists of both IoT NFT and Edge AI devices, Miner and cloud.
+IoT NFT and Edge AI devices collect data from “things,” and send to the cloud via the Miner.
 This is uniquely designed to specifically be a decentralized solution allowing for everyone to
 suit their/the market’s needs. The usability of the hardware has been specifically designed
 as a “plug and play” solution, making installation simple without the need for a professional
-configuration. It is designed to be easy to set up and easy to share data.
+configuration. It is designed to be easy to set up and easy to share the data economy.
 
-As the flow in [Figure 2](#fig2) demonstrates, LPWAN Gateways connect to each other to form
-either a mesh network as a collective cloud or the Internet. The sensors or end devices
-communicate with Gateways using LPWAN technology for bi-directional communication.
-Notably, the sensors and end devices are not purely limited to a single LPWAN product. In
-fact, any LoRaWAN compatible sensors are able to connect to the LPWAN network and
-can start sending and receiving messages.
+As the flow in [Figure 2](#fig2) demonstrates, LPWAN Miners connect to each other to form
+either a decentralized mesh network as a collective cloud or the Internet. The IoT NFT and Edge AI devices
+communicate with Miners using LPWAN technology for bi-directional communication.
+Notably, the IoT NFT and Edge AI devices are not purely limited to few product. In fact, any LoRaWAN compatible sensors are able to connect to the LPWAN network and
+can start sending and receiving messages through our device provisioning design.
+
+Then device provisioning will transfer the MXC from the device payments and distribute the rewards to miners according to their health.
 
 <a name="fig2"> </a>
 <figure>
