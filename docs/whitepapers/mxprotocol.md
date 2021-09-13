@@ -42,6 +42,7 @@ sidebar_position: 2
     - [7.1 Goals of the design](#71-goals-of-the-design)
     - [7.2 Design and implementation](#72-design-and-implementation)
     - [7.3 Polkadot parachain](#73-polkadot-parachain)
+    - [7.4 Mining Power](#73-mpower)
   - [8. Device Provisioning](#8-device-provisioning)
     - [8.1 Goals of design](#81-goals-of-design)
     - [8.2 Design and implementation](#82-design-and-implementation)
