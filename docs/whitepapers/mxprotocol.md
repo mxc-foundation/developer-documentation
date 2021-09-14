@@ -377,24 +377,21 @@ Then device provisioning will transfer the MXC from the device payments and dist
 </figure>
 
 MXProtocol facilitates the data and value flow of the LPWAN. Inside this
-ecosystem, each sensor or end device has a MXC wallet address assigned to an
-individual user. This is required in order to both pay for the network usage and
-to receive money from selling the data and services. The sensor wallet is stored
-in the cloud in order to maintain the LPWAN low-power requirements. This is also
+ecosystem, each IoT NFT and Edge AI device has a MXC wallet in Supernode assigned to an
+individual user. This is required in order to both pay for the network provisioning and
+to receive mining from miner health services. The device wallet is stored
+in the Supernode server in order to maintain the LPWAN low-power requirements. This is also
 due to the fact that the CPU is usually resource-constrained. The same wallet is
-used as the Gateway wallet (also found in a user account and stored in the
-cloud). This wallet will receive coins from uploading/downloading the data from
-the cloud to the sensor and assists in paying for the other LPWAN’s resource or
+used as the miner wallet (also found in a user account and stored in the
+Supernode). This wallet will receive MXC tokens from transporting the data from
+the Supernode to the devices and assists in paying for the other LPWAN’s resource or
 data.
 
 Coinciding with the current LPWAN infrastructure protocol, the data link between
-the Gateway and sensor end devices is unregulated. As a result, there would be
-no possibility to be rewarded for forwarding data from the sensor to cloud via
-the Gateway, and ultimately the downlink resource would be limited, only being
-allocated on a “first come, first served” basis. This system as is would
-negatively impact low-level data procurement services offered by things such as
-a door lock or car charging station system and would result in the data link not
-being appropriately monetized. MXC LPWAN infrastructure solves such issues,
+the Miner and IoT NFT/Edge AI devices is unregulated. As a result, there would be
+no possibility to be rewarded for forwarding data from the sensor to supernode via
+the Miner, and ultimately the downlink resource would be free, only being
+allocated on a “first come, first served” basis. This design with a proper Miner health metrics such as altitude can distribute the mining outcome much more better than other designs such as monetizing the downlinks or halving. MXC LPWAN infrastructure solves the problem of robustness and the inequality of the network income,
 delivering the ultimate user experience to SMEs and MNCs.
 
 <a name="fig3"> </a>
