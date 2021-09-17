@@ -405,11 +405,10 @@ delivering the ultimate user experience to SMEs and MNCs.
 
 [Figure 3](#fig3) shows the detailed technical stack of the MXProtocol infrastructure.
 The decentralized and autonomous LPWAN can be built on any permissionless
-blockchain, such as IOTA, Stellar, Skywire and NEO.
+blockchain, such as Ethereum blockchain or DataHighway.com.
 
-Based on this, the Anti-Collision Coordinator between LPWANs, Smart Bidding and
-Inter-chain data market are introduced to answer the LPWAN deployment considerations
-mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations).
+All LPWAN devices and miners are connected to Supernodes that are hosted by global communitys. Based on this, the Anti-Collision Coordinator between LPWANs, Miner Health and Device Provisioning are introduced to answer the LPWAN deployment considerations
+mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations). Inter-chain Data Marketplace is designed to facilitate the data movement between different LPWAN and apps.
 
 ### 4.1 Permissionless Blockchain
 
