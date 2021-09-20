@@ -3,7 +3,7 @@ title: MXProtocol
 sidebar_position: 2
 ---
 
-# MXProtocol (Machine eXchange Protocol): Open and Free Network Infrastructure, Secure and Private Data Stream
+# MXProtocol : Open and Free Network Infrastructure, Secure and Private Data Stream for Web3 & Metaverse
 
 ## Table of Contents
 
