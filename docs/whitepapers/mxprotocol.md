@@ -55,7 +55,7 @@ sidebar_position: 2
 > The MXC vision is to introduce a systematic process to both simplify and
 > increase data transactions for AI and blockchain devices.
 
-The decentralized infrastructure upon which MXC’s system is based is the future
+The decentralized web3 and metaverse infrastructure upon which MXC’s system is based is the future
 of Low Power Wide Access Network (LPWAN) and the Machine eXchange Protocol
 (MXProtocol). Utilizing this solid device network foundation, MXC is introducing
 an extraordinarily unique token, MXC, which
@@ -69,7 +69,7 @@ users, corporations and enterprises can all participate in the construction of
 decentralized, ubiquitous and secure LPWAN. Simply by connecting “anything” to
 the network, adopters will be able to profit and trade MXC.
 
-The trading network is built on the premise of the “sharing economy.” Therefore,
+The web3 and metaverse network is built on the premise of the “sharing economy.” Therefore,
 it is uniquely and exclusively owned by users — both individuals and enterprises
 — who take advantage of the monetization of the network in three ways:
 
@@ -81,25 +81,25 @@ it is uniquely and exclusively owned by users — both individuals and enterpris
 3. By creating unique NFTs in MXC LPWAN and trade it on popular NFT exchanges
 
 
-Both sensors and connected devices joining the network through device provisioning tags to use the unlimited downlinks and uplink resources in MXC LPWAN. This ultimately increates LPWAN coverage. "Things" can autonomously access to LPWAN with MXC tokens and get accredited by sharing data or creating unique values on Blockchain.
+Both sensors and connected devices joining the network through device provisioning tags to use the unlimited downlinks and uplink resources in MXC LPWAN. This ultimately increates LPWAN coverage. "Things" can autonomously access to LPWAN with MXC tokens and get accredited by sharing data or creating unique values on Blockchain, Web3 and Metaverse.
 
 There has been a phenomenal increase in the sourcing, collection and
-transmission of big data within the past few years. Additionally, the
+transmission of big data to blockchain and metaverse within the past few years. Additionally, the
 increasing use of AI feeding off this data has assisted
-people to simplify tedious tasks and to make better informed decisions on
+people to simplify tedious tasks and to make better informed decisions online on
 everything from projecting a weather forecast, to track a lost pet, to
 find the parking lots alongside the street. The tone has now been set for
 decades to come. AI and Blockchain devices interacting with one another has seen a significant
 increase over such a short period. This will only increase as our
-interdependency on machines and machine learning grows and becomes ever more
+interdependency on web3 and Metaverse and virtual world grows and becomes ever more
 significant in day to day life.
 
-Whether for individuals or big companies, the need for a privacy focused network
+Whether for individuals or big companies, the need for a privacy focused web3 and Metaverse network
 concentrating on machines and machine data is here to stay. It will play a
 bigger part in supporting both individuals and businesses than ever before.
 MXProtocol introduces the next generation of LPWAN with a superior AI and Blockchain data
 platform and a premium network experience, allowing for a simplified and
-expedited way to create a secure and efficient solution for AI and Blockchain devices.
+expedited way to create a secure and efficient solution for AI and Blockchain devices in Metaverse.
 
 The following sections elaborate on the unique advantages of MXProtocol,
 including its components — Blockchain Supernodes,  Miner Health,
@@ -111,7 +111,7 @@ innovative design.
 MXC is a German non-profit organization based in the country’s start-up and
 blockchain capital, Berlin. MXC is partnering with various LPWAN companies.
 MXProtocol is a revolutionary design that solves the problem of LPWAN and
-bridges the AI and Blockchain data gap between different infrastructures.
+bridges the AI and Blockchain data gap between different web3 infrastructures.
 
 IoT is a hot topic that has been intently discussed for over a decade. The one
 focus and premise of the IoT network is connecting “things” to the Internet and
@@ -124,12 +124,14 @@ battery life and increasing maintenance costs significantly. The fact is,
 current implementations for data networks are extremely expensive and offer very
 low usability. The need for a new technology is here and the need for LPWAN will
 only increase as it solves the current problems of  AI and Blockchain device data
-transmissions.
+transmissions for Web3 and Metaverse.
+
+In Metaverse, everything needs to be connected, some of the virtual objects would have a real item to authenticate and encrypt. The needs of brining offline objects to Metaverse is definitely increasing and the bridge between real world and web3 needs a native blockchain wireless network.
 
 The fact is, current implementations for data networks are extremely expensive
 and offer very low usability for AI and Blokchain devices. The need for a new technology is here and the need
 for LPWAN will only increase as it solves the current problems of low range/high
-cost, insecure data transmissions.
+cost, insecure data transmissions for Web3 and Metaverse.
 
 <a name="fig1"> </a>
 
@@ -227,7 +229,7 @@ order to significantly boost the applications of blockchain and IoT within the r
 context.
 
 ### 2.2 5.5G networks
-LPWAN contains mostly low data-rate technologies like NB-IoT and LoRa, however MXProtocol supports 5.5G network that is low power and reaches few kilometers. As a great complementary to the low data-rate technologies, 5.5G acts as a data channel for devices to use internet applications would make the LPWAN much more versatile.
+LPWAN contains mostly low data-rate technologies like NB-IoT and LoRa, however MXProtocol supports 5.5G network that is low power and reaches few kilometers. As a great complementary to the low data-rate technologies, 5.5G acts as a data channel for devices to connect to Metaverse would make the LPWAN much more versatile.
 
 #### 2.2.1 802.11ax
 The 802.11 ax standards is designed by IEEE committe to facilitate the low power fast throughput of the network, will take users up to and beyond Gigabit throughput while keeping the power consumption as 1/10 of what 5G delivered. MXProtocol integrates 802.11 ax as a part of LPWAN to deliver comprehensive data regimes to wider public and more devices.
@@ -239,17 +241,17 @@ As a home device which access your local internet, usually users won't let someo
 ## MXC economy
 
 MXC offers a unique and specifically designed decentralized
-technological “Open and Free Network” to the global AI and Blockchain economy. Data can be shared on a
+technological “Open and Free Network” to the global AI and Blockchain economy in Web3 and Metaverse. Data can be shared on a
 mass scale whilst ensuring complete end to end privacy. The MXC intends to be distributed
 amongst data owners, data receivers and data network hosts, allowing for a facilitated
-cross-over from a “commodity” based token into an everyday trading currency.
+cross-over from a “commodity” based token into an everyday trading currency in Web3 and Metaverse.
 
 ### 3.1 Edge AI platform
 
 MXC is the first Token designed to bridge current commodity-based
 trading of cryptocurrency tokens and the device connected global economy. Utilizing the “sharing
 economy,” MXC uses this as an axis, allowing large businesses, SMEs and individuals to
-collect GPDR/CCPA-safe data from daily senarios using Edge AI.
+collect GPDR/CCPA-safe data from daily scenarios using Edge AI.
 
 MXProtocol builts an Edge AI platform that connects all the devices that equipped with hardware Neural Network capacity to analyze the data patterns, and only send the end results through MXProtocol to users. Thus the GDPR and CCPA are fulfilled when the privacy related patterns like human faces or paces are not pre-trained in the platform. No any personal or privacy data will be collected as they are ignored by the hardware Neural Networks.
 
@@ -267,7 +269,7 @@ suffer from GDPR and CCPA accusations about collecting personal data.
 
 MXC has been highly successful with regards to the design and production of high-end
 LPWAN hardware. Using the tokens and sharing economy will allow for a massive influx
-of Non-Fungible Token(NFT) amongst individuals and companies, giving better accesses into artworks, agricultural products, luxury items and unique creations.
+of Non-Fungible Token(NFT) amongst individuals and companies, giving better accesses into artworks, agricultural products, luxury items and unique creations. NFT is also a foundation of Metaverse and a lot of Web3 applications.
 
 With MXC, LPWAN NFT adds a completely new way for individuals
 and companies to both trade and manage their unique assets. Current methods
@@ -287,7 +289,7 @@ certificate hasn’t been sold/reproduced and assigned to potentially multiple p
 ### 3.3 Data bloom
 
 MXC is a blockchain-based decentralized AI and Blokchain platform designed to revolutionize three core
-functions based around the Smart City industry: Data collection, Data transaction, Data Visualization.
+functions based around the Web3 and Metaverse industry: Data collection, Data transaction, Data Visualization.
 
 #### 3.3.1 MXC-assisted parking
 
@@ -408,9 +410,9 @@ The decentralized and autonomous LPWAN can be built on any permissionless
 blockchain, such as Ethereum blockchain or DataHighway.com.
 
 All LPWAN devices and miners are connected to Supernodes that are hosted by global communitys. Based on this, the Anti-Collision Coordinator between LPWANs, Miner Health and Device Provisioning are introduced to answer the LPWAN deployment considerations
-mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations). Inter-chain Data Marketplace is designed to facilitate the data movement between different LPWAN and apps.
+mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations). Inter-chain Data Marketplace is designed to facilitate the data movement between different LPWAN and apps. Anyone can easily build this network for Metaverse and bridge offline world to online world by collecting the data from devices.
 
-### 4.1 Permissionless Blockchain
+### 4.1 Blockchain Supernodes.
 
 There are various kinds of blockchain. Anyone can use cryptographic keys, anyone can be
 a node and join the network, and anyone can become a participant to service the network
@@ -422,7 +424,9 @@ legitimate changes and anyone can write a new block into the chain as long as
 they follow the rules. Decisions on a permissionless blockchain are made by the
 network participants. The protocol is based on a consensus protocol. The
 permissionless blockchain provides a way to reach consensus without relying on a
-closed system to accurately record financial transactions.
+closed system called Supernode to accurately record financial transactions.
+
+MXC Supernodes are designed as a layer-2 solution for billions of devices to interact with each other, and then book the necessary transactions to the permissionless blockchain.
 
 #### 4.1.1 Features
 
