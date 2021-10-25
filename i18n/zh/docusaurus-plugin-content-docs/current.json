@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.M2 Pro Miner": {
+    "message": "M2 Pro Miner",
+    "description": "The label for category M2 Pro Miner in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Devices": {
+    "message": "Devices",
+    "description": "The label for category Devices in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Supernode": {
+    "message": "Supernode",
+    "description": "The label for category Supernode in sidebar tutorialSidebar"
+  }
+}

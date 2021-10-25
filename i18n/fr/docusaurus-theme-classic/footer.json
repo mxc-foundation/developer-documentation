@@ -1,0 +1,66 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Tutorials": {
+    "message": "Tutorials",
+    "description": "The label of footer link with label=Tutorials linking to /docs/tutorials/intro"
+  },
+  "link.item.label.API": {
+    "message": "API",
+    "description": "The label of footer link with label=API linking to /docs/api/intro"
+  },
+  "link.item.label.Whitepapers": {
+    "message": "Whitepapers",
+    "description": "The label of footer link with label=Whitepapers linking to /docs/whitepapers/intro"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://mxc.news/telegram"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://mxc.news/discord"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/mxcfoundation"
+  },
+  "link.item.label.Developer Blog": {
+    "message": "Developer Blog",
+    "description": "The label of footer link with label=Developer Blog linking to /blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/mxc-foundation/"
+  },
+  "link.item.label.MXC Website": {
+    "message": "MXC Website",
+    "description": "The label of footer link with label=MXC Website linking to https://www.mxc.org"
+  },
+  "link.item.label.User Documentation": {
+    "message": "User Documentation",
+    "description": "The label of footer link with label=User Documentation linking to https://www.mxc.wiki"
+  },
+  "link.item.label.Imprint": {
+    "message": "Imprint",
+    "description": "The label of footer link with label=Imprint linking to https://www.mxc.org/imprint"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Privacy Policy linking to https://www.mxc.org/privacy-policy"
+  },
+  "copyright": {
+    "message": "Copyright © 2021 MXC Foundation gGmbH.",
+    "description": "The footer copyright"
+  }
+}
