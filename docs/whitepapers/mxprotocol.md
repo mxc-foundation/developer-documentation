@@ -484,16 +484,10 @@ devices and ensure they are routed to the network seamlessly.
 ## 5. Proof of Participation
 
 Due to governmental regulations of the LPWAN spectrum, the downlink is a precious
-resource that is closely guarded by sensors and end devices. The majority of the world uses
-eight downlink channels for acknowledgement or confirmation of the sensor data, and
-each channel usually has to wait anywhere from a few milliseconds up to a few minutes in
-order to send another packet.
+resource that is closely guarded by sensors and end devices. MXProtocol designed Proof of Participation (PoP) as an unique way to encourage the maintenance of the network and downlinks. As these networks are targeted for enterprises and companies, more aspects should be considered in this design.
 
-The downlink channels are fixed in the protocol and code, and the waiting time for each
-downlink is dependent on the data rate of the sensor/end device. A key side note to this
-point is that LPWAN Gateways use the latest in “Listen Before Talk” technology allowing
-them to send data more regularly. This means that data may be sent when the channel is
-free, and therefore doesn’t have to wait for a specific time period to elapse.
+Decentralized wireless web3.0 network is not like the distributed ledgers, the hardware stays in one place and provides the network resources to the vicinity.
+How to encourage the community to put the hardware miner at a favorable spot and to maintain the link resources without turning it off and stack up together, is a big challenge in the whole industry. PoP gives its own answer to the challenge.
 
 ### 5.1 Goals of design
 
@@ -547,7 +541,7 @@ alternatively, the willingness of the sensors.
   />
 </figure>
 
-### 5.3 Gateway status
+### 5.3 Miner Health
 
 Sensors and end devices will already be aware of the status of the Gateway in advance in
 order to make an appropriate bid for the resources and the services that provided by the
@@ -584,7 +578,7 @@ regularly kept up to date. Sensors and end devices would then choose from the Ga
 bids for services, combined with the MTBF and the number of downlinks sent for the
 auction.
 
-### 5.4 Smart Bidding strategy
+### 5.4 Miner Difficulty Strategy
 
 The following are the standard auction methods found in the system:
 
