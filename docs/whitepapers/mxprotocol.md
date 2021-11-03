@@ -491,21 +491,16 @@ How to encourage the community to put the hardware miner at a favorable spot and
 
 ### 5.1 Goals of design
 
-To further overcome such industry-wide issues, MXProtocol implements a bidding
-mechanism, designed to bring the needed resources to those devices that are
-willing to bid the most. Generally public LPWAN deployment is pushed by both
-individuals and corporations who do so in order to extend their own individual
-network reach. Introducing a bidding mechanism will cause network reaches to
-multiply due to the fact that users can both earn and learn from the data that
-are sent by the sensors. The purpose of this section is to examine the Smart
-Bidding design that would support a well-functioning LPWAN ecosystem. The goals
+To further overcome such industry-wide issues, MXProtocol implements a PoP with Mining Difficulty and Miner health, designed to bring the high level of robustness of the network. Generally public LPWAN deployment is pushed by both
+individuals and corporations who do so in order to maintain their reputations in that region. Introducing a PoP mechanism will cause network stability to
+multiply due to the fact that users can get more PoP validations with more reputation and vise versa. The purpose of this section is to examine the PoP design that would support a well-functioning LPWAN ecosystem. The goals
 of the design are to:
 
-- Allocate downlink resources adequately
-- Allow all sensors/end devices to compete on a market platform for network resources
-- Offer network deployments incentives, assisting them to monetize
-- Ensure LPWAN services are monetized
-- Power the decentralized ledger with MXProtocol to simplify and resolve any issues
+- Allocate network resources adequately
+- Allow all sensors/end devices to trust a decentralized network and use it
+- Offer network deployments validations, guide a decentralized community to maintain
+- Ensure decentralized LPWAN services are robust
+- Power the decentralized network with autonomous governance to simplify and resolve any issues
 
 ### 5.2 Design and implementation
 
