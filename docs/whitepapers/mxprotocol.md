@@ -52,11 +52,11 @@ sidebar_position: 2
 
 ## 1. MXC Vision
 
-> The MXC vision is to introduce a systematic process to both simplify and
+> The MXC vision is to introduce a Web3.0 process to both simplify and
 > increase data transactions for AI and blockchain devices.
 
-The decentralized web3 and metaverse infrastructure upon which MXC’s system is based is the future
-of Low Power Wide Access Network (LPWAN) and the Machine eXchange Protocol
+The decentralized Web3.0 and metaverse infrastructure upon which MXC’s system is based is the future
+of Low Power Wide Access Network (LPWAN) and the Meta X Protocol
 (MXProtocol). Utilizing this solid device network foundation, MXC is introducing
 an extraordinarily unique token, MXC, which
 allows for increased data transactions and an idiosyncratic data flow
@@ -66,19 +66,19 @@ MXProtocol places a keen focus on robust networks,
 constructing an inter-chain data market, provisioning devices with lower costs and introducing GDPR-safe AI and blockchain NFT for
 both data providers and receivers. For the first time ever, individual network
 users, corporations and enterprises can all participate in the construction of
-decentralized, ubiquitous and secure LPWAN. Simply by connecting “anything” to
-the network, adopters will be able to profit and trade MXC.
+decentralized, ubiquitous and secure LPWAN and LEO-satellite. Simply by connecting “anything” to
+the network, adopters will be able to govern and obtain MXC.
 
-The web3 and metaverse network is built on the premise of the “sharing economy.” Therefore,
+The Web3.0 and metaverse network is built on the premise of the “sharing economy.” Therefore,
 it is uniquely and exclusively owned by users — both individuals and enterprises
-— who take advantage of the monetization of the network in three ways:
+— who take advantage of the monetization of the metaverse in three ways:
 
-1. By increasing coverage via a Miner, e.g. a M2Pro
-   LPWAN Gateway Miner, Cisco LPWAN Gateway
+1. By increasing coverage authenticate locations via a Miner, e.g. a M2Pro
+   LPWAN Gateway Miner, Cisco LPWAN Gateway, or LEO-satellite miner
 2. By unleashing access to a massive network
-   of published and traded data to the marketplace which is securely traded using
+   of published and traded real-world data to the NFT marketplace which is securely traded using
    blockchain technology
-3. By creating unique NFTs in MXC LPWAN and trade it on popular NFT exchanges
+3. By owning polygons that created by miners and enable multi-token mining
 
 
 Both sensors and connected devices joining the network through device provisioning tags to use the unlimited downlinks and uplink resources in MXC LPWAN for free. This ultimately increases LPWAN coverage. "Things" can autonomously access to LPWAN with MXC tokens and get accredited by sharing data or creating unique values on Blockchain, Web3 and Metaverse.
@@ -91,19 +91,19 @@ everything from projecting a weather forecast, to track a lost pet, to
 find the parking lots alongside the street. The tone has now been set for
 decades to come. AI and Blockchain devices interacting with one another has seen a significant
 increase over such a short period. This will only increase as our
-interdependency on web3 and Metaverse and virtual world grows and becomes ever more
+interdependency on Web3.0 and Metaverse and virtual world grows and becomes ever more
 significant in day to day life.
 
 Whether for individuals or big companies, the need for a privacy focused web3 and Metaverse network
-concentrating on machines and machine data is here to stay. It will play a
+concentrating on machines-to-machine and human-to-human data is here to stay. It will play a
 bigger part in supporting both individuals and businesses than ever before.
-MXProtocol introduces the next generation of LPWAN with a superior AI and Blockchain data
+MXProtocol introduces the next generation of LPWAN and LEO-satellite with a superior AI and Blockchain data
 platform and a premium network experience, allowing for a simplified and
 expedited way to create a secure and efficient solution for AI and Blockchain devices in Metaverse.
 
 The following sections elaborate on the unique advantages of MXProtocol,
-including its components — Blockchain Supernodes,  Miner Health,
-Anti-Collision Coordinator,Inter-Chain Data Market and Device Provisioning — that make it a truly
+including its components — Blockchain Supernodes,  Proof-of-Participation,
+Multi Token Mining,Inter-Chain Data Market and Proof-of-Location — that make it a truly
 innovative design.
 
 ## 2. Background
