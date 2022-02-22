@@ -43,7 +43,7 @@ sidebar_position: 2
     - [7.2 Design and implementation](#72-design-and-implementation)
     - [7.3 Polkadot parachain](#73-polkadot-parachain)
     - [7.4 Mining Power](#73-mpower)
-  - [8. Proof-of-Location](#8-pol)
+  - [8. Proof of Location](#8-pol)
     - [8.1 Goals of design](#81-goals-of-design)
     - [8.2 Design and implementation](#82-design-and-implementation)
     - [8.3 MXC Controller](#83-mxc-controller)
