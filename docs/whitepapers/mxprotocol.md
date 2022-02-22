@@ -287,7 +287,7 @@ certificate hasn’t been sold/reproduced and assigned to potentially multiple p
 
 ### 3.3 Data bloom
 
-MXC is a blockchain-based decentralized AI and Blokchain platform designed to revolutionize three core
+MXC is a blockchain-based decentralized AI and Blokchain platform with both narrow band and broad ban is designed to revolutionize three core
 functions based around the Web3 and Metaverse industry: Data collection, Data transaction, Data Visualization.
 
 #### 3.3.1 MXC-assisted parking
@@ -358,7 +358,7 @@ assets, profiting from the blockchain economy.
 ## 4. MXProtocol stack
 
 MXProtocol infrastructure consists of both IoT NFT and Edge AI devices, Miner and cloud.
-IoT NFT and Edge AI devices collect data from “things,” and send to the cloud via the Miner.
+IoT NFT and Edge AI devices collect data from “things,” and send to the cloud via the LPWAN and Satellite-LEO Miner.
 This is uniquely designed to specifically be a decentralized solution allowing for everyone to
 suit their/the market’s needs. The usability of the hardware has been specifically designed
 as a “plug and play” solution, making installation simple without the need for a professional
@@ -366,11 +366,11 @@ configuration. It is designed to be easy to set up and easy to share the data ec
 
 As the flow in [Figure 2](#fig2) demonstrates, LPWAN Miners connect to each other to form
 either a decentralized mesh network as a collective cloud or the Internet. The IoT NFT and Edge AI devices
-communicate with Miners using LPWAN technology for bi-directional communication.
+communicate with Miners using LPWAN or Satellite-LEO technology for bi-directional communication.
 Notably, the IoT NFT and Edge AI devices are not purely limited to few product. In fact, any LoRaWAN compatible sensors are able to connect to the LPWAN network and
-can start sending and receiving messages through our device provisioning design.
+can start sending and receiving messages through our Proof of Location portal by device provisioning design.
 
-Then device provisioning will transfer the MXC from the device payments and distribute the rewards to miners according to their health.
+Then device provisioning will transfer the MXC from the device payments and distribute the rewards to miners according to their Meta-XP, how long they stay on the network and how well they maintain the devices.
 
 <a name="fig2"> </a>
 <figure>
