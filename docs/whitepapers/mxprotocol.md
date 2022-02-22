@@ -227,14 +227,14 @@ MXC has designed this next generation LPWAN infrastructure using MXProtocol in
 order to significantly boost the applications of blockchain/metaverse and IoT within the real-world
 context.
 
-### 2.2 LPWAN for 5.5G networks
-LPWAN contains mostly low data-rate technologies like NB-IoT and LoRa, however MXProtocol supports 5.5G network that is low power and reaches few kilometers. As a great complementary to the low data-rate technologies, 5.5G acts as a data channel for devices to connect to Metaverse would make the LPWAN much more versatile.
+### 2.2 Satellite LEO
+LPWAN contains mostly low data-rate technologies like NB-IoT and LoRa, however MXProtocol supports Satellite LEO (Low Earth Orbit) network that is low power and reaches few kilometers. As a great complementary to the low data-rate technologies, Satellite-LEO acts as a data channel for devices to connect to Metaverse would make the LPWAN much more versatile. Currently it is relatively easier to launch LEO satellite to offer stable broadband internet to public, thanks to partners like Startlink and KLEO, MXC can focuses on ground miner units to receive the satellite in a Web3.0 approach.
 
-#### 2.2.1 802.11ax
-The 802.11 ax standards is designed by IEEE committe to facilitate the low power fast throughput of the network, will take users up to and beyond Gigabit throughput while keeping the power consumption as 1/10 of what 5G delivered. MXProtocol integrates 802.11 ax as a part of LPWAN to deliver comprehensive data regimes to wider public and more devices.
+#### 2.2.1 Broadband Web3.0 network
+The 802.11 ax standards is designed by IEEE committe to facilitate the low power fast throughput of the network, will take users up to and beyond Gigabit throughput while keeping the power consumption as 1/10 of what 5G delivered. MXProtocol integrates Satellite-LEO with 802.11 ax as a part of LPWAN to deliver comprehensive data regimes to wider public and more devices from the ground miner units.
 
 #### 2.2.2 Deployment considerations
-As a home device which access your local internet, usually users won't let someone else to access their home network. How to isolate the 5.5G network from user's home network is critical and the user agreements about the data transferred has no business or personal relationship with the device owner is important. Usually 5.5G with Omnidirectional antenna can only reach less than 100 meters, how to use a highly dierectional antenna to make sure the network is acessessable from few kilometers away is considerred thoroughly by MXProtocol.
+As a home device which access your local internet, usually users won't let someone else to access their home network. How to isolate the Satellite-LEO network from user's home network is critical and the user agreements about the data transferred has no business or personal relationship with the device owner is important. Usually Satellite-LEO with antenna dish needs to face the clear sky view, how to use a high-performance antenna to make sure the network is accessible from ground is considered thoroughly by MXProtocol.
 
 
 ## MXC economy
