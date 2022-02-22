@@ -108,10 +108,9 @@ innovative design.
 
 ## 2. Background
 
-MXC is a German non-profit organization based in the country’s start-up and
-blockchain capital, Berlin. MXC is partnering with various LPWAN companies.
+MXC is a Saint Vincent and the Grenadine non-profit organization based in a lot of cities like New York and Berlin. MXC is partnering with various LPWAN and LEO-satellite companies.
 MXProtocol is a revolutionary design that solves the problem of LPWAN and
-bridges the AI and Blockchain data gap between different web3 infrastructures.
+bridges the AI and Blockchain data gap between different Web3.0 infrastructures.
 
 IoT is a hot topic that has been intently discussed for over a decade. The one
 focus and premise of the IoT network is connecting “things” to the Internet and
@@ -119,19 +118,19 @@ collecting/using this data from the objects that can’t speak for themselves. T
 application of this new founded, increased data is highly limited due to the
 current methods offering low range and high power consumption. For example,
 standard WiFi can generally reach an absolute maximum of around 100 meters, and
-using 3G/4G consumes a significant amount of power, thus reducing effective
+using 4G/5G consumes a significant amount of power, thus reducing effective
 battery life and increasing maintenance costs significantly. The fact is,
 current implementations for data networks are extremely expensive and offer very
-low usability. The need for a new technology is here and the need for LPWAN will
-only increase as it solves the current problems of  AI and Blockchain device data
+low usability. The need for a new technology is here and the need for LPWAN and LEO-satellite will
+only increase as it solves the current problems of AI and Blockchain device data
 transmissions for Web3 and Metaverse.
 
-In Metaverse, everything needs to be connected, some of the virtual objects would have a real item to authenticate and encrypt. The needs of bringing offline objects to Metaverse is definitely increasing and the bridge between real world and web3 needs a native blockchain wireless network.
+In Metaverse, everything needs to be connected from real-world, some of the virtual objects would have a real item to authenticate and encrypt. The needs of bringing offline objects to Metaverse is definitely increasing and the bridge between real world and web3 needs a native blockchain wireless network.
 
 The fact is, current implementations for data networks are extremely expensive
-and offer very low usability for AI and Blokchain devices. The need for a new technology is here and the need
+and offer very little coverage for AI and Blokchain devices. The need for a new technology is here and the need
 for LPWAN will only increase as it solves the current problems of low range/high
-cost, insecure data transmissions for Web3 and Metaverse.
+cost, insecure data transmissions for Web3.0 and Metaverse.
 
 <a name="fig1"> </a>
 
