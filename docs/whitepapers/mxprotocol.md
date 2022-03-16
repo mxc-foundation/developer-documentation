@@ -386,13 +386,15 @@ due to the fact that the CPU is usually resource-constrained. The same wallet is
 used as the miner wallet (also found in a user account and stored in the
 Supernode). This wallet will receive MXC tokens from transporting the data from
 the Supernode to the devices and assists in paying for the other LPWAN’s resource or
-data.
+data or relevant services.
 
 Coinciding with the current LPWAN infrastructure protocol, the data link between
 the Miner and IoT NFT/Edge AI devices is unregulated. As a result, there would be
 no possibility to be rewarded for forwarding data from the sensor to supernode via
 the Miner, and ultimately the downlink resource would be free, only being
-allocated on a “first come, first served” basis. This design with a proper Miner health metrics such as altitude can distribute the mining outcome much more better than other designs such as monetizing the downlinks or halving. MXC LPWAN infrastructure solves the problem of robustness and the inequality of the network income,
+allocated on a “first come, first served” basis. There is also a possibility to setup bidding mechanism for miners to offer premium services. This design with a proper Miner health metrics such as altitude can distribute the mining outcome much more better than other designs such as monetizing the downlinks or halving. 
+
+Proof of Location is the key functionality of the network as the miners can triangulate an object's location thanks to precise GPS timestamp and the design of the LPWAN chip. It would be very hard to fake a location of the object unless you cheat 51% of the miners by feeding them wrong GPS coordinates. MXC LPWAN infrastructure solves the problem of robustness and the inequality of the network income,
 delivering the ultimate user experience to SMEs and MNCs.
 
 <a name="fig3"> </a>
@@ -408,8 +410,8 @@ delivering the ultimate user experience to SMEs and MNCs.
 The decentralized and autonomous LPWAN can be built on any permissionless
 blockchain, such as Ethereum blockchain or DataHighway.com.
 
-All LPWAN devices and miners are connected to Supernodes that are hosted by global communitys. Based on this, the Multi-token mining between LPWANs, Miner Health and Device Provisioning are introduced to answer the LPWAN deployment considerations
-mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations). Inter-chain Data Marketplace is designed to facilitate the data movement between different LPWAN and apps. Anyone can easily build this network for Metaverse and bridge offline world to online world by collecting the data from devices.
+All LPWAN devices and miners are connected to Supernodes that are hosted by global community via MXC Controller. Based on this, the Multi-token mining between LPWANs, Meta-XP and Device Provisioning are introduced to answer the LPWAN deployment considerations
+mentioned in the previous chapter [see 2.1.3](#213-deployment-considerations). Inter-chain Data NFT Marketplace is designed to facilitate the data movement between different LPWAN and apps. Anyone can easily build this network for Metaverse and bridge offline world to online world by collecting the data from devices.
 
 ### 4.1 Blockchain Supernodes.
 
@@ -465,15 +467,14 @@ Anyone can host a supernode, the process is automatic judged by MXC holders. The
 - has a cloud server with at least dual-core CPU, 16GB RAM， 40GB HDD and 10MB network bandwith
 - has business and influences in that region
 
-Anyone who fulfills the metrics can automatically become a MXC supernode to facilitate the data movement.
+Anyone who fulfills the metrics will need to go to a governance event like referendum to become a MXC supernode to facilitate the data movement.
 
 #### 4.1.3 Long-term adoptions
 
 As previously stated, MXProtocol is a LPWAN platform protocol that brings
 efficiency and robustness to the users. For example, the more supernodes in one region is not necessarily bringing more robustness to the network.
 
- There are, however, still several
-components inside permissionless blockchain itself that MXC feels necessary to
+ There are, however, still several components inside permissionless blockchain itself that MXProtocol feels necessary to
 emphasize. For example, to ensure the long term stability of the LPWAN IoT
 projects, continued research is still required with regards to the current data
 interface. Real field deployment will need to be conducted in order to properly
