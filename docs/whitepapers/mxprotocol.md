@@ -504,34 +504,22 @@ of the design are to:
 
 ### 5.2 Design and implementation
 
-There are different bidding models, ranges and methods to be set in Smart Bidding. The
-goal is to assign the network resource to the highest bidder. The design and functionality
-of the Smart Bidding process is proposed in [Figure 4](#fig4). Sensors/end devices bid on one
-single downlink channel out of the eight available on the LPWAN Gateway. The Smart
-Bidding code sensors/end devices are hosted on the cloud code, enabling them to place a
-bid. The LPWAN Gateway then provides the status of the network and provides resources
-to the sensors/end devices.
+There are different metrics, ranges and methods relevant to PoP. The
+goal is to allocate the MXC validation to the most stable and committed miner. The design and functionality
+of the PoP is proposed in [Figure 4](#fig4). Sensors/end devices pay for the services like Proof-of-Location, NFT and AI after they purchased the device provisioning tags. This influx of payment and service fees will need to be distributed to all miners globally depending on the PoP design, and this means that all miners in every corner of the world can enjoy the validation of the network if they maintain this Web3.0 infrastructure.
 
-In the example illustrated in in Figure 4, there are three sensors/end devices
-are bidding on one single channel for the downlink resource. The sensor on the
-right doesn’t participate in the auction due to the specification of its code.
-Let’s say this is due to the sensor that is used for a minor purpose, e.g. to
-monitor a garbage can or electricity meter, so the downlink confirmation can
-acceptably be lost. This leaves the other two devices to bid for the downlink.
-In this case, the door lock wins the auction. Should the downlink arrive, the
-payment is then automatically sent from the sensor wallet to the Gateway wallet
-which provided the resource.
+In the example illustrated in in Figure 4, there are validation results need to be distributed to MXC multi-token miners thanks to the payment of the network services. Meta-XP will check whether some miners are eligible to participate, if not then the miner has to accumulate more Meta-XP in order to see the validation results.
+If the validation result is good, the miner can choose what token they like to receive as results.
+In MXC case, miners can receive MXC as validation results and participate in the MXC governance like referendum, election of supernodes.
 
-Usually one Gateway offers eight channels for the sensors/end devices to bid and
-the prices change dynamically due to the status of the Gateway, or
-alternatively, the willingness of the sensors.
+Usually the different kinds of token users choose, like MXC , DHX and BTC, the much more robust network we will see since there are multiple assets staked and bonded.
 
 <a name="fig4"> </a>
 
 <figure>
   <img
-    src="./images/fig4_mxp_smart_bidding.png"
-    alt="MXP-smart-bidding"
+    src="./images/fig4_mxp_pop.png"
+    alt="MXP-pop"
     width="70%"
   />
 </figure>
@@ -573,7 +561,7 @@ regularly kept up to date. Sensors and end devices would then choose from the Ga
 bids for services, combined with the MTBF and the number of downlinks sent for the
 auction.
 
-### 5.4 Miner Difficulty Strategy
+### 5.4 Meta-XP
 
 The following are the standard auction methods found in the system:
 
@@ -591,58 +579,7 @@ The following are the standard auction methods found in the system:
     of time for downlink resource, the region of a whole city’s downlink and the
     amount of resources that are needed.
 
-### 5.5 Sensor Smart Bidding code
-
-Sensors and end devices are programmed with a snippet of code to enable them to bid for
-network resources and services that are provided by Gateways. This is implemented on
-the cloud so third party sensors can still use the logic easily by porting the code. There
-are several parameters to receive from a Gateway in advance, such as the density of the
-deployment and the list of services that are available to the sensors, just to name a few.
-
-After the information has been obtained by the Gateway, sensors would bid for resources
-of the service according to the type of the auction. For example, a bike lock would bid for a
-downlink resource using the increase method. This specifies the range of the coins that the
-bike lock is willing to pay for each transaction and the market dictates the end price.
-
-A dedicated technical white paper about the logic, design and implementation of the Smart
-Bidding will be released and the APIs with documentation will be available on the MXC
-website.
-
-```cpp
-bid bike lock {
-
-  /* Define the willingness to pay for the services or resources */
-  type bidder
-
-  /* Define the gateway status it will use for the auction */
-  struct gw {
-      uint mtbf;
-      uint numdl;
-      uint density;
-      address service;
-  }
-
-  address lock1;
-  gw[] gwstats;
-
-  /* Parse the status that received from the gateway */
-  function Parse(gwstats) public {
-    gwstats [ lock1 ] = msg. sender
-    lock1 = gwstats [ lock1 ]. service
-  }
-
-  fuction bid(coin) constant returns (bytes32) {
-    coin.maximum = 10
-    coin.minimum = 6
-    auction.type = liner
-    auction.block = once
-
-    return coin
-  }
-}
-```
-
-## 6. Anti-Collision Coordinator
+## 6. Multi-token mining
 
 With the increasing amount of LPWAN field deployments, the problem of network
 congestion is anticipated to rapidly increase. This is especially so when the
