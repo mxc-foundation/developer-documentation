@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3 
-title: Integrations
+sidebar_label: Integration - MQTT
+sidebar_position: 2
 ---
 
-# Device Integrations
+# Integration - MQTT
 
 By default supernode provides MQTT broker service for users to subscribe or pushlish events on their devices.
 
@@ -39,7 +39,7 @@ mosquitto_sub -h {{ .SUPERNODE_URL }} -p 8883 -t '{{ .EVENT_TOPIC_STRING }}' -v 
 - enlink `lora.rosanetworks.com`
 - du-capital `supernode.iot-ducapital.net`
 
-### How to get `{{ .EVENT_TOPIC_STRING }}`
+### How to get `{{ .APPLICATION_ID }}` and `{{ .ORG_ID }}`
 
 1. Get JWT for supernode user account, in the following content, we call it `{{ .SUPERNODE_JWT }}`
 
@@ -114,12 +114,34 @@ Response
 }
 ```
 
-4. Get `{{ .EVENT_TOPIC_STRING }}` for subscribing to all devices' events under same application
+
+
+### How to get `{{ .USER_MQTT_AUTH_JWT }}`
 
 Call
 
 ```shell
-curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/subscribe-application-events?applicationId={{ .APPLICATION_ID }}&organizationId={{ .ORG_ID }}'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' -d '{ "organizationId": "{{ .ORG_ID }}", "ttlInSeconds": "{{ .TIME_TO_LIVE_IN_SECONDS }}"}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/login'
+```
+
+Response
+
+```json
+{
+  "jwtMqttAuth": "{{ .USER_MQTT_AUTH_JWT }}"
+}
+```
+
+## 
+
+### How to get `{{ .EVENT_TOPIC_STRING }}`
+
+1. Get `{{ .EVENT_TOPIC_STRING }}` for subscribing to all devices' events under same application
+
+Call
+
+```shell
+curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .USER_MQTT_AUTH_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/subscribe-application-events?applicationId={{ .APPLICATION_ID }}&organizationId={{ .ORG_ID }}'
 ```
 
 Response
@@ -135,7 +157,7 @@ Response
 Call
 
 ```shell
-curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/subscribe-device-events?devEui={{ .DEV_EUI }}&organizationId={{ .ORG_ID }}'
+curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .USER_MQTT_AUTH_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/subscribe-device-events?devEui={{ .DEV_EUI }}&organizationId={{ .ORG_ID }}'
 
 ```
 
@@ -156,21 +178,7 @@ Response
 }
 ```
 
-### How to get `{{ .USER_MQTT_AUTH_JWT }}`
 
-Call
-
-```shell
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' -d '{ "organizationId": "{{ .ORG_ID }}", "ttlInSeconds": "{{ .TIME_TO_LIVE_IN_SECONDS }}"}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/login'
-```
-
-Response
-
-```json
-{
-  "jwtMqttAuth": "{{ .USER_MQTT_AUTH_JWT }}"
-}
-```
 
 ## Publishing
 
@@ -186,7 +194,7 @@ mosquitto_pub -h {{ .SUPERNODE_URL }} -p 8883 -u '{{ .USER_MQTT_AUTH_JWT }}' -P 
 Call
 
 ```shell
-curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .SUPERNODE_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/send-command?devEui={{ .DEV_EUI }}&organizationId={{ .ORG_ID }}'
+curl -X GET --header 'Accept: application/json' --header 'Grpc-Metadata-Authorization: Bearer {{ .USER_MQTT_AUTH_JWT }}' 'https://{{ .SUPERNODE_URL }}/api/mosquitto-auth/send-command?devEui={{ .DEV_EUI }}&organizationId={{ .ORG_ID }}'
 ```
 
 Response
