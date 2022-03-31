@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3 
-title: Integrations
+sidebar_label: Integration - MQTT
+sidebar_position: 2
 ---
 
-# Device Integrations
+# Integration - MQTT
 
 By default supernode provides MQTT broker service for users to subscribe or pushlish events on their devices.
 
