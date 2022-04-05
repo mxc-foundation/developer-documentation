@@ -1,0 +1,246 @@
+function Decoder(topic, payload) {
+    try {
+        var jpayload = JSON.parse(payload);
+        if ((jpayload.data) && (jpayload.deviceName) && (jpayload.devEUI) && (jpayload.fPort)) {
+            var rawdata = fromBase64String(jpayload.data);
+            var ret_data = OysterDecode(jpayload.fPort, rawdata);
+
+            ret_data.push({
+                field: "RAWDATA",
+                value: arrayToHex(rawdata)
+            });
+            ret_data.push({
+                field: "RAWDATALEN",
+                value: rawdata.length
+            })
+            ret_data.push({
+                field: "FPORT",
+                value: jpayload.fPort
+            })
+            ret_data.push({
+                field: "DEVEUI",
+                value: jpayload.devEUI
+            })
+
+            for (var i = 0; i < ret_data.length; i++) {
+                // Add device id (Datacake device serial number)
+                ret_data[i].device = jpayload.deviceName;
+
+                // Uppercase to all field
+                ret_data[i].field = ret_data[i].field.toUpperCase();
+            }
+
+            console.log('ret_data=' + JSON.stringify(ret_data));
+            return ret_data;
+        }
+    }
+    catch (error) {
+        console.log("ERROR: " + error);
+    }
+}
+
+function OysterDecode(aPort, aData) {
+    var ret_obj = [];
+
+    if ((aPort == 1) && (aData.length == 11)) {
+        // GPS data (Man Down disabled)
+        var lat32 = (aData[3] << 24) | (aData[2] << 16) | (aData[1] << 8) | aData[0];
+        var lon32 = (aData[7] << 24) | (aData[6] << 16) | (aData[5] << 8) | aData[4];
+        var lat = Number(lat32) / 10000000;
+        var lon = Number(lon32) / 10000000;
+
+        var in_trip = false;
+        var last_fix_failed = false;
+        if (aData[8] & 0x01) {
+            in_trip - true;
+        }
+        if (aData[8] & 0x02) {
+            last_fix_failed = true;
+        }
+
+        ret_obj.push({
+            field: "LOCATION",
+            value: "(" + lat + "," + lon + ")"
+        });
+        ret_obj.push({
+            field: "HEADING",
+            value: Number(aData[8] >> 2) * 5.625
+        });
+        ret_obj.push({
+            field: "SPEED",
+            value: aData[9]
+        });
+        ret_obj.push({
+            field: "BATTERYLEVEL",
+            value: Number(aData[10]) * 0.025
+        });
+        ret_obj.push({
+            field: "INTRIP",
+            value: in_trip
+        });
+        ret_obj.push({
+            field: "LASTFIXFAILED",
+            value: last_fix_failed
+        });
+        ret_obj.push({
+            field: "MANDOWN",
+            value: false
+        });
+    }
+    if ((aPort == 4) && (aData.length >= 9)) {
+        // GPS data (Man Down mode)
+        var lat24 = (aData[2] << 16) | (aData[1] << 8) | aData[0];
+        var lon24 = (aData[5] << 16) | (aData[4] << 8) | aData[3];
+        var lat = Number(lat24) * 0.0000256;
+        var lon = Number(lon24) * 0.0000256;
+        var heading = Number(aData[6] & 0x07) * 45;
+        var speed = Number((aData[6] >> 3) & 0x1f) * 5;
+
+        var in_trip = false;
+        var last_fix_failed = false;
+        var man_down = false;
+        if (aData[8] & 0x01) {
+            in_trip - true;
+        }
+        if (aData[8] & 0x02) {
+            last_fix_failed = true;
+        }
+        if (aData[8] & 0x04) {
+            man_down = true;
+        }
+
+
+        ret_obj.push({
+            field: "LOCATION",
+            value: "(" + lat + "," + lon + ")"
+        });
+        ret_obj.push({
+            field: "HEADING",
+            value: heading
+        });
+        ret_obj.push({
+            field: "SPEED",
+            value: speed
+        });
+        ret_obj.push({
+            field: "BATTERYLEVEL",
+            value: Number(aData[7]) * 0.025
+        });
+        ret_obj.push({
+            field: "INTRIP",
+            value: in_trip
+        });
+        ret_obj.push({
+            field: "LASTFIXFAILED",
+            value: last_fix_failed
+        });
+        ret_obj.push({
+            field: "MANDOWN",
+            value: man_down
+        });
+    }
+
+    return ret_obj;
+}
+
+
+function fromBase64String(str) {
+    var alpha =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    var value = [];
+    var index = 0;
+    var destIndex = 0;
+    var padding = false;
+    while (true) {
+
+        var first = getNextChr(str, index, padding, alpha);
+        var second = getNextChr(str, first.nextIndex, first.padding, alpha);
+        var third = getNextChr(str, second.nextIndex, second.padding, alpha);
+        var fourth = getNextChr(str, third.nextIndex, third.padding, alpha);
+
+        index = fourth.nextIndex;
+        padding = fourth.padding;
+
+        // ffffffss sssstttt ttffffff
+        var base64_first = first.code == null ? 0 : first.code;
+        var base64_second = second.code == null ? 0 : second.code;
+        var base64_third = third.code == null ? 0 : third.code;
+        var base64_fourth = fourth.code == null ? 0 : fourth.code;
+
+        var a = ((base64_first << 2) & 0xFC) | ((base64_second >> 4) & 0x03);
+        var b = ((base64_second << 4) & 0xF0) | ((base64_third >> 2) & 0x0F);
+        var c = ((base64_third << 6) & 0xC0) | ((base64_fourth >> 0) & 0x3F);
+
+        value[destIndex++] = a;
+        if (!third.padding) {
+            value[destIndex++] = b;
+        } else {
+            break;
+        }
+        if (!fourth.padding) {
+            value[destIndex++] = c;
+        } else {
+            break;
+        }
+        if (index >= str.length) {
+            break;
+        }
+    }
+    return value;
+}
+
+function getNextChr(str, index, equalSignReceived, alpha) {
+    var chr = null;
+    var code = 0;
+    var padding = equalSignReceived;
+    while (index < str.length) {
+        chr = str.charAt(index);
+        if (chr == " " || chr == "\r" || chr == "\n" || chr == "\t") {
+            index++;
+            continue;
+        }
+        if (chr == "=") {
+            padding = true;
+        } else {
+            if (equalSignReceived) {
+                throw new Error("Invalid Base64 Endcoding character \""
+                    + chr + "\" with code " + str.charCodeAt(index)
+                    + " on position " + index
+                    + " received afer an equal sign (=) padding "
+                    + "character has already been received. "
+                    + "The equal sign padding character is the only "
+                    + "possible padding character at the end.");
+            }
+            code = alpha.indexOf(chr);
+            if (code == -1) {
+                throw new Error("Invalid Base64 Encoding character \""
+                    + chr + "\" with code " + str.charCodeAt(index)
+                    + " on position " + index + ".");
+            }
+        }
+        break;
+    }
+    return { character: chr, code: code, padding: padding, nextIndex: ++index };
+}
+
+function decimalToHex(d, padding) {
+    var hex = Number(d).toString(16);
+    padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
+
+    while (hex.length < padding) {
+        hex = "0" + hex;
+    }
+
+    return hex.toUpperCase();
+}
+
+function arrayToHex(arr) {
+    var result = '';
+    for (var i = 0; i < arr.length; i++) {
+        if (result.length > 0) {
+            result += ' ';
+        }
+        result += decimalToHex(arr[i], 2);
+    }
+    return result;
+}

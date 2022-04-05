@@ -42,6 +42,30 @@ Login to the Supernode and go to the Gateway page or Device page. Then look at t
 
 
 
+## Get the HTTP Auth Token
+
+This is a temporary step to get an Auth Token. After the new Supernode Web UI is released, you can get the Token from the Web UI directly.
+
+The HTTP Auth Token will be used in the next step to get the MQTT Auth Token.
+
+1. Login to the Supernode.
+
+1. Enable the developer tools of your browser.
+
+   For Chrome, click the right menu button, select the "More tools" and then the "Developer tools".
+
+   ![SN_GET_TOKEN_1](/img/datacake/supernode_api_token_1.png)
+
+2. Select the "Network" tool. We need to get the token from the HTTP request.
+
+   Refresh the page and let the tool capture some HTTP traffic.
+
+   Select one of the requests, scroll down and find the "Request Headers".
+
+   You can get the token from the header "Grpc-Metadata-Authorization".
+
+   ![SN_GET_TOKEN_2](/img/datacake/supernode_api_token_2.png)
+
 
 
 ## Get the MQTT Auth Token
@@ -52,25 +76,13 @@ When connecting to the Supernode with MQTT, an Auth Token is needed.
 
 ### **Get via command line (curl).**
 
-1. Get a login token.
-
-   ```
-   curl -X POST --header 'Content-Type: application/json' -d '{ "password": "YOUR_PASSWORD", "username": "YOUR_LOGIN"}' 'https://ussn.matchx.io/api/internal/login'
-   ```
-
-   The response will be like this. The string of characters is the login token for the next step.
-
-   ```
-   {"jwt":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","is2faRequired":false}
-   ```
-
-     
-
-2. Get the MQTT Auth Token.
+1. Replace the value of the header "Grpc-Metadata-Authorization" on the following command line with the HTTP Auth Token you got above.
 
    ```
    curl -X POST --header 'Content-Type: application/json' --header 'Grpc-Metadata-Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' -d '{ "organizationId": "27", "ttlInSeconds": "31557600"}' 'https://ussn.matchx.io/api/mosquitto-auth/login'
    ```
+
+2. Run the command.
 
    The responses will be like this. The string of the characters is the MQTT Auth Token.
 
@@ -78,29 +90,17 @@ When connecting to the Supernode with MQTT, an Auth Token is needed.
    {"jwtMqttAuth":"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"}
    ```
 
+   
+
 <br/>
 
 ### **Get via Postman (GUI).**
 
-1. Set the URL to ```https://ussn.matchx.io/api/internal/login```, and add the header ```Content-Type``` = ```application/json``` to a Postman request.
-
-   ![POSTMAN_LOGIN_1](/img/datacake/postman_login_1.png)
-
-2. Set the method to ```POST```, and set a raw body of your login information.
-
-   ```{ "password": "YOUR_PASSWORD", "username": "YOUR_LOGIN"}```
-
-   Then click the [Send] button to issue the request. If you succeed, you will get the login token for the next step.
-
-   ![POSTMAN_LOGIN_2](/img/datacake/postman_login_2.png)
-
-   
-
-3. Open another request, and set the URL to ```https://ussn.matchx.io/api/mosquitto-auth/login```. Add the header ```Content-Type``` = ```application/json```.
+1. Open an request, and set the URL to ```https://ussn.matchx.io/api/mosquitto-auth/login```. Add the header ```Content-Type``` = ```application/json```.
 
    ![POSTMAN_MQTT_1](/img/datacake/postman_mqtt_1.png)
 
-4. Set the Authorization Type to Bearer and place the login token you got from the login request.
+4. Set the Authorization Type to Bearer and enter the HTTP Auth Token you got from above.
 
    ![POSTMAN_MQTT_2](/img/datacake/postman_mqtt_2.png)
 
@@ -264,9 +264,9 @@ After the Application creation, you will get the Application ID, which is needed
 
    If you are using the MatchX LoRa Device, copy the content of our generic uplink decoder to the "Decoder function". For other devices, you may modify the raw data decoder to fit it.
 
-   [MatchX Generic Uplink Decoder](/img/datacake/src/matchx_generic_uplink.js)
+   [MatchX Generic Uplink Decoder](/text/datacake/matchx_generic_uplink.txt)
 
-   [Raw Data Only Uplink Decoder](/img/datacake/src/rawdata_only_uplink.js)
+   [Raw Data Only Uplink Decoder](/text/datacake/rawdata_only_uplink.txt)
 
    Click the [Add uplink decoder]  button to save the configuration.
 
@@ -408,7 +408,7 @@ For other devices, you need to adjust the decoder and fields.
 
    Copy the content of the following file to the "Payload encoder".
 
-   [Analog Shield Downlink](/img/datacake/src/matchx_analog-shield_downlink.js)
+   [Analog Shield Downlink](/text/datacake/matchx_analog-shield_downlink.txt)
 
    Modify the application ID to the one you got above.
 
@@ -518,11 +518,10 @@ The dashboard is the place to visualise your data. Here is an example of our Ana
 
 
 
+## Decoder for 3rd party devices
 
 
 
+### Oyster LoRaWAN GPS Tracker
 
-
-
-
-
+[Uplink Decoder](/text/datacake/oyster_lorawan_uplink.txt)
