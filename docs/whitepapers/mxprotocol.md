@@ -533,8 +533,8 @@ the following metrics of the Gateway to let sensors/end devices to bid for the d
 prices:
 
 - Mean time between failures (MTBF)
-- Number of downlink packets sent
 - Gateway density
+- Fuel tank size
 - List of services available
 
 The first key parameter used to measure the stability of a Gateway on the network is
@@ -542,10 +542,6 @@ determined by measuring the down time. It is recommended that a smaller MTBF be 
 than a larger one, because of the QoS that is required for the sensors. Thus, the high QoS
 sensors/end devices are willing to pay for the more stable LPWAN Gateways.
 
-The number of downlink packets sent by the Gateway represents the popularity of the
-device. This usually means the end devices/sensors around the Gateway are dense. If a
-sensor requires a downlink from the Gateway, which has a high number of downlink
-packets, it will need to place a higher bid or increase the overall bidding range accordingly.
 
 Gateway density is a parameter which is expected to motivate network administrators to
 deploy more Gateways in the areas that have little to no coverage. As demonstrated, it’s
@@ -555,29 +551,28 @@ prices will be high when sensors are competing with each other. Overall, it’s 
 this metric will push people to expand the network in order to provide better network
 access to the LPWAN devices.
 
+
+Fuel tanks is an innovative design that is similar to Proof of Stake, encouraging the network to fill more tokens to avoid 51% attack and reach a robust consensus mechanism. MXC miner fuel tank is only available to certain brand miners due to the provisioning system design, other brands miners will not have fuel tanks as the stability of the hardware is not guaranteed. 
+
 From time to time, LPWAN will provide a list of services, e.g. firmware upgrades,
 GPS-free localization, network configuration optimization. This allows all hardware to be
 regularly kept up to date. Sensors and end devices would then choose from the Gateway
-bids for services, combined with the MTBF and the number of downlinks sent for the
-auction.
+bids for services, combined with the MTBF and the fuel tank, total uptime.
+
+There are a more detailed page which detailed miner health design : Link
 
 ### 5.4 Meta-XP
 
-The following are the standard auction methods found in the system:
+To further encourage the crypto users to maintain and build a commercial ready network, MXProtocol introduced Meta-XP design to adjust the difficulty of the mining.
+Often we see in Bitcoin and Ethereum design there is an adjustment of mining difficulties depending on how many miners are in the network. MXProcol introduced similar idea but the Meta-XP is a coefficient from 0 to 1 that tells the network if the miner is more experienced in the network, it is encouraged to proceed to multi-token mining from MXC single token mining.
+The following are the methods found in the Meta-XP:
 
-- Auction
-  - Increase: When the initial bid fails, an increased bid is made in order to secure
-    the auction.
-  - Decrease: Similar to the Google Keyword style bidding auctions, the user states
-    their bidding range. The system then states (considering all factors) the nec-
-    essary bidding rate. In many instances, this will save customer coins.
-- Fixed price
-  - The network resource or service are offered at a fixed price, with limited or
-    unlimited quantity. Sensors/end devices just pay per use.
-- Quantitative purchase
-  - The network resource or service are bid by quantitative metrics, like a period
-    of time for downlink resource, the region of a whole city’s downlink and the
-    amount of resources that are needed.
+- Hexagon density
+  - Currently the limit of the hexagon is 10, if there are more than 10 miners , the later joiners will have lower Meta-XP.
+- Altitude
+  - The network can gain more Meta-XP by increasing the deployment altitude, however this metric is very hard to proof through air pressure or GPS coordinates since they can be easily faked. MXProtocol designed Proof-of-Location that could proof the altitude is not tampered.
+- Total uptime accumulated
+  - Meta-XP measures the stability of the miner by how long it stays on the network, since the longer it stays on the network , the more robust the network would be. Blockchain should encourage miners to use the fuel tank filled to mine multiple tokens like DHX or BTC to future increase the network stability.
 
 ## 6. Multi-token mining
 
