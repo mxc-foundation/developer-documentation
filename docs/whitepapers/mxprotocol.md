@@ -599,19 +599,14 @@ Here we define the goals of the design for the LPWAN ecosystem:
 
 ### 6.2 Design and implementation
 
-The design of the Anti-Collision Coordinator is illustrated in [Figure 5](#fig5). The coordinator
-has two responsibilities. The first is to make payments between networks using MXC. The
-second is to coordinate between networks about the downlink and uplink status.
-In the example illustrated in [Figure 5](#fig5), we see the door lock has successfully bid the downlink
-from the MXProtocol at downlink channel 1. However, the network that deployed over 1
-km is also using the downlink channel 1 for the garbage sensor, and the pending collision is
-obvious. The solution would be that the Anti-Collision.
+The design of the Multi-token mining is illustrated in [Figure 5](#fig5). The M2Pro miner owners choose which cyrptocurrency to mine, then the MXC should be locked in the corresponding wallet to mine from the pool of the paid network services.
+In the example illustrated in [Figure 5](#fig5), we see the M2Pro that mined 100MXC at start and satisfied for the BTC mining requirement can lock this 100MXC to get 1 sat BTC every day.
 
 <a name="fig5"> </a>
 <figure>
   <img
-    src="./images/fig5_anti_collision_coordinator.png"
-    alt="anti-collision-coordinator"
+    src="./images/fig5_multi.png"
+    alt="multi-token"
     width="70%"
   />
 </figure>
