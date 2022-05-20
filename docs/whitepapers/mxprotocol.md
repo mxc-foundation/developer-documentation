@@ -576,31 +576,26 @@ The following are the methods found in the Meta-XP:
 
 ## 6. Multi-token mining
 
-With the increasing amount of LPWAN field deployments, the problem of network
-congestion is anticipated to rapidly increase. This is especially so when the
-network coverage targets ultra-long ranges of 20 km or more.
+With the increasing amount of LPWAN field deployments, the requirement of the stability and robustness is also increasing.
 
-In 2020, there are expected to be more than 75 billion devices connected to the
+In 2025, there are expected to be more than 250 billion devices connected to the
 Internet. If the majority of these are to use LPWAN, it can be assumed that it
-would put quite a strain on the network resources. As a result, MXProtocol
+would put quite a demand on the network. As a result, MXProtocol
 infrastructure has bridged the gap between different networks using the
 innovative protocol.
 
 ### 6.1 Goals of the design
 
-> The MXProtocol also offers a
-> general overwhelming consensus
-> for all public LPWAN by adding a
-> community-based consensus, permissions and deployment permission etiquette.
+> The MXProtocol also offers multiple tokens mining as the payments to the network could also be multiple currencies such as BTC/DOT/ETH.
+Also when the network is supplied with multiple tokens, the stability and robustness of the network should be much more stronger than single token mining.
 
 Here we define the goals of the design for the LPWAN ecosystem:
 
-- Minimize packet collision for uplinks in the same region deployed with multiple
-  networks.
-- Allocate new resources to the sensors/end devices that need downlink for the networks.
-- Enable individual networks to pay for other networks resources and services, i.e.
-  network roaming.
-- Settle all monetary transactions in MXC.
+- Minimize M2Pro miner downtime in the region deployed with multiple
+  sensors already using them.
+- Allocate network payments to the M2Pro miners that empower networks.
+- Enable individual miners to choose the network validation results to diversify their holdings.
+- Settle all monetary transactions in multiple currency while let MXC work as a utility governance token.
 
 ### 6.2 Design and implementation
 
