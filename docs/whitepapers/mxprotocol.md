@@ -244,9 +244,8 @@ MXProtocol builts an Edge AI platform that connects all the devices that equippe
 
 Individuals place LoRa-based Edge AI hardware and their LPWAN miner in opportune positions in order to benefit
 from their GDPR-safe data and their decentralized LoRaWAN network. Businesses
-benefit by using these user-based networks to send the pre-processed Edge AI data, building a new
-“sharing economy.” Wallets are stored in the cloud allowing individuals to benefit from
-businesses Edge AI processed data via their LPWAN. The tokens are then sent from the device owners that MXProtocol addresses to Supernodes.
+benefit by using these user-based networks to send the validated NFC data for NFT services,and Edge AI data that allows metaverse to sense the real-world. Wallets are stored in the cloud allowing individuals to benefit from
+businesses Edge AI data and NFC validated NFT data via their LPWAN. The tokens are then sent from the device owners that MXProtocol addresses to Supernodes.
 
 MXProtocol gives network participants incentives to use, deploy and trade their Edge AI devices and network
 elements. In addition to that, it is a people-owned secure and private network that won’t
