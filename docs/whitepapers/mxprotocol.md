@@ -337,10 +337,9 @@ MXProtocol connects “things” utilizing a market-based economy, which adds a 
 of new transmission points allowing more data to be shared, traded, sold and analyzed for
 data mining.
 
-Within the new decentralized MXC economy, everyone can profit from the sharing of
+Within the new decentralized MXC economy, everyone can validate from the sharing of
 data; end to end encryption grants authorized usage of the NFT data; and entire communities can
-benefit from using their locations to act as a network facility to transport this data — trading
-assets, profiting from the blockchain economy.
+benefit from using their locations to act as a network facility to transport this data - bridging the real-world from the blockchain economy.
 
 ## 4. MXProtocol stack
 
