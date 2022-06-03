@@ -253,7 +253,7 @@ suffer from GDPR and CCPA accusations about collecting personal data.
 
 ### 3.2 Blockchain Non-Fungible Token
 
-MXC has been highly successful with regards to the design and production of high-end
+MXC and its affiliates has been highly successful with regards to the design and production of high-end
 LPWAN hardware. Using the tokens and sharing economy will allow for a massive influx
 of Non-Fungible Token(NFT) amongst individuals and companies, giving better accesses into artworks, agricultural products, luxury items and unique creations. NFT is also a foundation of Metaverse and a lot of Web3 applications.
 
@@ -269,8 +269,8 @@ this information to come from a qualified and reliable source.
 LPWAN NFT is also a bridge between digital world and real world assets since each item can have its unique identity on blockchains like Ethereum through MXProtocol. This added great usability to the current NFT exchanges that only support digital products.
 
 By applying LPWAN NFT, the individual items is allocated to one dedicated source. In contrast, a
-buyer of a tangible paper certificate, for example, has no way of knowing that the same
-certificate hasn’t been sold/reproduced and assigned to potentially multiple parties.
+buyer of a tangible product, for example, like a Nike shoes with QR code has no way of knowing that the same
+shoes hasn’t been sold/reproduced and assigned to potentially multiple parties.
 
 ### 3.3 Data bloom
 
