@@ -186,40 +186,28 @@ yet another MXC advantage.
 
 #### 2.1.3 Deployment considerations
 
-When deploying LPWAN, the first consideration is understanding how to avoid a col-
-lision between different competing networks residing in the same region. Generally, the
-issue comes from the fact that both may use the same channel to send out the message at
-the same time and leave the other available channel empty due to the chosen preferences.
+When deploying LPWAN, the first consideration is understanding how to enable community to maintain the quality of services for the network. Generally, the
+issue comes from the fact that community members are mostly radio amateurs that knows little about how radio stations work.
 As a result, it’s generally hard to reach a consensus between these networks and thus the
 deployment suffers as network usage increases. The decentralization and distributed mech-
 anism of MXProtocol solves this issue by coordinating the networks via blockchain. The network evolves
-by having users pay micro-payments for the services like Proof-of-Location that another one offers.
+by having users pay for the services like Proof-of-Location, or NFTs that another one offers.
 
-The second concern is due to the shortage of downlink resources for the dense sensor/
-end device deployment. Usually there are some sensors/end devices which require no
-downlink or can bear with the loss of downlinks. This is usually associated with low-activity sensors, such as garbage bins or electricity meters. However, end devices like bike
-locks or location tracker devices need to receive regular and reliable confirmations from
-the cloud for every uplink. Hence, they are willing to pay a premium for this reliability
-and a QoS provided by the networks. MXProtocol provides this bidding resource, ensuring
-that, for example, a garbage bin sensor won’t take first preference over the vital downlink
-resource of something like a bike lock.
-
-Another consideration pertains to the requirements for multi-national cooperations (MNC)
+Another consideration pertains to the requirements for individuals
 and small to medium enterprises (SME) authenticate the location of their devices using
 LPWAN technology. Within LPWAN, both the data stream and Proof-of-Location features
 are simplified, easy to read and can be digitally validated from many kilometers away.
 This makes the data services a clear necessity for the needs of the LPWAN market of
 tomorrow.
 
-With respect to the needs of MNCs or SMEs, it’s likely that such enterprises will wish to
+With respect to the needs of individuals or SMEs, it’s likely that such enterprises will wish to
 deploy their own LPWAN to cover an entire city or a region for its own specific applica-
 tions such as asset tracking (e.g. automobile) or sensor data management. This is a perfect
 solution for “Big Business.” LPWAN technology delivers via its long reach ensuring that
 sensor/end device uplink packets are securely received as per the protocol design.
 
-This leads to one of the key aspects of the MXProtocol: Making the network open and free while bringing the monetization of data
-services to the forefront. Using the MXProtocol, micro-payments within the LPWAN
-infrastructure will be traded from third party sensors/end devices, ensuring data with its location is conveniently, correctly and concisely transmitted in a secure manner, whilst being maintained
+This leads to one of the key aspects of the MXProtocol: Making the network open and free while enable communities to achieve more. Using the MXProtocol, servicess within the LPWAN
+infrastructure will be provided from third party sensors/end devices, ensuring data with its location is conveniently, correctly and concisely transmitted in a secure manner, whilst being maintained
 by the support of Supernodes. The industry has been waiting for a decentralized
 and consensus-based mechanism to improve the usability of LPWAN, and MXC is delivering.
 
