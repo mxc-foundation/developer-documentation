@@ -616,27 +616,15 @@ free-licensed bands completely.
 
 ### 6.3 Third party integration
 
-The Anti-Collision Coordinator is indeed a protocol plug-in for the LoRaWAN server to
-control the Media Access Control (MAC) layer of LoRaWAN uplinks and downlinks.
+It is also possible to integrate third party LPWAN miners to the MXC network which will also enable the multi-token mining for other brands.
 
-There are two ways to integrate the Anti-Collision Coordinator into the LPWAN server.
-First is to run the full node which integrates the anti-collision mechanism into the protocol
-layer like illustrated in [Figure 3](#fig3). Another solution is to run a light node with the
-anti-collision module that could be compatible with all the LoRaWAN servers.
+As [Figure 6](#fig6) shows, MXC controller enables the miner that compatible with LoRaWAN protocol to mine multiple tokens. It will create a fuel tank like the other M2Pro miners and enables the data validations in MXC network, but these third party miners don't equip with location engine chips, they can't provide Proof-of-Location and other services to the network thus the income will be less than M2Pro.
 
-As [Figure 6](#fig6) shows, the Anti-Collision Coordinator is essentially a plug-in for the other
-LoRaWAN servers that is compatible with LoRaWAN protocol. The plug-in is a protocol enhancement that controls the uplink and downlink based on the payment logic and
-resource requirement between two or more networks.
-
-A light node connects to the full node to assign the LPWAN a wallet for sending and
-receiving MXCs. The Anti-Collision Coordinator controls the MAC layer for all the
-LoRaWAN devices. A separate white paper will be released about the protocol design of
-the Anti-Collision Coordinator and its APIs for LoRaWAN servers.
 
 <figure>
   <img
-    src="./images/fig6_anti_collision_integration.png"
-    alt="anti-collision-third-party-integration"
+    src="./images/fig6_thrid-party"
+    alt="third-party-integration"
     width="70%"
   />
 </figure>
@@ -644,7 +632,7 @@ the Anti-Collision Coordinator and its APIs for LoRaWAN servers.
 ## 7. Inter-Chain Data Market
 
 Currently, there are several traditional data markets that originate from
-cryptocurrencies, e.g. Streamr, IOTA and Mobius. All provide a secure mechanism
+cryptocurrencies, e.g. Streamr and IOTA. All provide some mechanisms
 to make sure that the data stream can be copied and transmitted from the owner
 to the consumer in a sequential manner.
 
@@ -657,37 +645,34 @@ successfully delivered? The smart contract must rely on external Oracles from
 either the GPS data from the package or the LPWAN tag reading from the
 warehouse.
 
-> The entire industry continually requires chains such as Mobius or MXC to feed
+> The entire industry continually requires chains such as MXC to feed
 > other chains smart contracts and the interdependent information to the
 > applications.
 
 Oracles are third party services which are not part of the blockchain consensus
 mechanism. The main challenge with Oracles is that people need to trust these
 sources of information. Whether a website or a sensor, the source of information
-needs to be consistently trustworthy. In order to solve these issues, Oracles
-have different trusted computing techniques.
+needs to be consistently trustworthy. In order to solve these issues, MXC proposed data as NFTs to work as Oracles.
 
 ### 7.1 Goals of the design
 
-Blockchains support Oracles in order to assist with fetching external data. The
+Blockchains support NFTs in order to assist with exchanging external data. The
 reason for this comes from the fact that blockchain applications, such as
-Bitcoin scripts and smart contracts cannot access and fetch data directly. As a
-result, they require pricing feeds for assets and financial applications and
-weather-related information for peer-to-peer insurance, all written with smart
-contracts. Here we define the goals of the MXProtocol data market with respect
-to designing for Oracles:
+OpenSea and RMRK, exchanges external data like pictures, music files between each other. As a
+result, they require location, real-world data feeds for assets and financial applications and
+weather-related information for peer-to-peer insurance, all written with NFTs. Here we define the goals of the MXProtocol data market with respect
+to designing for Data NFT:
 
 - Facilitate data usage between different blockchains
 - Establish a trusted resource for the external Oracles
 - Stack up the data for later purchase
-- Enable purchase of a live data stream
+- Enable purchase of a live real-world data stream
 - Provide APIs for non-blockchain applications to access the data
-- Settle all monetary transfers within MXC
 
 ### 7.2 Design and implementation
 
-The MXProtocol Inter-Chain Data Market provides an effective method to feed the
-other smart contracts with LPWAN data captured by sensors or end devices.
+The MXProtocol Inter-Chain Data Market that built on both Ethereum and DataHighway blockchain provides an effective method to feed the
+other applications with LPWAN data NFT captured by sensors or end devices.
 
 <a name="fig7"> </a>
 <figure>
@@ -699,108 +684,59 @@ other smart contracts with LPWAN data captured by sensors or end devices.
 </figure>
 
 [Figure 7](#fig7) shows the example of the transaction between MXProtocol data and blockchains
-like Ethereum.
+like Ethereum and DataHighway.
 
-MXProtocol feeds data to Ethereum smart contracts, and gets Ethereum payments as
+MXProtocol feeds data to Ethereum/DataHighway NFTs, and gets Ethereum/DHX payments as
 rewards. It only requires a simple protocol to trust that the data fetched from
 the MXProtocol data source is genuine and untampered. In addition to that, the
 rich data stream can also be used by external non-blockchain applications via
-Web APIs.
+Web APIs after the NFT is purchased by the Web2 companies.
 
-Major block chains like Ethereum are short in data for smart contracts, and the data that
+Major block chains like Ethereum and Polkadot are short in data for Dapps, and the data that
 is provided by external Oracles essentially may not be trustworthy. With the MXProtocol
 Inter-chain data market, the generation and flow of the data can be tracked and verified
-publicly on the chain. Hence, the security issue is solved internally with MXProtocol.
+publicly on the chain. Hence, the security issue of NFT real-world data is solved internally with MXProtocol.
 
-### 7.3 Polkadot and Aeternity
+### 7.3 Polkadot and Cosmos
 
 Polkadot is essentially a protocol that communicates between different networks.
-It solves consensus and transaction delivery between different chains.
+It solves consensus and transaction delivery between different chains. DataHighway is a project that built by ex-parity team as a DAO, featuring a parachain as a service, DataHighway will be the project that host all kinds of real-world data NFT transactions.
 
-Aeternity is created to be the interface between real world data and smart
-contracts. Instead of using Oracles that can cause a single point of failure,
-Aeternity’s design provides decen- tralized infrastructure for holding and
-transferring the data to smart contracts.
+Cosmos is created to be the interface between blockchains and smart
+contracts. Instead of using relay chains as shared security,
+Cosmos’s design provides IBC hub infrastructure for holding and
+transferring the interchain data to smart contracts.
 
 The MXProtocol Inter-chain data market uses the idea and mechanism developed by
-both Polkadot and Aeternity to deal with consensus, privacy, transaction
-delivery and security. A separate white paper will be released about this
-design.
+both Polkadot and DataHighway to deal with consensus, privacy, transaction
+delivery and security. A separate white paper in Datahighway.com is released to elaborate the design.
 
-## 8. Smart Bidding use cases
+## 8. Proof of Location
 
-### 8.1 Downlink resource auction
+### 8.1 Goals of design
 
-Downlink resource auctions occur when it is the only option for the Gateways to
-decide which sensor/end devices to communicate with. The Gateway usually has
-eight downlink channels, supporting more than 60,000 sensors that need to be
-acknowledged in sequence. Uplinks are free for the sensors since all the
-Gateways will pick up the packets and forward them within the same network, and
-the Anti-Collision Coordinator needs to pay the other network when collisions
-need to be avoided. The downlink resources need to be allocated to some sensors
-that need downlinks to execute the commands ([See Figure 8](#fig8)). Smart Bidding codes
-decide the willingness for the sensor/end devices to pay for the resources, and
-all the transactions are settled in MXC.
+Location is a very rare resources that needs to be calculated by radio signals. Right now there are 3 methods to calculate a location. First is GPS signals, which only works in outdoor, and easy to be tampered as the GPS radios can be emulated by some software to fake a location. second is IP address calculations, this is a database technology that relies on the accuracy of the data input about a certain IP address, and often a VPN service can get a new IP for you to fake a location. Thrid is bluetooth based location tracking, companies like Apple is using it as it is hard or nearly impossible to fake the bluetooth receiver that hold by general public, as they pass by the bluetooth tags and tells the network the exact location of the object in a decentralized way.
 
-Both the European and U.S. radio committees impose regulations on the spectrum
-access for LPWAN radios using 868/915Mhz bands. These regulations cover issues
-from maximum time on air to maximum duty cycle, which, in turn, introduces
-waiting times between two packets. For Gateways without Listen-Before-Talk
-Technology, this waiting time can range anywhere from a few milliseconds to
-minutes depending on the data rate and number of bytes being sent.
+MXProtocol designs the Proof of location to solve the problem that bluetooth often failed to solve-- distance. While Bluetooth only gets 100-200 meters, MXC miners can reach 1-40km to determine the location of the object in a decentralized way, as the miners are hold by different communities.
 
 <a name="fig8"></a>
 <figure>
   <img src="./images/fig8_LPWAN.png" alt="LPWAN" width="70%" />
 </figure>
 
-Currently, the downlink resource is distributed on a “first come first served”
-basis, which can lead to many potential problems for various devices. For
-example, if an electricity monitoring meter were to get downlink priority over a
-door lock, the door lock in turn doesn’t receive the confirmation to unlock the
-door. The MXProtocol Smart Bidding solves this problem as covered in the
-following two aspects:
+As we can see in [Figure 8](#fig8) shows how a sensor NFT's Proof of Location works, firstly the sensor send data that can be picked up by the miners as usual, each data will be timestamped in the miner with precise time of arrival, this feature is done by the hardware chip inside the M2Pro miners, the thrid party miners won't be able to provide this service due to the hardware limit.
 
-- Allocate the downlink resource within the same LPWAN using the Smart Bidding
-  code snippet for the auction.
-- Enable different networks to trade for the downlink resources for the sensors/
-  end devices that are willing to pay.
+Then the MXC controller needs to rule out the tampered location of miners or inaccurate ones with bias and peer Proof of Location data, if the miner is not physically located there or always change the location, the Proof of Location can easily exclude these data. A location of Time Difference of Arrival (TDOA) needs at leas 3 miners with valid location to calculate, the more miners the more accuate the location can be.
 
-The snippet of code inside the sensors/end devices decides the market prices of the
-LPWAN. For a dense Gateway deployment like a city center, the prices can be lower due to
-the abundant resources of the downlink channels available. While in the mountains or suburban areas, few sensors would compete for the downlink
-resources and thus the prices will rise. The sensors will bid according to the MTBF,
-downlink numbers and the density of the network.
+All the miners that can provide Proof of Locations will be able to validate more MXC results than the third party miners.
 
-The auction method and logic behind the bidding can be programmed by the owner of the
-sensor. It is expected that AI-driven algorithms will later be introduced to offer smarter
-bidding strategy for the sensors and end devices.
+### 8.2 Design and implementation
 
-### 8.2 Network coverage market
+It is expected that miners need to equip with Semtech SX1303 chips or the ones that has accurate timestamp functions in order to provide the location services.
 
-It is expected that the supply of downlink resources will gradually increase
-with the demand of the sensors/end devices. The bidders will pay for the high
-prices for the lower Gateway density, which gives SMEs and MNCs incentives to
-expand the network coverage to get more MXC coin rewards.
+The bias and credibility of the location data feed is aldo dependent on the Meta-XP and Miner health of the miner, as the location data  are mostly self-reporting and peer verified by the Proof of Location networks that built by community.
 
-Figure 6 illustrates the market placed by Smart Bidding codes. The prices are
-lower at the dense deployment where the two LPWAN coverages overlap, and higher
-where there is only one LPWAN coverage.
-
-Some sensors travel around the city. Their code specifies the maximum amount of
-coins that it would like to pay for a single downlink. However, they have been
-to the places where no LPWAN coverage is available. Once they are back to the
-network, they put the last off-chain bid to the chain, and notify the whole
-network that they are willing to pay a pre-determined price from the Smart
-Bidding code.
-
-The prices and the amount of off-chain bids will surely motivate companies and
-individuals to deploy the LPWAN Gateway to the field, thus expanding the network
-coverage for the chain. MXProtocol shifts control from telecommunication
-conglomerates to companies and individuals by allowing them to deploy their own
-LPWAN.
-
-### 8.3 Service market
+### 8.3 MXC Controller
 
 There are lists of services that LPWAN can provide to the sensors/end devices.
 For example, an Over-the-air firmware update should be multi-casted to the
@@ -812,33 +748,31 @@ power consumption and limited reach, LPWAN localization uses the packets sent
 by the sensors to calculate the position, which requires no computation from the
 resource-limited sensors.
 
-Such a service requires the resources of both a Gateway and the cloud. Hence, the Smart
-Bidding code will specify whether it is willing to pay for the service and its accuracy. The
+Such a service requires the resources of both a miner and the Supernode. Hence, MXC controller will specify whether it is willing to pay for the service and its accuracy. The
 more Gateways that receive the packets, the more accurate the position will be.
 
-LPWAN sometimes needs to change the channel configurations like the arrangement
-or the allowed data rate. This kind of coordination will need to be applied globally and the
-network will have to try to synchronize such a configuration as much as possible. Smart
-Bidding can also accept “free auctions” where they require no one to pay.
+Also  the data NFTs that could facilitate the data transactions would need a service to provision and provide the NFT to the blockchain, MXC Controller is designed to bridge the users and supernode/miners for NFT provisioning services.
 
-Through the MXProtocol Smart Bidding design, it is possible that sensors/end devices pay
-for the services that the network offers to them. The outcome of the design will be:
+Through the MXC controller design, it is possible that sensors/end devices pay 1 USD
+for life-time free usage of the network, while choosing the available services to subscribe or pay. The outcome of the design will be:
 
 - Some sensors/end devices get the services and the resources that they demand
   through auction
 - Network deployment receives reward by offering services and resources to the
   LPWAN sensors/end devices
-- All the monetary transactions are done automatically in MXC without human intervention
+- All the monetary transactions are done automatically in MXC/BTC/DOT without human intervention
 
 ## 9. Development progress
 
-MXC Foundation’s partner MatchX has released the MatchBox LPWAN Gateway, and
-the LPWAN module with development kits. It has reached more than 40 countries with
+MXC Foundation’s partner MatchX has released the MatchX LPWAN Gateway, M2Pro, and
+the LPWAN module with development kits. It has reached more than 170 countries with
 distributors in Australia, North America, Asia and Europe.
 
 The first Proof-of-Concept has been performed in conjunction with the Stellar
-Development Foundation, utilizing the LPWAN coverage and enabling sensors to pay
+Development Foundation and IOTA, utilizing the LPWAN coverage and enabling sensors to pay
 with each other.
+
+Now MXC is built on Ethereum and Datahighway.com for the whitepaper elaborated.
 
 ## 10. References
 
