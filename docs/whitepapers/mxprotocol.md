@@ -378,7 +378,7 @@ Coinciding with the current LPWAN infrastructure protocol, the data link between
 the Miner and IoT NFT/Edge AI devices is unregulated. As a result, there would be
 no possibility to be rewarded for forwarding data from the sensor to supernode via
 the Miner, and ultimately the downlink resource would be free, only being
-allocated on a “first come, first served” basis. There is also a possibility to setup bidding mechanism for miners to offer premium services. This design with a proper Miner health metrics such as altitude can distribute the mining outcome much more better than other designs such as monetizing the downlinks or halving. 
+allocated on a “first come, first served” basis. There is also a possibility to setup bidding mechanism for miners to offer premium services. This design with a proper Miner health metrics such as fuel tank can distribute the mining outcome much more better than other designs such as monetizing the downlinks or halving. 
 
 Proof of Location is the key functionality of the network as the miners can triangulate an object's location thanks to precise GPS timestamp and the design of the LPWAN chip. It would be very hard to fake a location of the object unless you cheat 51% of the miners by feeding them wrong GPS coordinates. MXC LPWAN infrastructure solves the problem of robustness and the inequality of the network income,
 delivering the ultimate user experience to SMEs and MNCs.
@@ -556,7 +556,7 @@ The following are the methods found in the Meta-XP:
 - Hexagon density
   - Currently the limit of the hexagon is 10, if there are more than 10 miners , the later joiners will have lower Meta-XP.
 - Altitude
-  - The network can gain more Meta-XP by increasing the deployment altitude, however this metric is very hard to proof through air pressure or GPS coordinates since they can be easily faked. MXProtocol designed Proof-of-Location that could proof the altitude is not tampered.
+  - The network can gain more Meta-XP by increasing the deployment altitude, however this metric is very hard to proof through air pressure or GPS coordinates since they can be easily faked. MXProtocol designed Proof-of-Location that could proof the altitude is not tampered. Also Meta-XP only consider the relative altitude from a hexagon, not global overall hexagon for the fairness of the network contribution.
 - Total uptime accumulated
   - Meta-XP measures the stability of the miner by how long it stays on the network, since the longer it stays on the network , the more robust the network would be. Blockchain should encourage miners to use the fuel tank filled to mine multiple tokens like DHX or BTC to future increase the network stability.
 
