@@ -597,22 +597,9 @@ In the example illustrated in [Figure 5](#fig5), we see the M2Pro that mined 100
   />
 </figure>
 
-Coordinator would pay for Cisco’s network resource, allowing the Gateway to pause
-downlink channel 1 for this time’s message, thus allowing the door lock to receive the
-“unlock door” confirmation from the cloud.
+The BTC or other tokens mining pool is subject to the MXC controller payment gateways, in which there are more tokens can be selected and paid from fiat currencies. And the pool size will change after certain periods as the NFTs and sensor devices are connecting from more places.
 
-On the other side, the two networks report each other’s uplink lost message, since the
-LoRaWAN protocol has the counter for the uplink. Later, the coordinator finds out that
-the majority of the packets that are lost come from both street lighting and the parking
-meter due to the fact that their sending intervals are overlapped and they are quite close to
-each other.
-
-The coordinator then delays the street light’s sending interval or, alternatively, it changes
-the data rate to make sure that they won’t collide with each other, and the fees for a delay
-should be paid by the parking meter. Such network coordination is expected to occur
-quite often when future deployment of LPWAN sensors becomes more dense. Thus,
-the Anti-Collision Coordinator solves the problem of the network resource allocation in
-free-licensed bands completely.
+ Such multi-token mining is expected to occur quite often when future deployment of LPWAN sensors becomes more dense. A multiple token staked network is more stable as a single token pull out won't affect the network. Thus, the Multi-token mining solves the problem of the network stability in free-licensed bands completely.
 
 ### 6.3 Third party integration
 
