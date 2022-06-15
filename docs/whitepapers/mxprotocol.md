@@ -706,6 +706,8 @@ Location is a very rare resources that needs to be calculated by radio signals. 
 
 MXProtocol designs the Proof of location to solve the problem that bluetooth often failed to solve-- distance. While Bluetooth only gets 100-200 meters, MXC miners can reach 1-40km to determine the location of the object in a decentralized way, as the miners are hold by different communities.
 
+Proof of location is a localization algorithm that utilizes LPWAN uplink data with timestamp to triangulate the location of LPWAN sensors and M2Pro miners, in order to triangulate the sensors, the algorithms firsly confirms the location of the miners with the downlinks they sent to the sensors. With regular downlink peer listening, the algorithm is able to filter out the tampered miner locations as they can't be heard by peer M2Pro miners.Those miner locations are confirmed by the Proof-of-Locations can respond to the uplink request for location services.
+
 <a name="fig8"></a>
 <figure>
   <img src="./images/fig8_LPWAN.png" alt="LPWAN" width="70%" />
