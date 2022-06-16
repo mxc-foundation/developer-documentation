@@ -134,7 +134,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} MXC Foundation gGmbH.`,
+      copyright: `Copyright © ${new Date().getFullYear()} MXC Foundation LLC.`,
     },
     prism: {
       theme: lightCodeTheme,
