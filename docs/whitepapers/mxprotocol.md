@@ -71,7 +71,7 @@ The MXProtocol is central to achieving these objectives, as it's based on our Pr
 <a name="fig1"> </a>
 
 <figure>
-  <img src="/img/mxprotocol/fig1_lpwan_comparison.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig1_lpwan_comparison.png" alt="LPWAN" width="100%" />
 </figure>
 
 ### 2.1 LPWAN vs other technologies
@@ -206,7 +206,7 @@ Proof of Location is the key functionality of the network, as miners can triangu
 
 <a name="fig2"> </a>
 <figure>
-  <img src="/img/mxprotocol/fig2_dataflow.png" alt="dataflow" width="70%" />
+  <img src="/img/mxprotocol/fig2_dataflow.png" alt="dataflow" width="100%" />
 </figure>
 
 MXProtocol facilitates the data and value flow of the LPWAN. Inside this
@@ -234,7 +234,7 @@ delivering the ultimate user experience to SMEs and MNCs.
   <img
     src="/img/mxprotocol/fig3_MXProtocol_stack.png"
     alt="dataflow-mxprotocol"
-    width="50%"
+    width="100%"
   />
 </figure>
 
@@ -308,9 +308,9 @@ There are lots of variables, ranges, and methods relevant to PoP and its perform
 
 <figure>
   <img
-    src="./images/fig4_mxp_pop.png"
+    src="/img/mxprotocol/fig4_mxp_pop.png"
     alt="MXP-pop"
-    width="70%"
+    width="100%"
   />
 </figure>
 
@@ -375,9 +375,9 @@ The design of multi-token mining is illustrated in [Figure 5](#fig5). The M2 Pro
 <a name="fig5"> </a>
 <figure>
   <img
-    src="./images/fig5_multi.png"
+    src="/img/mxprotocol/fig5_multi.png"
     alt="multi-token"
-    width="70%"
+    width="100%"
   />
 </figure>
 
@@ -395,9 +395,9 @@ As [Figure 6](#fig6)  shows, the MXC controller enables the miners to integrate 
 
 <figure>
   <img
-    src="./images/fig6_thrid-party.png"
+    src="/img/mxprotocol/fig6_thrid-party.png"
     alt="third-party-integration"
-    width="70%"
+    width="100%"
   />
 </figure>
 
@@ -430,7 +430,7 @@ The MXProtocol interchain data market is built on both Ethereum and the DataHigh
   <img
     src="/img/mxprotocol/fig7_inter_chain_market.png"
     alt="inter-chain-data-market"
-    width="70%"
+    width="100%"
   />
 </figure>
 
@@ -458,7 +458,7 @@ Proof of Location is a localization algorithm that utilizes LPWAN uplink data wi
 
 <a name="fig8"></a>
 <figure>
-  <img src="/img/mxprotocol/fig8_LPWAN.png" alt="LPWAN" width="70%" />
+  <img src="/img/mxprotocol/fig8_LPWAN.png" alt="LPWAN" width="100%" />
 </figure>
 
 In [Figure 8](#fig8) Figure 8 we can see how a sensor NFT’s Proof of Location works. Firstly, the sensor sends data that can be picked up by the miners as usual. Each data packet will be time stamped in the miner with precise time of arrival; this feature is executed by the hardware chip inside the M2 Pro miners. The third party miners won’t be able to provide this service due to the hardware limits.
