@@ -1,6 +1,7 @@
 ---
 title: Payload Format
 sidebar_label: Payload Format
+sidebar_position: 4
 ---
 
 ## Uplink Payload Data Format
