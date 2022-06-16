@@ -308,13 +308,8 @@ There are lots of variables, ranges, and methods relevant to PoP and its perform
 
 <figure>
   <img
-<<<<<<< HEAD
     src="./images/fig4_mxp_pop.png"
     alt="MXP-pop"
-=======
-    src="/img/mxprotocol/fig4_mxp_smart_bidding.png"
-    alt="MXP-smart-bidding"
->>>>>>> main
     width="70%"
   />
 </figure>
@@ -380,13 +375,8 @@ The design of multi-token mining is illustrated in [Figure 5](#fig5). The M2 Pro
 <a name="fig5"> </a>
 <figure>
   <img
-<<<<<<< HEAD
     src="./images/fig5_multi.png"
     alt="multi-token"
-=======
-    src="/img/mxprotocol/fig5_anti_collision_coordinator.png"
-    alt="anti-collision-coordinator"
->>>>>>> main
     width="70%"
   />
 </figure>
@@ -405,13 +395,8 @@ As [Figure 6](#fig6)  shows, the MXC controller enables the miners to integrate 
 
 <figure>
   <img
-<<<<<<< HEAD
     src="./images/fig6_thrid-party.png"
     alt="third-party-integration"
-=======
-    src="/img/mxprotocol/fig6_anti_collision_integration.png"
-    alt="anti-collision-third-party-integration"
->>>>>>> main
     width="70%"
   />
 </figure>
