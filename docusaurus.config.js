@@ -34,7 +34,7 @@ module.exports = {
       title: 'Developer Documentation',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/NEW-LOGO-MXC.png',
       },
       items: [
         {
