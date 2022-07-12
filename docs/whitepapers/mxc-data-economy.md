@@ -48,3 +48,11 @@ In the following example, it shows how USDX is backed:
 |              |           |          | 37500     | 100%       |
 
 This collateral can create **31,250 USD** with 120% collateral rate. When people want to redeem let's say 200 USD ride token, they will also have to reduce the amount of NFT value according to the 20/80 ratio, otherwise the burning of USDX won't be successful.
+
+In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth of NFT, and also to get 25USD of any token, like 25USD MXC token. So the user needs to burn 125 USDX, in return he gets 1 Gin 1689 and 25USD MXC
+
+| Collateral redeemed | Value USD | Quantity | Total USD | Percentage |
+|---------------------|-----------|----------|-----------|------------|
+| Gin 1689 NFT        | 100       | 1        | 100       | 80%        |
+| MXC token           | 1         | 25       | 125       | 20%        |
+|                     |           |          | 125       | 100%       |
