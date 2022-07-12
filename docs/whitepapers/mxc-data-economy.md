@@ -25,7 +25,7 @@ MXProtocol design and DataHighway blockchain both are aimed for validating the U
 <a name="fig2"> </a>
 <figure>
   <img
-    src="/img/usdx/fig2.png"
+    src="/img/usdx/FIG2.png"
     alt="Mint USDX"
     width="100%"
   />
