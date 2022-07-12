@@ -51,8 +51,8 @@ This collateral can create **31,250 USD** with 120% collateral rate. When people
 
 In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth of NFT, and also to get 25USD of any token, like 25USD MXC token. So the user needs to burn 125 USDX, in return he gets 1 Gin 1689 and 25USD MXC
 
-| Collateral redeemed | Value USD | Quantity | Total USD | Percentage |
+| Collateral redeemed | Value USD | Quantity | Total Burnt USDX | Percentage |
 |---------------------|-----------|----------|-----------|------------|
 | Gin 1689 NFT        | 100       | 1        | 100       | 80%        |
-| MXC token           | 1         | 25       | 125       | 20%        |
+| MXC token           | 1         | 25       | 25       | 20%        |
 |                     |           |          | 125       | 100%       |
