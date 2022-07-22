@@ -56,3 +56,14 @@ In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth 
 | Gin 1689 NFT        | 100       | 1        | 100       | 80%        |
 | MXC token           | 1         | 25       | 25       | 20%        |
 |                     |           |          | 125       | 100%       |
+
+
+
+## Todo
+
+- Use case of USDX
+- Support Sensor offering
+- Buy NFTs with USDX
+- Buy sensors with USDX
+- Buy everything with USDX
+- Enable every person/company to create USDX for their own Fiat on-ramp and off-ramp
