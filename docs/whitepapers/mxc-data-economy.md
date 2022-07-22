@@ -3,7 +3,7 @@ title: MXC Stable Coin
 sidebar_position: 3
 ---
 
-# MXC Stable Coin
+# MXC Stable Coin (draft)
 
 MXC will be the largest Layer-2 IoT solution on both Dotsama and Ethereum ecosystem, bringing tremendous real-world items to NFT world and data to the blockchain. Undoubtedly each real-world item and each piece of data has its own value, and this kind of value is not from pure financial speculations, the value comes from real economy that serves our food, sports, transportation every day. 
 
