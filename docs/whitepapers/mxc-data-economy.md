@@ -66,4 +66,5 @@ In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth 
 - Buy NFTs with USDX
 - Buy sensors with USDX
 - Buy everything with USDX
+- Insure the issued USDX with selected crypto
 - Enable every person/company to create USDX for their own Fiat on-ramp and off-ramp
