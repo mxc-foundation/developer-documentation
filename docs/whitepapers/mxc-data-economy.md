@@ -12,30 +12,30 @@ MXC is going to leverage the real-world economy to build the first stable coin b
 <a name="fig1"> </a>
 <figure>
   <img
-    src="/img/usdx/fig1.png"
+    src="/img/xUSD/fig1.png"
     alt="IoT token swap"
     width="100%"
   />
 </figure>
 
-As figure 1 shows, the IoT tokens like Ride token would be the major applications that use MXC network and DHX blockchain to build their own data economy. These Ride and Park token can be swapped in MXC Swap conveniently, through USDX trading pair. USDX will be the first IoT stable coin that are backed by real-world assets and data values, meanwhile serving for the digital and real-world economy.
+As figure 1 shows, the IoT tokens like Ride token would be the major applications that use MXC network and DHX blockchain to build their own data economy. These Ride and Park token can be swapped in MXC Swap conveniently, through xUSD trading pair. xUSD will be the first IoT stable coin that are backed by real-world assets and data values, meanwhile serving for the digital and real-world economy.
 
-MXProtocol design and DataHighway blockchain both are aimed for validating the USDX stable coin is pegged to US dollars in 1:1 manner. Along with the NFC, LoraWAN and Satellite technologies, users are able to verify and validate the value of USDX are backed by collateral like Gin 1689 NFTs, and MXC/DHX/Ride tokens.
+MXProtocol design and DataHighway blockchain both are aimed for validating the xUSD stable coin is pegged to US dollars in 1:1 manner. Along with the NFC, LoraWAN and Satellite technologies, users are able to verify and validate the value of xUSD are backed by collateral like Gin 1689 NFTs, and MXC/DHX/Ride tokens.
 
 <a name="fig2"> </a>
 <figure>
   <img
-    src="/img/usdx/FIG2.png"
-    alt="Mint USDX"
+    src="/img/xUSD/FIG2.png"
+    alt="Mint xUSD"
     width="100%"
   />
 </figure>
 
-NFTs and tokens are used as collateral to back the USDX, the collateral rate should be above 120% to make sure the USDX can't be de-pegged from the market fluctuation. Normally the NFTs are issued by companies and manufacturers to let communities to burn USDX and get a collateral to redeem, in the whole reserve of the MXC there are 20 percent of cryptocurrencies as collateral, the rest of 80% should be IoT NFTs that are backed by real-world assets.
+NFTs and tokens are used as collateral to back the xUSD, the collateral rate should be above 120% to make sure the xUSD can't be de-pegged from the market fluctuation. Normally the NFTs are issued by companies and manufacturers to let communities to burn xUSD and get a collateral to redeem, in the whole reserve of the MXC there are 20 percent of cryptocurrencies as collateral, the rest of 80% should be IoT NFTs that are backed by real-world assets.
 
 The ratio of the 20/80 percent should be adjusted by MXC Reserve, namely MXC DAO in referendum : https://snapshot.org/#/mxcpop.eth
 
-In the following example, it shows how USDX is backed:
+In the following example, it shows how xUSD is backed:
 
 | Collateral   | Value USD | Quantity | Total USD | Percentage |
 |--------------|-----------|----------|-----------|------------|
@@ -47,11 +47,11 @@ In the following example, it shows how USDX is backed:
 | DHX token    | 100       | 3        | 300       | 0.8%       |
 |              |           |          | 37500     | 100%       |
 
-This collateral can create **31,250 USD** with 120% collateral rate. When people want to redeem let's say 200 USD ride token, they will also have to reduce the amount of NFT value according to the 20/80 ratio, otherwise the burning of USDX won't be successful.
+This collateral can create **31,250 USD** with 120% collateral rate. When people want to redeem let's say 200 USD ride token, they will also have to reduce the amount of NFT value according to the 20/80 ratio, otherwise the burning of xUSD won't be successful.
 
-In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth of NFT, and also to get 25USD of any token, like 25USD MXC token. So the user needs to burn 125 USDX, in return he gets 1 Gin 1689 and 25USD MXC
+In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth of NFT, and also to get 25USD of any token, like 25USD MXC token. So the user needs to burn 125 xUSD, in return he gets 1 Gin 1689 and 25USD MXC
 
-| Collateral redeemed | Value USD | Quantity | Total Burnt USDX | Percentage |
+| Collateral redeemed | Value USD | Quantity | Total Burnt xUSD | Percentage |
 |---------------------|-----------|----------|-----------|------------|
 | Gin 1689 NFT        | 100       | 1        | 100       | 80%        |
 | MXC token           | 1         | 25       | 25       | 20%        |
@@ -61,10 +61,12 @@ In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth 
 
 ## Todo
 
-- Use case of USDX
-- Support Sensor offering
-- Buy NFTs with USDX
-- Buy sensors with USDX
-- Buy everything with USDX
-- Insure the issued USDX with selected crypto
-- Enable every person/company to create USDX for their own Fiat on-ramp and off-ramp
+- Use case of xUSD
+- Support Sensor offering with xUSD
+- Buy NFTs with xUSD
+- Buy sensors with xUSD
+- Pay EV charging stations with xUSD
+- Buy everything with xUSD
+- Insure the issued xUSD with selected crypto
+- Enable every person/company to create xUSD for their own Fiat on-ramp and off-ramp
+- Borrow xUSD and lend xUSD to generate stable APY
