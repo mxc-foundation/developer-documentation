@@ -59,14 +59,33 @@ In this case, the users will try to redeem one Gin 1689 NFT to get 100USD worth 
 
 
 
-## Todo
 
-- Use case of xUSD
-- Support Sensor offering with xUSD
+## Insurance
+The goal of xUSD and MXC, DHX is to enable every person/company to create xUSD and circulate in their own economy to support their business logic, eventually it is to change the current situation that all the stable coins and Fiat currencies are backed by US treasury bonds, while US treasury bonds are like 30 trillion USD and US treasury and Fed Reserve only got 4 trillion gold or other reserves.
+
+We need to peg this world better with the assets created by people and used by people. Also we need to deal with systematic risks if the de-peg happens. Central banks proposes to print more money to solve the problem. MXC DAO proposes that we should add a 10% insurance on the top of the every xUSD mint to deal with the systematic risks.
+
+This 10% insurance can be paid every year to make sure even if the depeg happened like the collateral is gone or the overall overall collateral price is reduced due to a certain black swan event.
+
+The insurance should be an option at the end of the minting process.
+
+## UxT
+
+When the xUSD economy is getting bigger and bigger, the MXC DAO should consider to cancel the 1:1 exchange rate between USD and xUSD, and also change the name of xUSD to UxT as the exchange rate won't be 1:1. 
+
+This is due to the volatility of the Fed Reserve to create more balance sheet and run-off the balance sheet without any anchor, xUSD holder should aim for a certain development that the unit price of the collateral like watch, shoes, wines are defined by the unit of a UxT and no longer will be a USD.
+
+Also the majority of DEX trading pair would be UxT trading pair will define the new stable coin economy.
+
+
+## Lending protocol
+It is expected that people will borrow xUSD and lend xUSD to generate stable APY, there are a lot of similar lending protocols like AAVE will move to DataHighway parachain to enable xUSD economy active.
+
+## Use case of xUSD
+
+- 
 - Buy NFTs with xUSD
 - Buy sensors with xUSD
 - Pay EV charging stations with xUSD
 - Buy everything with xUSD
-- Insure the issued xUSD with selected crypto
-- Enable every person/company to create xUSD for their own Fiat on-ramp and off-ramp
-- Borrow xUSD and lend xUSD to generate stable APY
+- Support Sensor offering with xUSD
