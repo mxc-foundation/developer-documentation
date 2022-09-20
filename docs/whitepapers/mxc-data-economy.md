@@ -83,7 +83,6 @@ It is expected that people will borrow xUSD and lend xUSD to generate stable APY
 
 ## Use case of xUSD
 
-- 
 - Buy NFTs with xUSD
 - Buy sensors with xUSD
 - Pay EV charging stations with xUSD
