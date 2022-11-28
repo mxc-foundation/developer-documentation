@@ -1,7 +1,14 @@
+---
+title: DHX
+sidebar_position: 1
+---
 # What is DHX
 
 The MXC Foundation  is creating a new way of fashioning  physical goods into  digital assets within  the blockchain. These assets  are not only tradable but also trackable, traceable and can  verify the origins of these products.
- 
+
+## Why participate in the DataHighway?
+The purpose of the DataHighway is to have an Inter-Chain Data Market and LPWAN Decentralized Roaming Hub that allows data buyers to spend supported cryptocurrencies to cost-effectively purchase access to data from IoT devices that are owned by data providers.
+for more information you can refer to [data highway documentation](https://dev.datahighway.com/docs/).
 ## IoT NFTs
 The M2 Pro Miner enables LPWAN NFC tags to onboard as blockchain-based NFTs through its 40,000 network areas.
 ![](https://i.imgur.com/OnqcjdM.png)
