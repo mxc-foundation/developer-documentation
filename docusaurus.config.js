@@ -61,6 +61,36 @@ module.exports = {
           position: 'right',
         },
         {
+          label: 'Telegram',
+          href: 'https://mxc.news/telegram',
+          position: 'right',
+        },
+        {
+          label: 'Discord',
+          href: 'https://discord.gg/mxcfoundation',
+          position: 'right',
+        },
+        {
+          label: 'Twitter',
+          href: 'https://twitter.com/mxcfoundation',
+          position: 'right',
+        },
+        {
+          label: 'YouTube',
+          href: 'https://www.youtube.com/c/MXCFoundation',
+          position: 'right',
+        },
+        {
+          label: 'Facebook',
+          href: 'https://www.facebook.com/MXCfoundation/',
+          position: 'right',
+        },
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/company/mxc-foundation/',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/mxc-foundation/developer-documentation',
           label: 'GitHub',
           position: 'right',
@@ -96,11 +126,26 @@ module.exports = {
             },
             {
               label: 'Discord',
-              href: 'https://mxc.news/discord',
+              href: 'https://discord.gg/mxcfoundation',
             },
             {
               label: 'Twitter',
               href: 'https://twitter.com/mxcfoundation',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/c/MXCFoundation',
+              position: 'right',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/MXCfoundation/',
+              position: 'right',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/mxc-foundation/',
+              position: 'right',
             },
           ],
         },
@@ -108,16 +153,16 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Developer Blog',
-              to: '/blog',
+              label: 'MXC Website',
+              to: 'https://www.mxc.org',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/mxc-foundation/',
             },
             {
-              label: 'MXC Website',
-              to: 'https://www.mxc.org',
+              label: 'Developer Blog',
+              to: '/blog',
             },
             {
               label: 'User Documentation',
