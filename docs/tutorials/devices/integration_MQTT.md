@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Integration - MQTT
 
-By default supernode provides MQTT broker service for users to subscribe or pushlish events on their devices.
+By default supernode provides MQTT broker service for users to subscribe or publish events on their devices.
 
 Users can subscribe to MQTT broker under topics in the servers after authentication. Before that, you need to make sure
 you have mosquitto package installed. Use the package manager apt to install these dependencies on the Ubuntu 18.04 LTS
