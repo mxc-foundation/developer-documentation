@@ -27,3 +27,36 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.social-media-wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 0.97em;
+  grid-row-gap: 0.97em;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+
+.social-media-wrapper.hero {
+  position: absolute;
+  left: auto;
+  top: 1.67em;
+  right: 1.67em;
+  bottom: auto;
+  z-index: 5;
+}
+
+
+
+.social-media-img {
+  width: auto;
+  height: 0.83em;
+}
+
+
+.hero-social-media-wrapper {
+  display: none;
+}
