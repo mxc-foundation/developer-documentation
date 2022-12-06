@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "item.label.Docs": {
-    "message": "Docs",
+    "message": "Tutorials",
     "description": "Navbar item with label Docs"
   },
   "item.label.API": {
@@ -15,9 +15,29 @@
     "message": "Whitepapers",
     "description": "Navbar item with label Whitepapers"
   },
-  "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://mxc.news/telegram"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/mxcfoundation"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/mxcfoundation"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=Twitter linking to https://www.youtube.com/c/MXCFoundation"
+  },
+  "link.item.label.Facebook": {
+    "message": "Facebook",
+    "description": "The label of footer link with label=Twitter linking to https://www.facebook.com/MXCfoundation/"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://www.linkedin.com/company/mxc-foundation/"
   },
   "item.label.GitHub": {
     "message": "GitHub",
