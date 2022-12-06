@@ -29,7 +29,7 @@
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://mxc.news/discord"
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/mxcfoundation"
   },
   "link.item.label.Twitter": {
     "message": "Twitter",
@@ -60,7 +60,7 @@
     "description": "The label of footer link with label=Privacy Policy linking to https://www.mxc.org/privacy-policy"
   },
   "copyright": {
-    "message": "Copyright © 2021 MXC Foundation gGmbH.",
+    "message": "Copyright © 2022 MXC Foundation gGmbH.",
     "description": "The footer copyright"
   }
 }
