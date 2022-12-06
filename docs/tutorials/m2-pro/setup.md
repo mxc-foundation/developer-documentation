@@ -19,7 +19,7 @@ Side node: Please make sure to choose the correct supernode based on your [regio
 ## How to create an account on DataDash app?
 You simply need to download DataDash app on your phone by visiting app/play store on your mobile phone and then signing up for an account on DataDash app by following the steps below:
 
-![workflow](../../../static/img/m2pro account creation/img1.jpg)
+![workflow](/img/m2pro_ac/img1.jpg)
 
 2FA is very important in protecting your withdrawals so please make sure to set it up!
 

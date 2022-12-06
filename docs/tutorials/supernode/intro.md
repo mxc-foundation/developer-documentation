@@ -6,7 +6,7 @@ title: Introduction
 # Introducing Supernodes
 The Supernode simply is a server that all Gateways (M2 Pro Miners) are connected to.
 
-![](../../../static/img/supernode/image.png)
+![](/img/supernode/image.png)
 
 there are multiple Supernodes providing services for different regions.
 
@@ -28,7 +28,8 @@ The Supernode communicates with the cloud service that is connected to the block
 
 The Supernode supports many miners throughout the region which creates a network. this network can be used by other LoRaWAN devices and businesses.
 all the data transferred by the Business owner is stored in the Supernode server, where it can be accessed by third party users that needs this data.
-![](../../../static/img/supernode/supernode.png)
+
+![](/img/supernode/supernode.png)
 
 The Supernode is monitored with Grafana to give a good overview of the load on the server.
 

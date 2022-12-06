@@ -18,11 +18,11 @@ We can greatly enhance the overall user experience with our products by beta tes
 | MXC Controller | Closed | *Coming Soon* |
 | M2 Pro (MatchX) | Open | *Coming Soon* |
 
-*A beta version is pre-release and considered unstable. This implies that you may experience some issues. Normally these issues will be minimal, (????) however participating in an M2 Pro beta could potentially affect your mining. MXC Controller and DataDash betas will not have any influence on your overall mining potential.*
+*A beta version is pre-release and considered unstable. This implies that you may experience some issues. Normally these issues will be minimal, however participating in an M2 Pro beta could potentially affect your mining. MXC Controller and DataDash betas will not have any influence on your overall mining potential.*
 
 
 ### Coding and Translating
-We have a number of active issues in our public repositories (????) that might use support. Our team is still growing, and community support is always appreciated, encouraged and in some cases rewarded.
+We have a number of active issues in our public repositories that might use support. Our team is still growing, and community support is always appreciated, encouraged and in some cases rewarded.
 
 Here is an updated list of repos that you can contribute to. 
 * [DataDash App](https://github.com/mxc-foundation/supernode-app) [Flutter / Dart]
@@ -33,7 +33,7 @@ Here is an updated list of repos that you can contribute to.
 We will continue to add repositories to this list as we work to increase transparency regarding our code and development process. 
 
 ## Manufacturing / Configuring Devices
-Without devices (????) the network has no purpose. As a result, we developed a simple method for manufacturers to join the network, making it possible for their devices to be deployed as a turnkey solution in the MXC ecosystem. 
+Without devices  the network has no purpose. As a result, we developed a simple method for manufacturers to join the network, making it possible for their devices to be deployed as a turnkey solution in the MXC ecosystem. 
 
 In order to increase security of the entire network, we've worked with MatchX to develop a novel provisioning concept for LoRa devices. This provisioning process is a requirement for any devices intending to be MXProtocol compatible. We have made this decision as:
 1. Device provisioning increases the security of the device data

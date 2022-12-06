@@ -15,10 +15,6 @@
     "message": "Whitepapers",
     "description": "Navbar item with label Whitepapers"
   },
-  "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
-  },
   "link.item.label.Telegram": {
     "message": "Telegram",
     "description": "The label of footer link with label=Telegram linking to https://mxc.news/telegram"

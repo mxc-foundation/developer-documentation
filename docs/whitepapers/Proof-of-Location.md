@@ -1,9 +1,9 @@
 ---
-title: Proof-of-Location
+title: Proof-of-Reality
 sidebar_position: 3
 ---
 
-# Proof-of-Location
+# Proof-of-Reality
 ## Design Aims
 A location is a rare resource that needs to be calculated by radio signals. 
 Currently, there are three methods to calculate a location.
@@ -21,7 +21,7 @@ In order to triangulate the sensors, the algorithms first confirm the location o
 With regular downlink peer listenings, the algorithm is able to filter out the tampered miner locations as they can’t be heard by peer M2 Pro miners. 
 Those miner locations are confirmed by the Proof of Location and then can respond to the uplink request for location services.
 
-![Proof of location design](../../static/img/POL/img1.JPG)
+![Proof of location design](/img/POL/img1.JPG)
 
 In the figure above, we can see how a sensor NFT’s Proof of Location works. 
 * First of all, the sensor sends data that can be picked up by the miners as usual. Each data packet will be time stamped in the miner with precise time of arrival; this feature is executed by the hardware chip inside the M2 Pro miners. The third party miners won’t be able to provide this service due to the hardware limits. 
