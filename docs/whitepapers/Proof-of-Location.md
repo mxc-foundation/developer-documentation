@@ -4,35 +4,52 @@ sidebar_position: 3
 ---
 
 # Proof-of-Reality
+## Defention
+Proof of Reality is an upgrade of proof of location. In Proof of Reality
+we overcome the disadvantage of Proof of location which only determines the location of said object.
+one of these disadvantage for example is the location can be faked by GPS spoofing.
+on the other hand, Proof of Reality proves the physical existence of the object 
+and also triangulate the location of the object.
+so Proof of Reality provides two things:
+* location of item
+* physical existence of the item
+
 ## Design Aims
+### location
 A location is a rare resource that needs to be calculated by radio signals. 
 Currently, there are three methods to calculate a location.
 * First is a GPS signal, which only works outdoors, and can easily be tampered with as GPS radios can be emulated by software to fake a location. 
 * Secondly, IP address calculations, this is a database technology that relies on the accuracy of the data input about a certain IP address, and often a VPN service can get a new IP for you to fake a location. 
 * Thirdly, a Bluetooth-based location tracking, companies such as Apple are using it. it is hard or nearly impossible to fake the Bluetooth receiver that is held by the general public, as they pass by the Bluetooth tags and tell the network the exact location of the object in a decentralized approach.
 
-MXProtocol designs the Proof of Location to solve the problem that Bluetooth often
+MXProtocol designs the Proof of Reality to solve the problem that Bluetooth often
 fails to solve – distance. While Bluetooth only reaches 100-200 meters, MXC miners
 can reach 1-40km to determine the location of the object in a decentralized way, as
 the miners are held by different users.
 
-Proof of Location is a localization algorithm that utilizes LPWAN uplink data with timestamps to triangulate the location of LPWAN sensors and M2 Pro miners. 
+Proof of Reality has a localization algorithm that utilizes LPWAN uplink data with timestamps to triangulate the location of LPWAN sensors and M2 Pro miners. 
 In order to triangulate the sensors, the algorithms first confirm the location of the miners with the downlinks they sent to the sensors. 
 With regular downlink peer listenings, the algorithm is able to filter out the tampered miner locations as they can’t be heard by peer M2 Pro miners. 
-Those miner locations are confirmed by the Proof of Location and then can respond to the uplink request for location services.
+Those miner locations are confirmed by the Proof of Reality and then can respond to the uplink request for location services.
 
-![Proof of location design](/img/POL/img1.JPG)
+![Proof of reality design for location](/img/POL/img1.JPG)
 
-In the figure above, we can see how a sensor NFT’s Proof of Location works. 
+In the figure above, we can see how a sensor NFT’s Proof of reality works. 
 * First of all, the sensor sends data that can be picked up by the miners as usual. Each data packet will be time stamped in the miner with precise time of arrival; this feature is executed by the hardware chip inside the M2 Pro miners. The third party miners won’t be able to provide this service due to the hardware limits. 
-* Next, the MXC Controller needs to rule out the tampered locations of the miners or inaccurate ones with bias and peer Proof of Location data, if the miner is not physically located there or always changes locations, the Proof of Location can easily exclude this kind of data. Time difference of arrival (TDOA) based on location requires at least 3 miners with valid locations to calculate; the more miners present, the more accurate the location data will be.
+* Next, the MXC Controller needs to rule out the tampered locations of the miners or inaccurate ones with bias and peer Proof of Reality data, if the miner is not physically located there or always changes locations, the Proof of Reality can easily exclude this kind of data. Time difference of arrival (TDOA) based on location requires at least 3 miners with valid locations to calculate; the more miners present, the more accurate the location data will be.
 
-All the miners that can provide Proof of Location will be able to validate more MXC results than the third party miners.
+All the miners that can provide Proof of Reality will be able to validate more MXC results than the third party miners.
+
+### Physical existence
+In order to determine the correct existence of the object concerned. We need to have a very accurate result which has minimum error (delta).
+in order to reach this accuracy we determined that a synchronization of nanosecond timestamp is required.
+methods like GPS helps us synchronize the miners using PPS signal (pulse-per-second signal). then the item location
+can be quickly located by triangulation
 
 ## Design and Implementation
 It is expected that miners need to be equipped with Semtech SX1303 chips or others that have accurate timestamp functions in order to provide the location services.
 
-The bias and credibility of the location data feed is also dependent on the Meta-XP and miner health factors of the miner, as the location data is mostly self-reporting and peer verified by the Proof of Location networks that are built by the community.
+The bias and credibility of the location data feed is also dependent on the Meta-XP and miner health factors of the miner, as the location data is mostly self-reporting and peer verified by the Proof of Reality networks that are built by the community.
 
 ## MXC Controller
 There are lists of services that LPWAN can provide to the sensors/end devices. 
