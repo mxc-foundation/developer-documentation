@@ -166,10 +166,10 @@ module.exports = {
             },
             {
               label: ' ',
-              to: 'https://twitter.com/mxcfoundation',
+              to: 'https://www.facebook.com/MXCfoundation/',
               position: 'right',
-              className: "header-twitter-link",
-              "aria-label": "twitter",
+              className: "header-facebook-link",
+              "aria-label": " facebook link",
             },
             {
               label: ' ',
