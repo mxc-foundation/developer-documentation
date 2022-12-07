@@ -119,7 +119,7 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorials',
+              label: 'Tutorial',
               to: '/docs/tutorials/intro',
             },
             {
