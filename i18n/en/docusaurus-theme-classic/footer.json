@@ -47,10 +47,6 @@
     "message": "Twitter",
     "description": "The label of footer link with label=Twitter linking to https://www.linkedin.com/company/mxc-foundation/"
   },
-  "link.item.label.Developer Blog": {
-    "message": "Developer Blog",
-    "description": "The label of footer link with label=Developer Blog linking to /blog"
-  },
   "link.item.label.GitHub": {
     "message": "MXC Foundation GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/mxc-foundation/"

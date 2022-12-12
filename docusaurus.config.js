@@ -145,7 +145,7 @@ module.exports = {
             {
               label: ' ',
               to: 'https://discord.gg/mxcfoundation',
-              position: 'right',
+              //position: 'right',
               className: "header-discord-link",
               "aria-label": "Discord",
 
@@ -153,35 +153,35 @@ module.exports = {
             {
               label: ' ',
               to: 'https://twitter.com/mxcfoundation',
-              position: 'right',
+              //position: 'right',
               className: "header-twitter-link",
               "aria-label": "twitter",
             },
             {
               label: ' ',
               to: 'https://www.youtube.com/c/MXCFoundation',
-              position: 'right',
+              //position: 'right',
               className: "header-youtube-link",
               "aria-label": "Youtube",
             },
             {
               label: ' ',
               to: 'https://www.facebook.com/MXCfoundation/',
-              position: 'right',
+              //position: 'right',
               className: "header-facebook-link",
-              "aria-label": " facebook link",
+              "aria-label": "facebook link",
             },
             {
               label: ' ',
               to: 'https://www.linkedin.com/company/mxc-foundation/',
-              position: 'right',
+              //position: 'right',
               className: "header-linkedin-link",
               "aria-label": "linkedin",
             },
             {
               to: 'https://github.com/mxc-foundation/developer-documentation',
               label: ' ',
-              position: 'right',
+              //position: 'right',
               className: "header-github-link",
               "aria-label": "GitHub repository",
             },
@@ -199,12 +199,8 @@ module.exports = {
               href: 'https://github.com/mxc-foundation/',
             },
             {
-              label: 'Developer Blog',
-              to: '/blog',
-            },
-            {
               label: 'User Documentation',
-              to: 'https://www.mxc.wiki',
+              to: 'https://www.mxc.org/knowledge-hub',
             },
             {
               label: 'Imprint',
