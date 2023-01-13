@@ -12,31 +12,34 @@ sidebar_position: 3
     - [2. Design Aims](#2-Design-Aims)
         - [2.1 location](#21-location)
         - [2.2 Physical existence](#22-Physical-existence)
+          - [2.2.1 Objective Measurement Techniques](#221-objective-measurement-techniques)
+        - [2.3 Synchronization of miners in network](#23-synchronization-of-miners-in-network)
     - [3. Existence Proof of Miner](#3-Existence-Proof-of-Miner)
-    - [4. trustworthy of miner](#4-trustworthy-of-miner)
-    - [5. GPS validation](#5-gps-validation)
-    - [6. Miner Peer Listening](#6-Miner-Peer-Listening)
-    - [7. IP address](#7-ip-address)
-    - [8. device messages data](#8-device-messages-data)
-    - [9. Miner health metrics and its corresponding scores](#9-Miner-health-metrics-and-its-corresponding-scores)
-        - [9.1 Fuel](#91-fuel)
-        - [9.2 uptime](#92-uptime)
-        - [9.3 GPS Signal](#93-GPS-Signal)
-        - [9.4 Orientation](#94-Orientation)
-        - [9.5 Proximity](#95-Proximity)
-        - [9.6 Altitude](#96-Altitude)
-        - [9.7 Summary](#97-Summary)
-    - [10. penalties](#10-penalties)
-    - [11. Synchronization of miners in network](#11-Synchronization-of-miners-in-network)
-    - [12. Localization algorithms](#12-Localization-algorithms)
-        - [12.1 localization through triangulation](#121-localization-through-triangulation)
-        - [12.2 localization through Trilateration for m3 lite](#122-localization-through-Trilateration-for-m3-lite)
-    - [13. third party application](#13-third-party-application)
-        - [13.1 trustworthy localization](#131-trustworthy-localization)
-        - [13.2 advantages of LPWAN against peer communications](#132-advantages-of-lpwan-against-peer-communications)
+    - [4. Miner trust](#4-Miner-trust)
+      - [4.1 GPS validation](#41-GPS-validation)
+      - [4.2 Miner Peer Listening](#42-Miner-Peer-Listening)
+      - [4.3 IP address](#43-IP-address)
+      - [4.4 device messages data](#44-device-messages-data)
+      - [4.5 Miner health metrics and its corresponding scores](#45-Miner-health-metrics-and-its-corresponding-scores)
+        - [4.5.1 Fuel](#451-Fuel)
+        - [4.5.2 uptime](#452-uptime)
+        - [4.5.3 GPS Signal](#453-GPS-Signal)
+        - [4.5.4 Orientation](#454-Orientation)
+        - [4.5.5 Proximity](#455-Proximity)
+        - [4.5.6 Altitude](#456-Altitude)
+        - [4.5.7 Summary](#457-Summary)
+    - [5. Localization algorithms](#5-Localization-algorithms)
+      - [5.1 localization through triangulation](#51-localization-through-triangulation)
+      - [5.2 localization through Trilateration for m3 lite](#52-localization-through-Trilateration-for-m3-lite)
+    - [6. penalties](#6-penalties)
+    - [7. Synchronization of miners in network](#7-Synchronization-of-miners-in-network)
+    - [8. third party application](#8-third-party-application)
+      - [8.1 trustworthy localization](#81-trustworthy-localization)
+      - [8.2 advantages of LPWAN against peer communications](#82-advantages-of-lpwan-against-peer-communications)
 
+bias score
 mxc controller before 10 point
-for point 5 we neeed to talk about design of existence of also the tags, need to talk about the penalty if miner or tag is fake
+for point 5 we need to talk about design of existence of also the tags, need to talk about the penalty if miner or tag is fake
 in chapter 1 talk about the problems of synchronization point 8.
 chapter 8 talk about the idea with m3 lite. a new layer of trust through the triangulation of m3 lite through m2 pro.
 active tag electricity powered tag
@@ -55,6 +58,8 @@ so Proof of Reality provides two things:
 * physical existence of the item
 
 ## 2. Design Aims
+Our main aim is to achieve Proof of Reality and mix the blockchain with the physical world.
+A blockchain that can be parallel to Real World and Meta-verse.
 ### 2.1 location
 A location is a rare resource that needs to be calculated by radio signals. 
 Currently, there are three methods to calculate a location.
@@ -81,33 +86,54 @@ In the figure above, we can see how a sensor NFT’s Proof of reality works.
 All the miners that can provide Proof of Reality will be able to validate more MXC results than the third party miners.
 
 ### 2.2 Physical existence
-In order to determine the correct existence of the object concerned. The miner has a score according to the miner health.
-the miner health is an indication of the validity of the miner. in addition, we need to have a very accurate result 
-which has minimum error when locating the miner.
-in order to reach this accuracy we determined that a synchronization of nanosecond timestamp is required.
-methods like GPS helps us synchronize the miners. then the item using the network can be quickly located 
-by triangulation or Trilateration algorithms.
+"I think therefore I am", is the first principle of René Descartes's philosophy to prove our existence. well in MXC this
+is not enough, to prove the reality of a 3rd party device utilizing our network we need to verify that miners used are unbiased.
 
+#### 2.2.1 Objective Measurement Techniques
+OMT in the case of determining the physical existence of an object covers 4 possibilities:
+1. Use multiple sources to verify the existence of the object. This could include using multiple observers to look for the object, or using sensors or other automated systems to detect its presence. 
+   * Like creating a classification machine learning model that verifies and cross-reference that object with its database.
+2. Use objective measurement tools and protocols to quantify the characteristics of the object and its location. For example, you could use a tape measure to accurately determine the size and shape of the object, or use GPS technology to precisely locate its position.
+   * attaching tags on the corners of the object that return its location to the cloud and then the dimension is calculated and then cross-referenced with dimension of model.
+   * the location of the item and it's tags can be determined by triangulation. 
+3. Use controlled conditions to eliminate the potential for external factors to influence the measurement. For example, you could conduct the measurement in a controlled environment, or use shielding or other methods to block out any external interference.
+   * making sure that the measurement devices are part of our system. through peer listening and IP address of miner, in addition miner health metrics.
+4. Use statistical analysis to confirm the existence of the object. By analyzing the data from the measurement process, you can use statistical techniques to determine the likelihood that the object exists in the specified location.
+    * Bandwidth utilized by miner and the amount of data sent or received by the object. validity of the triangulation process.
 
-## . MXC Controller
-There are lists of services that LPWAN can provide to the sensors/end devices. 
-For example, an over-the-air firmware update should be multi-casted to the sensors and calculate the position, which requires no computation for the resource-limited sensors.
-Such a service requires resources of both a miner and the Supernode. 
-Hence, MXC Controller will specify whether it is willing to pay for the service and its accuracy.
-The more gateways that receive the packets, the more accurate the position will be.
-In addition to this, data NFTs can also facilitate data transactions and would need a service to provision and provide the NFT to the blockchain. 
-MXC Controller is designed to bridge the users and supernode/miners for NFT provisioning services.
-Through the MXC Controller design, it is possible that the sensors/end devices pay 1 USD for lifetime free usage of the network, while choosing the available services to subscribe or pay. The outcome of the design will be as follows:
-* Some sensors/end devices get the services and the resources that they demand through auction.
-* Network deployments receive a compensation by offering services and resources to the LPWAN sensors/end devices.
-* All the monetary transactions are done automatically in MXC/BTC/DOT without human intervention
+In the next chapters, Miner scores affecting Physical existence will be discussed covering
+* GPS Location
+* Miner peer listening
+* IP address
+* Bandwidth
+* Miner health
+* Triangulation
+
+In addition, devices holding MXC tokens
+
+### 2.3 Synchronization of miners in network
+If there is no synchronization between LPWAN devices,
+several challenges may arise when trying to determine the location of a device using
+localization algorithms.
+1. Time of Arrival (ToA) or Time Difference of Arrival (TDoA) based methods rely on accurate timestamps of when the signal was received by each device, so if there is no synchronization between devices, the timestamps may be inaccurate, leading to errors in the calculated distances and ultimately resulting in a less accurate location estimate.
+2. Without synchronization, it becomes difficult to determine the time of flight of the signal, resulting in less accurate distance estimates, which ultimately leads to a less accurate location estimate.
+3. The error caused by lack of synchronization will be different at different distances, making it harder to estimate the distance and location of the device.
+4. An alternative to ToA methods is Received Signal Strength Indicator (RSSI), but it is less precise and more affected by the environment, especially when the devices are far away from the gateways, also it's not recommended to use it alone as it's not a deterministic method.
+5. Without synchronization, it becomes difficult to determine the time of flight of the signal, resulting in less accurate distance estimates, which ultimately leads to a less accurate location estimate.
+6. Additionally, the lack of synchronization can also make it harder to analyze the data from the devices over time, as it becomes harder to relate the data from different devices to a common time frame.
+
+To overcome these challenges, it's important to have a good time synchronization between the devices and gateways, using methods such as GPS time, NTP time or PTP time.
+
 
 ## 3. Existence Proof of Miner
-As a decentralized network we do not want a trusted 3rd party to proof that our community miners exist, because this 
-defeats the idea of decentralization. to further explain a GPS location can be faked from a  device that emulates the
-miner. however this fake device does not contain MXC tokens.
-Since the blockchain is secured and can be tracked by the community, We had the brilliant idea that the Miner can hold
-Cryptocurrencies AKA Miner Fuel to proof that the miner exist in the network since it exist in the blockchain.
+As a decentralized network we do not need a 3rd party to prove that our community's miners exist, because this 
+defeats the idea of decentralization. 
+AAlthough determining the location of Miner by secure peer listening or GPS localization. these aspects can be hacked
+as an extra protection layer the miners will hold MXC tokens, and we will implement that the item in the network will 
+hold MXC tokens.
+
+Since the blockchain is secured and can be tracked by the community, We had the idea that the Miner can hold
+Cryptocurrencies AKA Miner Fuel to prove that the miner exist in the network since it exist in the blockchain.
 
 (add picture ????)
 (picture of miner network parallel to it a picture of blockchain network)
@@ -115,13 +141,16 @@ Cryptocurrencies AKA Miner Fuel to proof that the miner exist in the network sin
 so the proof of stacking in Miner helps in proving the existence of the miner.
 the more the miner stack the more trustworthy the miner is. this is one aspect of miner health.
 
-## 4. trustworthy of miner
+## 4. Miner trust
 We are building this network so 3rd party businesses can utilize it. naturally these businesses would prefer to use
 nodes (miners) that are functional and trustworthy. 
-One of the main reasons we introduced miner health is to proof that the miner physically exist and the more
-percentage a miner has the more trustworthy the miner is.
-a miner is trustworthy when the following metrics are accurate:
-* GPS Location of miner (excluding for m3 lite miners)
+
+This score model will be weighted and score based. The MXC community will have control over the weight of each metric.
+the sum score of the model should be 1.
+Weighted average model will be used
+
+The following is the miner metrics score that will later be processed and summed:
+* GPS Location of miner (excluding for m3 lite miners) *******************9
   * Time Difference of Arrival (TDoA) with another device with known location.
   * comparison of Multilateration or triangulation equation output with device known location.
 * Miner peer listening
@@ -140,13 +169,13 @@ a miner is trustworthy when the following metrics are accurate:
 
 each of this metrics will have a score:
 
-| metric               | score name         | score | score present as      |
-|----------------------|--------------------|-------|-----------------------|
-| GPS validation       | anti-spoof score   | 1     | Trusted or Fake       |
-| Miner peer listening | family score       | 5     | integer 5             |
-| IP address           | Relic score        | 30    | percentage out of 30  |
-| Device messages Data | popularity score   | 100%  | percentage            |
-| Miner Health metrics | Reliability score  | 200   | percentage out of 200 |
+| metric               | score name         | score | score present as        |
+|----------------------|--------------------|-------|-------------------------|
+| GPS validation       | anti-spoof score   | 1     | Trusted (1) or Fake (0) |
+| Miner peer listening | family score       | 5     | percentage out of 5     |
+| IP address           | Relic score        | 30    | percentage out of 30    |
+| Device messages Data | popularity score   | 100%  | percentage              |
+| Miner Health metrics | Reliability score  | 200   | percentage out of 200   |
 
 So as follows proof of stack through blockchain proofs the validity of the above-mentioned metrics.
 when these metrics are trustworthy and accurate then the physical existence of the miner is proved and the location
@@ -161,7 +190,7 @@ therefore the item itself will be proved to exist by getting its location, and i
 MXC tokens.
 therefore the item itself achieved proof of reality
 
-## 5. GPS validation
+### 4.1 GPS validation
 With good programming and hardware skills hackers can spoof GPS location. We can counter that by simply testing the TDoA of each miner to a
 device with predefined location.
 * each Miner will provide a TDoA to locate a device.
@@ -178,7 +207,7 @@ in this regard a score of True (1) or False (0) will be given to the score.
 * True as trusted
 * False as fake
 
-## 6. Miner Peer Listening
+### 4.2 Miner Peer Listening
 We have created a system where we have a mapper that divide the space into hexagons. each hexagon can accommodate upto 5 Miners.
 more miners can exist in the hexagon but the systems does not require that.
 the score is simple:
@@ -186,7 +215,7 @@ the score is simple:
 When the hexagon is full this is an indication that the communication between the miners is reliable and strong creating a family. 
 therefore named family score.
 
-## 7. IP address
+### 4.3 IP address
 constant IP address is an indication that the miner does not use VPN or keeps on changing location.
 the longer the miner holds onto the same IP address more stoic, rigid, eternal and immutable.
 The relic score is calculated by the number of days the IP address of miner did not change:
@@ -198,7 +227,7 @@ since both miner and mobile device are connected through the data dash applicati
 if both of them are utilizing the same network and comparing the GPS location of mobile device with registered location
 of the Miner then we can consider the location of the miner to be valid
 
-## 8. device messages data
+### 4.4 device messages data
 going back to the hexagon system. it was told that it can hold upto 5 miners. however the number of devices connected
 to the miners existing in the hexagon is not limited. it depends on the amount of data and speed of LORAWAN of sender and 
 receiver.
@@ -220,7 +249,7 @@ here is an example
 
 so the score will be the mean of all previous calculated mean utilization of this hour.
 
-## 9. Miner health metrics and its corresponding scores
+### 4.5 Miner health metrics and its corresponding scores
 The miner health has a percentage score that influences the daily rate it mines
 for cryptocurrency. however this score is not the trustworthy score that
 will be used by 3rd party businesses.
@@ -236,7 +265,7 @@ the weighted trustworthy score also uses the same metrics in the miner health:
 for more information about the definition of these metrics please go [here](../docs/tutorials/m2-pro/miner-health.mdx).
 each metric will have a different score. in total the score will be 200.
 
-### 9.1 Fuel
+#### 4.5.1 Fuel
 The Fuel refers to the Cryptocurrency stacked in the tank.
 * if the tank has 100 tokens and the tank capacity is 100. then this miner Fuel score is 100%
 * if the tank has  0  tokens and the tank capacity is 100. then this miner Fuel score is 0%
@@ -247,7 +276,7 @@ having 0% tokens gives you -10 points trustworthy
 having 100% tokens gives you 0 points trustworthy
 having 200% tokens gives you +10 points trustworthy
 
-### 9.2 Uptime
+#### 4.5.2 Uptime
 Naturally when a 3rd party is using your services they want that service
 to be running 24 hrs every day. if the miner went down it will affect the quality
 of the service.
@@ -259,7 +288,7 @@ if it was down for 7 days it will get -50 trustworthy
 the equation for calculating uptime score is 
 2.1428571428571 x^2 - 0.71428571428571 x - 50
 
-### 9.3 GPS Signal
+#### 4.5.3 GPS Signal
 if the GPS signal of the miner is not strong 3rd parties will not be able to
 use the miner. to locate their items using network you need strong signals from 
 nodes to triangulate the location of the item. therefore the GPS signal score is also 50.
@@ -276,7 +305,7 @@ if error is 20 m trustworthy score is -50
 the equation for calculating GPS signal score is
 1.1111111111111 x^2 - 27.222222222222 |x| + 50
 
-### 9.4 Orientation
+#### 4.5.4 Orientation
 naturally the service user would prefer that the miner covers the largest area possible so their business
 would have an extended range.
 
@@ -289,7 +318,7 @@ if the miner is mounted horizontally or orientation miner health percentage is 0
 the equation for calculating the orientation score is
 0.048611111111111 x^2 - 5.4861111111111 |x| + 50
 
-### 9.5 Proximity
+#### 4.5.5 Proximity
 unlike the effect the proximity has on miner health. the more miners are in the 
 surroundings the more trustworthy score the miner has. due to the validity of peer miner
 communication
@@ -301,7 +330,7 @@ if miner proximity metric in miner health is 7 percent the trustworthy score is 
 the equation for calculating the Proximity score is
 - 2.8571428571429 x + 20
 
-### 9.6 Altitude
+#### 4.5.6 Altitude
 the high altitude of the miner influence its connectivity with other items in the network
 
 if miner Altitude metric in miner health is 5 percent the trustworthy score is +20
@@ -311,7 +340,7 @@ if miner Altitude metric in miner health is 0 percent the trustworthy score is 0
 the equation for calculating the Altitude score is
 4 x
 
-### 9.7 Summary
+#### 4.5.7 Summary
 for a total score of 200 the scores are divided as follows.
 * 10 p Fuel
 * 50 p Uptime
@@ -332,49 +361,22 @@ for a total score of 200 the scores are divided as follows.
 the higher the trustworthy score of the miner the stronger the proof of reality of the miner.
 in addition, the more valid are the following metrics:
 * GPS Location of miner (excluding for m3 lite miners)
-* Timestamp
-* authenticity of information gathered from Miner peer listening
+* Miner peer listening
 * the IP address of the miner
-* Device messages
-* information package held within miner
+* Device messages data
 
 through these metrics we can locate the position of any item in the network and proof its reality too.
 we need special algorithms in order to locate these data
 
-## 10. penalties
-The previous scores are either an indication for User about the mining rate of the miner or the reliability and availability of
-miner for 3rd party users.
-We need to create protection for the system.
-a common term for that is slashing. in the following table we will discuss the causes of penalties
-
-| Cause                                                            | action                                                                     | penalty                                                                                                                 | slash score                                    | How to avoid                                                                                     |
-|------------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| Faking miner location                                            | All Miners owned will be Locked                                            | Lose all Crypto connected to Miner and banned from Blockchain                                                           | 100                                            | do not fake miner location                                                                       |
-| miner is down more than 7 days and is still registered in mapper | notification will be sent to owner profile in application and through mail | no benefits from mining or 3rd party using miner as gateway for the same amount of days the miner was down after 7 days | 5                                              | always try to keep miner on. if not possible notify the customer support or unregister the miner |
-| GPS Signal                                                       | +50 p error = 0 m                                                          | 0 p error = 2 m                                                                                                         | -50 p error >= 20 m                            |                                                                                                  |
-| Orientation                                                      | +50 p 7% Orientation score                                                 | 0 p 6.2% Orientation score                                                                                              | -50 p horizontal mount or 0% Orientation score |
-| Proximity                                                        | +20 p 0% proximity score                                                   | +10 p 3.5% proximity score                                                                                              | 0 p 7% proximity score                         |
-| Altitude                                                         | +20 p 5% Altitude score                                                    | +10 p 2.5% Altitude score                                                                                               | 0 p 0% Altitude score                          |
-
-## 11. Synchronization of miners in network
-for miners other than m3 lite we can synchronize the miners using GPS signal from satellite. 
-generating pps which is quick and reach accuracy in nanosecond. this is possible with GPS.
-since we proved the reality of the miner the GPS signal is also valid.
-therefore it is a reliable resource.
-
-on the other hand for the m3 lite we can determine the location of the m3 lite by triangulating it using other miners
-using GPS technology. or through the peer to peer communication, IP address or device messages which is slower.
-
-
-## 12. Localization algorithms
+## 5. Localization algorithms
 1. Trilateration:
    This algorithm uses the distances between the LPWAN device and three or more reference points (e.g., base stations) to calculate the device's position.
 2. Multilateration:
    This algorithm is similar to trilateration, but it uses the time difference of arrival (TDOA) of signals from the LPWAN device to multiple reference points to calculate the device's position.
 
-3. Trilateration will be used for M3 lite but Multilateration will be used for miners that has GPS support
+Trilateration will be used for M3 lite but Multilateration will be used for miners that has GPS support
 
-### 12.1 localization through Trilateration
+### 5.1 localization through Trilateration
 Trilateration is a good algorithm to use when you want to find the position of a device using three LPWAN devices (or reference points). Trilateration works by calculating the position of the device based on the distances between the device and the three LPWAN devices.
 
 To use trilateration, you need to know the positions of the three LPWAN devices and the distance between the device and each of the LPWAN devices. There are various methods for measuring the distance between the device and the LPWAN devices, such as using the time of flight of a signal or the strength of the signal.
@@ -475,7 +477,7 @@ int main(int argc, char** argv) {
   return 0;
 }
 ```
-### 12.2 localization through Multilateration
+### 5.2 localization through Multilateration
 If each of the LPWAN devices has a GPS time stamp, it may be possible to use the GPS data to more accurately determine the position of the device. One approach would be to use the GPS time stamps to synchronize the clocks of the LPWAN devices, and then use a technique such as multilateration to calculate the position of the device based on the time difference of arrival (TDOA) of signals from the device to the LPWAN devices.
 
 Multilateration is similar to trilateration, but it uses the TDOA of signals from the device to multiple reference points (in this case, the LPWAN devices) to calculate the device's position. By measuring the TDOA of the signals, it is possible to determine the distance between the device and each of the LPWAN devices more accurately than using techniques such as time of flight or signal strength.
@@ -568,7 +570,37 @@ This implementation uses the GNU Scientific Library (GSL) to solve a least squar
 
 Note that you will need to include the GSL header files and link against the GSL library in order to use this code. You can find more information on installing and using GSL at the following link: https://www.gnu.org/software/gsl/
 
-## 13. third party application
+
+## 6. penalties
+The previous scores are either an indication for User about the mining rate of the miner or the reliability and availability of
+miner for 3rd party users.
+We need to create protection for the system from abuse.
+in the following table we will discuss the causes of penalties
+
+| Cause                                                            | action                                                                     | penalty                                                                                                                 | slash score                                    | How to avoid                                                                                     |
+|------------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Faking miner location                                            | All Miners owned will be Locked                                            | Lose all Crypto connected to Miner and banned from Blockchain                                                           | 100                                            | do not fake miner location                                                                       |
+| miner is down more than 7 days and is still registered in mapper | notification will be sent to owner profile in application and through mail | no benefits from mining or 3rd party using miner as gateway for the same amount of days the miner was down after 7 days | 5                                              | always try to keep miner on. if not possible notify the customer support or unregister the miner |
+
+
+
+
+
+
+## 8. third party application
 plug and play API
-### 13.1 trustworthy localization
-### 13.2 advantages of LPWAN against peer communications
+### 8.1 trustworthy localization
+### 8.2 advantages of LPWAN against peer communications
+
+## . MXC Controller
+There are lists of services that LPWAN can provide to the sensors/end devices.
+For example, an over-the-air firmware update should be multi-casted to the sensors and calculate the position, which requires no computation for the resource-limited sensors.
+Such a service requires resources of both a miner and the Supernode.
+Hence, MXC Controller will specify whether it is willing to pay for the service and its accuracy.
+The more gateways that receive the packets, the more accurate the position will be.
+In addition to this, data NFTs can also facilitate data transactions and would need a service to provision and provide the NFT to the blockchain.
+MXC Controller is designed to bridge the users and supernode/miners for NFT provisioning services.
+Through the MXC Controller design, it is possible that the sensors/end devices pay 1 USD for lifetime free usage of the network, while choosing the available services to subscribe or pay. The outcome of the design will be as follows:
+* Some sensors/end devices get the services and the resources that they demand through auction.
+* Network deployments receive a compensation by offering services and resources to the LPWAN sensors/end devices.
+* All the monetary transactions are done automatically in MXC/BTC/DOT without human intervention
