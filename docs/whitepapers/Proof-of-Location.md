@@ -1,38 +1,58 @@
 ---
-title: Proof-of-Reality
+title: Low-Scale-Certification
 sidebar_position: 3
 ---
 
-# Proof-of-Reality
+# Low-Scale-Certification
 
 ## Table of Contents
 
-- [Proof of Reality](#Proof-of-Reality)
-    - [1. Definition](#1-Definition)
-    - [2. Design Aims](#2-Design-Aims)
-        - [2.1 location](#21-location)
-        - [2.2 Physical existence](#22-Physical-existence)
-          - [2.2.1 Objective Measurement Techniques](#221-objective-measurement-techniques)
-        - [2.3 Synchronization of miners in network](#23-synchronization-of-miners-in-network)
-    - [3. Existence Proof of Miner](#3-Existence-Proof-of-Miner)
-    - [4. Miner trust](#4-Miner-trust)
-      - [4.1 GPS validation](#41-GPS-validation)
-      - [4.2 Miner Peer Listening](#42-Miner-Peer-Listening)
-      - [4.3 IP address](#43-IP-address)
+- [Low-Scale-Certification](#low-scale-certification)
+    - [1. Definitions](#1-definitions)
+      - [1.1 Low Scale Certification](#11-low-scale-certification)
+      - [1.2 Proof of Reality](#12-proof-of-reality)
+    - [2. Design Aims](#2-design-aims)
+      - [2.1 Logic of design](#21-logic-of-design)
+        - [2.1.1 Problem definition](#211-problem-definition)
+        - [2.1.2 Current designs](#212-current-designs)
+        - [2.1.3 Prerequisite](#213-prerequisite)
+      - [2.2 Location](#22-location)
+        - [2.2.1 How are objects localized](#221-how-are-objects-localized)
+        - [2.2.2 Challenges of current localization methods](#222-challenges-of-current-localization-methods) 
+        - [2.2.3 Our localization method goal](#223-our-localization-method-goal)
+      - [2.3 Physical existence](#23-physical-existence)
+        - [2.3.1 Current methods to prove object exists](#231-current-methods-to-prove-object-exists)
+        - [2.3.2 Challenges of current proof of existence methods](#232-challenges-of-current-proof-of-existence-methods)
+        - [2.3.3 Our proof of physicality and existence methods](#233-our-proof-of-physicality-and-existence-methods)
+          - [Holding MXC tokens](#holding-mxc-tokens)
+          - [Objective Measurement Techniques](#objective-measurement-techniques)
+      - [2.4 Synchronization of miners in network](#24-synchronization-of-miners-in-network)
+        - [2.3.1 Why do we require synchronization](#241-why-do-we-require-synchronization)
+        - [2.3.2 Our synchronization method](#242-our-synchronization-method)
+    - [3. LSC of miner and sensors](#3-lsc-of-miner-and-sensors)
+      - [3.1 Risks of fake devices](#31-risks-of-fake-devices)
+      - [3.2 Decentralized solution](#32-decentralized-solution)
+        - [3.2.1 LSC device provisioning](#321-lsc-device-provisioning)
+          - [definition](#definition)
+          - [method](#method)
+        - [3.2.2 Conventional Solutions](#322-conventional-solution)
+    - [4. Miner trust](#4-miner-trust)
+      - [4.1 GPS validation](#41-gps-validation)
+      - [4.2 Miner Peer Listening](#42-miner-peer-listening)
+      - [4.3 IP address](#43-ip-address)
       - [4.4 device messages data](#44-device-messages-data)
-      - [4.5 Miner health metrics and its corresponding scores](#45-Miner-health-metrics-and-its-corresponding-scores)
-        - [4.5.1 Fuel](#451-Fuel)
-        - [4.5.2 uptime](#452-uptime)
-        - [4.5.3 GPS Signal](#453-GPS-Signal)
-        - [4.5.4 Orientation](#454-Orientation)
-        - [4.5.5 Proximity](#455-Proximity)
-        - [4.5.6 Altitude](#456-Altitude)
-        - [4.5.7 Summary](#457-Summary)
-    - [5. Localization algorithms](#5-Localization-algorithms)
-      - [5.1 localization through triangulation](#51-localization-through-triangulation)
-      - [5.2 localization through Trilateration for m3 lite](#52-localization-through-Trilateration-for-m3-lite)
+      - [4.5 Miner health metrics and its corresponding scores](#45-miner-health-metrics-and-its-corresponding-scores)
+        - [4.5.1 Fuel](#451-fuel)
+        - [4.5.2 Uptime](#452-uptime)
+        - [4.5.3 GPS Signal](#453-gps-signal)
+        - [4.5.4 Orientation](#454-orientation)
+        - [4.5.5 Proximity](#455-proximity)
+        - [4.5.6 Altitude](#456-altitude)
+        - [4.5.7 Summary](#457-summary)
+    - [5. Localization algorithms](#5-localization-algorithms)
+      - [5.1 Localization through Trilateration](#51-localization-through-trilateration)
+      - [5.2 Localization through Multilateration](#52-localization-through-multilateration)
     - [6. penalties](#6-penalties)
-    - [7. Synchronization of miners in network](#7-Synchronization-of-miners-in-network)
     - [8. third party application](#8-third-party-application)
       - [8.1 trustworthy localization](#81-trustworthy-localization)
       - [8.2 advantages of LPWAN against peer communications](#82-advantages-of-lpwan-against-peer-communications)
@@ -46,31 +66,90 @@ active tag electricity powered tag
 point 10 with mxc controller
 
 
-## 1. Definition
-Proof of Reality is an upgrade of proof of location. 
+## 1. Definitions
+### 1.1 Low Scale Certification
+* Low-scale certification in LPWAN refers to the verification of standards and requirements for LPWAN devices and networks on a smaller scale. 
+* It is used to validate the performance and reliability of LPWAN devices and networks in a controlled environment. 
+* The standards and requirements for low-scale certification vary based on the specific technology and certifying body. 
+* Low-scale certification ensures that LPWAN devices and networks function properly and meet quality and performance standards before widespread deployment. 
+* The main purpose of low-scale certification in LPWAN is to provide assurance of device and network quality before deployment.
+
+
+### 1.2 Proof of Reality 
+POR is an upgrade of proof of location. 
 In Proof of Reality we overcome the disadvantage of Proof of 
 location which only determines the location of said object.
 one of these disadvantage for example is the location can be faked by GPS spoofing.
 on the other hand, Proof of Reality proves the physical existence of the object 
 and also triangulate the location of the object.
+
 so Proof of Reality provides two things:
 * location of item
 * physical existence of the item
 
 ## 2. Design Aims
-Our main aim is to achieve Proof of Reality and mix the blockchain with the physical world.
-A blockchain that can be parallel to Real World and Meta-verse.
-### 2.1 location
-A location is a rare resource that needs to be calculated by radio signals. 
-Currently, there are three methods to calculate a location.
-* First is a GPS signal, which only works outdoors, and can easily be tampered with as GPS radios can be emulated by software to fake a location. 
-* Secondly, IP address calculations, this is a database technology that relies on the accuracy of the data input about a certain IP address, and often a VPN service can get a new IP for you to fake a location. 
-* Thirdly, a Bluetooth-based location tracking, companies such as Apple are using it. it is hard or nearly impossible to fake the Bluetooth receiver that is held by the general public, as they pass by the Bluetooth tags and tell the network the exact location of the object in a decentralized approach.
+Our main aim is to connect the metaverse with the physical world. 
+to achieve that we need to authenticate the miners and devices in out network using multiple tools to create a blockchain that will be parallel to the Real World and Meta-verse.
 
-MXProtocol designs the Proof of Reality to solve the problem that Bluetooth often
-fails to solve – distance. While Bluetooth only reaches 100-200 meters, MXC miners
-can reach 1-40km to determine the location of the object in a decentralized way, as
-the miners are held by different users.
+### 2.1 Logic of design
+#### 2.1.1 Problem definition
+If the metaverse and the physical world are not connected, it can lead to a number of issues. 
+First and foremost, it becomes easier for scammers and attackers to create fake devices, items, and identities within either metaverse or real world. 
+Without a connection to between the two domains, it is more difficult to verify the authenticity of items and devices, making it easier for fraudsters to pass off counterfeit items as the real thing.
+
+Additionally, the lack of connection between the metaverse and the physical world can also make it more difficult to prevent 
+and detect fraud and other malicious activity within the metaverse. 
+For example, if a device or item in the metaverse is supposed to represent a physical asset, 
+but there is no way to verify that the device or item actually exists in the physical world, 
+it becomes much easier for attackers to create fake devices or items that are not backed by any real-world assets.
+
+Furthermore, not connecting the metaverse and the physical world can lead to the creation of virtual items that have no real-world value, 
+which can lead to a lack of trust in the virtual economy and a decrease in the overall value of virtual assets.
+
+However, connecting the metaverse and the physical world through a blockchain technology can ensure that all items and 
+devices within the metaverse are verified and can be traced back to real-world assets. 
+This can prevent fraud and other malicious activity within the metaverse, 
+and increase trust in the virtual economy and the overall value of virtual assets.
+
+#### 2.1.2 Current designs
+Currently, the metaverse and the real world are seperated. There are several ways that people in the industry are attempting to connect the metaverse to the real world. 
+* Using blockchain technology: Some companies are using blockchain technology to create decentralized virtual worlds and marketplaces where users can buy, sell, and trade virtual assets, such as virtual real estate, in-game items, and other digital goods. 
+* Virtual and Augmented Reality: Developers are using virtual and augmented reality to create immersive experiences that allow users to interact with the metaverse in a more realistic way. 
+* Tokenization: Tokenization of virtual assets is another way to connect the metaverse to the real world. By giving virtual assets a unique digital identity, they can be bought, sold, traded, and even used as collateral for loans in the real world.
+* NFTs (Non-Fungible Tokens): NFTs are digital assets that are unique and cannot be replaced by another asset. They are used to represent ownership of digital assets such as virtual real estate, art, and collectibles in the metaverse and can be bought and sold in the real world. 
+* Real world assets: Some companies are experimenting with the idea of creating virtual representations of real-world assets and allowing them to be traded in the metaverse. This could include anything from virtual stock options to virtual real estate. 
+* Gaming: Games and game items are a significant part of the metaverse, allowing players to earn in-game currency and items that can be used in other games or sold for real-world money.
+
+these solutions however do not affect the physical world. it is true a virtual representation of an object in the real world can be made in the metaverse, however the live state and condition of that said object 
+is not connected to the metaverse. the item could be damaged, destroyed, repaired or changed. it could be moved from one place to another. however the current solution does not show that.
+
+#### 2.1.3 Prerequisite
+in order to achieve true connection between the Metaverse and the Real world. the state, location and ownership of the object should always be known, updated
+and observable.
+the tools we will use to achieve that are:
+* Low Scale Certification (LSC)
+* Proof of Reality (POR)
+
+
+### 2.2 Location
+A location is a rare resource that needs to be calculated by radio signals.
+#### 2.2.1 How are objects localized
+Currently, there are three methods to calculate a location.
+
+* GPS: Global Positioning System (GPS) is a widely used tool for determining the location of an object. It uses a network of satellites to triangulate the position of a device on the ground.
+* BLE (Bluetooth Low Energy): Bluetooth Low Energy (BLE) is a wireless technology that can be used to determine the location of an object. It uses a technique called "beaconing" where a device sends out a signal that can be picked up by other devices in the area. 
+* RTLS (Real-Time Location Systems): Real-Time Location Systems (RTLS) are a set of technologies that can be used to determine the location of an object in real-time. They can use a combination of technologies such as GPS, BLE, Wi-Fi, and RFID to determine the location of an object.
+
+#### 2.2.2 Challenges of current localization methods
+
+* GPS: A person can potentially use a GPS spoofing device or software to fake their location. These devices or software programs can mimic the signals of a GPS satellite and trick a GPS receiver into thinking it is in a different location.
+* BLE (Bluetooth Low Energy): A person can potentially use a BLE jammer to interfere with the signals being sent by the BLE beacons that are used to determine location. This can cause the system to provide inaccurate location data.
+* RTLS (Real-Time Location Systems): A person can potentially use a jammer or a device that generates false location data to interfere with the signals being used by the RTLS system. Additionally, a person can potentially use a device that can mimic or imitate the signal of another device in the same network, tricking the system into believing the fake device is in a different location
+
+
+#### 2.2.3 Our localization method goal
+
+In our solution we will counter all tampering attempts and provide accurate result by using a combination of technologies and verification method.
 
 Proof of Reality has a localization algorithm that utilizes LPWAN uplink data with timestamps to triangulate the location of LPWAN sensors and M2 Pro miners. 
 In order to triangulate the sensors, the algorithms first confirm the location of the miners with the downlinks they sent to the sensors. 
@@ -85,11 +164,48 @@ In the figure above, we can see how a sensor NFT’s Proof of reality works.
 
 All the miners that can provide Proof of Reality will be able to validate more MXC results than the third party miners.
 
-### 2.2 Physical existence
+### 2.3 Physical existence
 "I think therefore I am", is the first principle of René Descartes's philosophy to prove our existence. well in MXC this
-is not enough, to prove the reality of a 3rd party device utilizing our network we need to verify that miners used are unbiased.
+is not enough, to prove the reality of a 3rd party device utilizing our network we need to verify that miners used are unbiased and tamper free.
+The objects in the blockchain should always be observable and updated by the system, so it can achieve true connection between the metaverse and reality.
 
-#### 2.2.1 Objective Measurement Techniques
+#### 2.3.1 Current methods to prove object exists
+
+* RFID (Radio-Frequency Identification) tags: Many blockchain companies, use RFID tags to link physical objects to a unique digital identity on the blockchain. These tags can be affixed to the object and can contain information such as the object's location, condition, and other characteristics. This information is recorded on the blockchain, providing a permanent and unchangeable record of the object's existence. 
+* IoT (Internet of Things) devices: Some blockchain companies, use IoT devices, such as sensors, to collect data on an object's location, condition, and other characteristics. This data is then recorded on the blockchain, providing a permanent and unchangeable record of the object's existence. 
+* Using smart contract: Some blockchain companies use smart contract to prove the existence of an object, the smart contract is designed to execute automatically when certain conditions are met, for example, when the physical object is delivered to a specific location, the smart contract will automatically update the blockchain with the object’s location and other information.  
+* QR Codes: Some blockchain companies use QR codes to provide a unique identification for the physical object, the QR code when scanned will lead to a webpage that contains information about the object, location, authenticity, and other information that can prove the object's existence
+* Hash of the object's information : Some blockchain companies use the hash of the object's information and store it on the blockchain, this hash can be used later to prove the object's existence.
+
+#### 2.3.2 Challenges of current proof of existence methods
+Do these methods replace the eye? The ultimate proof of an object's existence is through direct observation with the human eye.
+That is why whatever method is chosen it will always have a challenge. but we try to minimize it and make it as small as possible.
+Therefore, it's important to consider the use of multiple methods to confirm the authenticity of an object.
+
+* RFID tag cloning: RFID tags can be cloned by using specialized equipment to copy the information stored on the tag. This would allow an attacker to create a counterfeit RFID tag that is identical to the original, making it difficult to detect.
+* IoT device spoofing: IoT devices can be spoofed by creating a fake device that mimics the behavior of the real device. This would allow an attacker to send false information to the blockchain, making it difficult to detect. 
+* Smart contract manipulation: Smart contracts can be manipulated by an attacker to change the conditions required to execute the contract. This would allow an attacker to change the location or condition of an object, making it difficult to detect.  
+* QR code tampering: QR codes can be tampered with by altering the information that it points to or by creating a fake QR code that points to a fake webpage. 
+* Hash manipulation: The hash of the object's information can be manipulated by altering the information of the object before calculating the hash and storing it on the blockchain.
+
+#### 2.3.3 Our proof of physicality and existence methods
+Since the ultimate proof of an object's existence is through direct observation with the human eye, 
+it's important to understand that any method used alone cannot replace the human eye's capabilities entirely. 
+However, By utilizing a combination of several observation and analysis methods, 
+we can approach the human eye's capabilities as much as possible. 
+This can provide a comprehensive and robust proof of an object's physicality, 
+making it more difficult for counterfeiters to successfully replicate an object. 
+By using multiple methods, we can gather information on the object's characteristics and detect any inconsistencies, 
+making it easier to confirm the authenticity of an object.
+
+##### Holding MXC tokens
+Allowing devices in the MXC network to hold MXC tokens is an effective method for providing verification that these 
+devices are genuine members of the network. The MXC tokens themselves, being a digital asset on the blockchain, 
+are resistant to counterfeiting due to their immutable and transparent nature. By being signed and verified on the blockchain, 
+these tokens can be traced back to the device that holds them, making it near impossible for an attacker to counterfeit them. This provides a strong proof of the device's authenticity and its membership in the MXC network.
+Furthermore, this approach also allows for a decentralized and trustless verification of the devices within the network, as the blockchain ensures that the tokens are securely and transparently distributed to the devices that are part of the network. This eliminates the need for a centralized authority to verify devices, reducing the risk of fraud and increasing the overall security of the network. Additionally, the ability to trace the history of the tokens ensures that the devices have not been tampered with or compromised. Overall, allowing devices in the MXC network to hold MXC tokens provides a robust and secure method for verifying the authenticity of devices within the network, as well as ensuring the integrity of the network as a whole.
+
+##### Objective Measurement Techniques
 OMT in the case of determining the physical existence of an object covers 4 possibilities:
 1. Use multiple sources to verify the existence of the object. This could include using multiple observers to look for the object, or using sensors or other automated systems to detect its presence. 
    * Like creating a classification machine learning model that verifies and cross-reference that object with its database.
@@ -109,11 +225,12 @@ In the next chapters, Miner scores affecting Physical existence will be discusse
 * Miner health
 * Triangulation
 
-In addition, devices holding MXC tokens
+### 2.4 Synchronization of miners in network
+Our System tracks the devices in Real-time. monitoring and tracking of the devices to observe any changes as they occur in real-time.
+In order to achieve that we require good synchronization of miners in the network.
 
-### 2.3 Synchronization of miners in network
-If there is no synchronization between LPWAN devices,
-several challenges may arise when trying to determine the location of a device using
+#### 2.4.1 Why do we require synchronization
+If there is no synchronization between LPWAN devices, several challenges may arise when trying to determine the location of a device using
 localization algorithms.
 1. Time of Arrival (ToA) or Time Difference of Arrival (TDoA) based methods rely on accurate timestamps of when the signal was received by each device, so if there is no synchronization between devices, the timestamps may be inaccurate, leading to errors in the calculated distances and ultimately resulting in a less accurate location estimate.
 2. Without synchronization, it becomes difficult to determine the time of flight of the signal, resulting in less accurate distance estimates, which ultimately leads to a less accurate location estimate.
@@ -122,14 +239,48 @@ localization algorithms.
 5. Without synchronization, it becomes difficult to determine the time of flight of the signal, resulting in less accurate distance estimates, which ultimately leads to a less accurate location estimate.
 6. Additionally, the lack of synchronization can also make it harder to analyze the data from the devices over time, as it becomes harder to relate the data from different devices to a common time frame.
 
-To overcome these challenges, it's important to have a good time synchronization between the devices and gateways, using methods such as GPS time, NTP time or PTP time.
+#### 2.4.2 Our synchronization method
+
+Our System utilizes advanced synchronization techniques to ensure that all devices and gateways in the network are in sync with one another. 
+This includes the use of GPS time, NTP time, and PTP time to accurately synchronize the devices and gateways.
+
+By implementing these methods, we are able to overcome the challenges of determining the location of a device using localization algorithms. 
+This allows us to achieve a high degree of accuracy and precision in our location estimates, 
+and ensures that our system is able to effectively track and monitor devices in real-time, observing any changes as they occur.
+
+Additionally, our synchronization methods also make it easier to analyze data from the devices over time, 
+as all data can be related to a common time frame. This allows us to gain a deeper understanding of the devices and their behaviors, 
+and make more informed decisions based on the data collected. 
+Overall, our synchronization techniques are crucial in ensuring the effectiveness and reliability of our real-time tracking and monitoring system.
 
 
-## 3. Existence Proof of Miner
+## 3. LSC of Miner and sensors
+Proving that a miner is a miner is a challenge because it is difficult to verify the physical existence 
+and authenticity of the mining equipment and the same goes for sensors.
+A fake device could be created that mimics the characteristics of a legitimate miner or device, 
+and it can be used to gain unauthorized access to the network and potentially compromise the security of the blockchain system.
+### 3.1 Risks of fake devices
+Proving that a miner is a legitimate miner can be challenging because malicious actors can create fake devices that mimic the characteristics of real miners.
+a fake device can:
+* disrupt the network by flooding it with fake transactions, slowing down the network and making it difficult for legitimate miners to participate. 
+* manipulate the network by controlling a large percentage of the mining power, potentially leading to a 51% attack and allowing the attacker to control the network, double spend, and reverse transactions. 
+* also disrupt the consensus mechanism by falsely reporting the state of the network, leading to forks and causing confusion among the honest nodes. 
+* also cause damage to the network's security by attempting to steal private keys or personal information from users connected to it.
+
+### 3.2 Decentralized solution
+
 As a decentralized network we do not need a 3rd party to prove that our community's miners exist, because this 
-defeats the idea of decentralization. 
-AAlthough determining the location of Miner by secure peer listening or GPS localization. these aspects can be hacked
-as an extra protection layer the miners will hold MXC tokens, and we will implement that the item in the network will 
+defeats the idea of decentralization.
+Although determining the location of Miner by secure peer listening or GPS localization. these aspects can be hacked
+as an extra protection we will implement certain methods
+
+#### 3.2.1 LSC device provisioning
+##### definition
+##### method
+
+#### 3.2.2 Conventional solutions
+
+layer the miners will hold MXC tokens, and we will implement that the item in the network will 
 hold MXC tokens.
 
 Since the blockchain is secured and can be tracked by the community, We had the idea that the Miner can hold
@@ -138,8 +289,8 @@ Cryptocurrencies AKA Miner Fuel to prove that the miner exist in the network sin
 (add picture ????)
 (picture of miner network parallel to it a picture of blockchain network)
 
-so the proof of stacking in Miner helps in proving the existence of the miner.
-the more the miner stack the more trustworthy the miner is. this is one aspect of miner health.
+so the proof of staking in Miner helps in proving the existence of the miner.
+the more the miner stake the more trustworthy the miner is. this is one aspect of miner health.
 
 ## 4. Miner trust
 We are building this network so 3rd party businesses can utilize it. naturally these businesses would prefer to use
@@ -177,7 +328,7 @@ each of this metrics will have a score:
 | Device messages Data | popularity score   | 100%  | percentage              |
 | Miner Health metrics | Reliability score  | 200   | percentage out of 200   |
 
-So as follows proof of stack through blockchain proofs the validity of the above-mentioned metrics.
+So as follows proof of stake through blockchain proofs the validity of the above-mentioned metrics.
 when these metrics are trustworthy and accurate then the physical existence of the miner is proved and the location
 of the miner is validated. thus proof of Reality achieved.
 
@@ -266,7 +417,7 @@ for more information about the definition of these metrics please go [here](../d
 each metric will have a different score. in total the score will be 200.
 
 #### 4.5.1 Fuel
-The Fuel refers to the Cryptocurrency stacked in the tank.
+The Fuel refers to the Cryptocurrency stored in the tank.
 * if the tank has 100 tokens and the tank capacity is 100. then this miner Fuel score is 100%
 * if the tank has  0  tokens and the tank capacity is 100. then this miner Fuel score is 0%
 * if the tank has  200  tokens and the tank capacity is 100. then this miner Fuel score is still 100%
@@ -376,7 +527,7 @@ we need special algorithms in order to locate these data
 
 Trilateration will be used for M3 lite but Multilateration will be used for miners that has GPS support
 
-### 5.1 localization through Trilateration
+### 5.1 Localization through Trilateration
 Trilateration is a good algorithm to use when you want to find the position of a device using three LPWAN devices (or reference points). Trilateration works by calculating the position of the device based on the distances between the device and the three LPWAN devices.
 
 To use trilateration, you need to know the positions of the three LPWAN devices and the distance between the device and each of the LPWAN devices. There are various methods for measuring the distance between the device and the LPWAN devices, such as using the time of flight of a signal or the strength of the signal.
@@ -477,7 +628,7 @@ int main(int argc, char** argv) {
   return 0;
 }
 ```
-### 5.2 localization through Multilateration
+### 5.2 Localization through Multilateration
 If each of the LPWAN devices has a GPS time stamp, it may be possible to use the GPS data to more accurately determine the position of the device. One approach would be to use the GPS time stamps to synchronize the clocks of the LPWAN devices, and then use a technique such as multilateration to calculate the position of the device based on the time difference of arrival (TDOA) of signals from the device to the LPWAN devices.
 
 Multilateration is similar to trilateration, but it uses the TDOA of signals from the device to multiple reference points (in this case, the LPWAN devices) to calculate the device's position. By measuring the TDOA of the signals, it is possible to determine the distance between the device and each of the LPWAN devices more accurately than using techniques such as time of flight or signal strength.
