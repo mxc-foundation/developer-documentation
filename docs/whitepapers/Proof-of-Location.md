@@ -24,8 +24,8 @@ sidebar_position: 3
         - [2.3.2 Challenges of current proof of existence methods](#232-challenges-of-current-proof-of-existence-methods)
         - [2.3.3 Our proof of physicality and existence methods](#233-our-proof-of-physicality-and-existence-methods)
       - [2.4 Synchronization of miners in network](#24-synchronization-of-miners-in-network)
-        - [2.3.1 Why do we require synchronization](#241-why-do-we-require-synchronization)
-        - [2.3.2 Our synchronization method](#242-our-synchronization-method)
+        - [2.4.1 Why do we require synchronization](#241-why-do-we-require-synchronization)
+        - [2.4.2 Our synchronization method](#242-our-synchronization-method)
     - [3. LSC of miner and sensors](#3-lsc-of-miner-and-sensors)
       - [3.1 Risks of fake devices](#31-risks-of-fake-devices)
       - [3.2 Decentralized solution](#32-decentralized-solution)
@@ -52,10 +52,22 @@ sidebar_position: 3
       - [4.2 Localization algorithms](#42-localization-algorithms)
         - [4.2.1 Localization through Trilateration](#421-localization-through-trilateration)
         - [4.2.2 Localization through Multilateration](#422-localization-through-multilateration)
-      - [4.3 penalties](#43-penalties)
-    - [5. third party application](#5-third-party-application)
-      - [5.1 trustworthy localization](#51-trustworthy-localization)
-      - [5.2 advantages of LPWAN against peer communications](#52-advantages-of-lpwan-against-peer-communications)
+    - [5. Consensus Group](#5-consensus-group)
+      - [5.1 why we need Consensus Groups](#51-why-we-need-consensus-groups)
+      - [5.2 Consensus Group Ground Rules](#52-consensus-group-ground-rules)
+        - [5.2.1 Decision-making Process](#521-decision-making-process)
+        - [5.2.2 Inclusiveness](#522-inclusiveness)
+        - [5.2.3 Accountability](#523-accountability)
+        - [5.2.4 Flexibility](#524-flexibility)
+        - [5.2.5 Shared Control](#525-shared-control)
+        - [5.2.6 Commitment to implementation](#526-commitment-to-implementation)
+        - [5.2.7 Validation](#527-validation)
+        - [5.2.8 Time Synchronization](#528-time-synchronization)
+        - [5.2.9 Quorum](#529-quorum)
+        - [5.2.10 Data Aggregation](#5210-data-aggregation)
+        - [5.2.11 Decision Threshold](#5211-decision-threshold)
+        - [5.2.12 Penalty Mechanism](#5212-penalty-mechanism)
+    - [6. MXC Controller](#6-mxc-controller)
 
 
 ## 1. Definitions
@@ -84,6 +96,23 @@ real-world item and not a virtual or simulated representation. This provides add
 authenticity of the object's location information.
 
 Together, these two aspects of LSC provide a comprehensive and secure method of determining both the physical presence and location of an object.
+
+### 1.2 Consensus Group
+A consensus group in blockchain technology is a group of nodes that participate in the process of validating 
+and confirming transactions on a blockchain network. 
+The goal of a consensus group is to achieve agreement or consensus among its members on the state of the blockchain ledger, 
+ensuring that all transactions are valid and consistent with the rules of the network.
+
+In blockchain technology, consensus is crucial to the security and integrity of the network. 
+By ensuring that all nodes agree on the state of the blockchain, 
+the consensus group prevents any single node from acting maliciously or tampering with the blockchain. 
+This is achieved through a consensus algorithm, which establishes a set of rules and procedures for validating 
+and confirming transactions, and for resolving conflicts or discrepancies between nodes.
+
+Consensus groups in blockchain technology are often decentralized and open, 
+meaning that anyone can participate in the validation process by running a node on the network. 
+This helps to ensure that the decision-making process is transparent, fair, and democratic, 
+and that the network is resilient to attacks or failures.
 
 ## 2. Design Aims
 Our primary objective is to establish a seamless connection between the metaverse and the physical world. 
@@ -150,8 +179,9 @@ In order to establish a true connection between the metaverse and the real world
 
 To achieve this, we will utilize two key tools:
 
-- Low-Scale Certification (LSC) Location
 - Low-Scale Certification (LSC) Physical existence
+- Low-Scale Certification (LSC) Location
+
 
 LSC will allow us to track and verify the authenticity of objects within the metaverse, 
 ensuring that their state, location, and ownership information is up-to-date and accurate. 
@@ -161,7 +191,7 @@ By using these tools, we aim to bridge the gap between the metaverse and the rea
 ### 2.2 Location
 A location is a rare resource that needs to be calculated by radio signals.
 #### 2.2.1 How are objects localized
-Currently, there are three methods to calculate a location.
+Examples of methods to calculate a location.
 
 * GPS: Global Positioning System (GPS) is a widely used tool for determining the location of an object. 
 It uses a network of satellites to triangulate the position of a device on the ground.
@@ -193,7 +223,8 @@ tricking the system into believing the fake device is in a different location
 
 #### 2.2.3 Our localization method goal
 
-In our solution we will counter all tampering attempts and provide accurate result by using a combination of technologies and verification method.
+In our solution we will counter all tampering attempts and provide accurate result by using 
+a combination of technologies and verification method.
 
 
 ### 2.3 Physical existence
@@ -243,10 +274,8 @@ This would allow an attacker to send false information to the blockchain, making
 * Smart contract manipulation: Smart contracts can be manipulated by an attacker to change the conditions required to 
 execute the contract. This would allow an attacker to change the location or condition of an object, making it difficult to detect.
 
-
 * QR code tampering: QR codes can be tampered with by altering the information that it points to or by creating
 a fake QR code that points to a fake webpage. 
-
 
 * Hash manipulation: The hash of the object's information can be manipulated by altering the information of 
 the object before calculating the hash and storing it on the blockchain.
@@ -313,7 +342,43 @@ as an extra protection we will implement certain methods
 
 #### 3.2.1 LSC device provisioning
 ##### definition
+LSC is a technology used to prove the existence of a LPWAN device in the real world. 
+It is important in applications where LPWAN end-devices perform tasks for which require interactions with blockchain. 
+It is important to create a strategy of detecting and minimizing the risk of malicious actions by actors pretending 
+to be a real, physical device.
+
 ##### method
+Device provisioning of the LPWAN device is a process of establishing a shared secret key between the device 
+and the cloud server to exchange information in an encrypted and secure way.  
+The protocol is based on the Key exchange protocol that uses asymmetric cryptography and it's based on PID unique device identifier. 
+PID is purchased by the device manufacturer from the SuperNode for a fee.
+- this PID is valid for 12 months and a new fee is paid to get another 12 months extension.
+
+###### Step 1 Generate the PID
+The PID is created by the Device creator on the Super Node using MXC Controller. 
+The PID costs some fee. The SN then creates a NFT on the blockchain with 
+the PID attached a secret, only visible to the owner of the NFT. The NFT is then sent to Creators wallet.
+
+###### Step 2 PID is programmed into the device.
+The creator needs to flash the PID into the sensor device it wants to produce. 
+Also needs to print a label with the PID so the device can be added to the DD app by scanning it.
+
+###### Step 3 Device provisioning
+PID is just an authenticator of the device, to be able to join the device needs to perform self provisioning after it is manufactured.
+
+Two types of keys should be created and exchanged during this process - AS128 keys for LPWAN, and ECC keys 
+for authentication and signing. The AS128 key will be stored on the Device Provisioning server. 
+The Public ECC key will be stored on blockchain and the Private ECC key will be only known to the device itself.
+
+The provisioning message sent by the Sensor Device is forwarded to the SuperNode by the Miner, 
+Miner signs the message with its private Key. The miner has its Public Key stored on the blockchain because 
+it was provisioned earlier so we know it is real.
+
+Supernode generates all the keys and sends the AS128 and ECC keys to the Device. 
+At the same time it signs the received signed message from the Miner with its own private key 
+and creates a new NFT with this message chain and Device Public key and attaches it to the original NFT with PID on the blockchain. 
+The NFT can contain more information like the EUI of the device, certificate of the manufacturer and so on.
+
 
 #### 3.2.2 Conventional solutions
 
@@ -365,7 +430,7 @@ In the next chapters, Miner scores affecting Physical existence will be discusse
 
 
 ## 4. LSC of location
-We are building this network so 3rd party businesses can utilize it. naturally these businesses would prefer to use
+We are building this network so 3rd party services can utilize it. naturally these businesses would prefer to use
 nodes (miners) that are functional and trustworthy.
 
 Our solution has a localization algorithm that utilizes LPWAN uplink data with timestamps to triangulate the location of LPWAN sensors and our miners.
@@ -540,9 +605,9 @@ if the GPS signal of the miner is not strong 3rd parties will not be able to
 use the miner. to locate their items using network you need strong signals from 
 nodes to triangulate the location of the item. therefore the GPS signal score is also 50.
 
-theory; if the GPS location and the peer miner communication has a huge error
+theory; if the GPS location and the TDoA triangulation from other miners has a huge error
 the less score you have. the less the error the more score you have
-(************) this is wrong
+
 delta error is 20 m
 
 if error is 0 m trustworthy score is + 50
@@ -624,222 +689,124 @@ we need special algorithms in order to locate these data
 Trilateration will be used for M3 lite but Multilateration will be used for miners that has GPS support
 
 #### 4.2.1 Localization through Trilateration
-Trilateration is a good algorithm to use when you want to find the position of a device using three LPWAN devices (or reference points). Trilateration works by calculating the position of the device based on the distances between the device and the three LPWAN devices.
+Trilateration is a good algorithm to use when you want to find the position of a device using three LPWAN devices (or reference points).
+Trilateration works by calculating the position of the device based on the distances between the device and the three LPWAN devices.
 
-To use trilateration, you need to know the positions of the three LPWAN devices and the distance between the device and each of the LPWAN devices. There are various methods for measuring the distance between the device and the LPWAN devices, such as using the time of flight of a signal or the strength of the signal.
+To use trilateration, you need to know the positions of the three LPWAN devices and the distance between the device and 
+each of the LPWAN devices. There are various methods for measuring the distance between the device and the LPWAN devices, 
+such as using the time of flight of a signal or the strength of the signal.
 
-Once you have this information, you can use trilateration to calculate the position of the device by solving a system of three equations, one for each of the LPWAN devices. This can be done using a variety of methods, such as linear least squares or iterative methods.
+Once you have this information, you can use trilateration to calculate the position of the device by solving 
+a system of three equations, one for each of the LPWAN devices. 
+This can be done using a variety of methods, such as linear least squares or iterative methods.
 
-Overall, trilateration is a relatively simple and power-efficient method for finding the position of a device using three LPWAN devices, and it is often used in applications where accuracy is important.
-```c
-#include <math.h>
-#include <stdio.h>
+Overall, trilateration is a relatively simple and power-efficient method for finding the position of a device using 
+three LPWAN devices, and it is often used in applications where accuracy is important.
 
-struct Point {
-  double x;
-  double y;
-  double z;
-};
-
-// Computes the distance between two points
-double distance(struct Point a, struct Point b) {
-  return sqrt((a.x - b.x) * (a.x - b.x) +
-              (a.y - b.y) * (a.y - b.y) +
-              (a.z - b.z) * (a.z - b.z));
-}
-
-// Solves for the location of the object using trilateration
-struct Point trilaterate(struct Point referencePoints[3], double distances[3]) {
-  struct Point objectLocation;
-
-  // Compute position of reference point 0 in spherical coordinates
-  double x0 = referencePoints[0].x;
-  double y0 = referencePoints[0].y;
-  double z0 = referencePoints[0].z;
-  double r0 = distances[0];
-  double phi0 = atan2(y0, x0);
-  double theta0 = atan2(sqrt(x0 * x0 + y0 * y0), z0);
-
-  // Compute position of reference point 1 in spherical coordinates
-  double x1 = referencePoints[1].x;
-  double y1 = referencePoints[1].y;
-  double z1 = referencePoints[1].z;
-  double r1 = distances[1];
-  double phi1 = atan2(y1, x1);
-  double theta1 = atan2(sqrt(x1 * x1 + y1 * y1), z1);
-
-  // Compute position of reference point 2 in spherical coordinates
-  double x2 = referencePoints[2].x;
-  double y2 = referencePoints[2].y;
-  double z2 = referencePoints[2].z;
-  double r2 = distances[2];
-  double phi2 = atan2(y2, x2);
-  double theta2 = atan2(sqrt(x2 * x2 + y2 * y2), z2);
-
-  // Convert spherical coordinates to Cartesian coordinates
-  struct Point p0 = {r0 * sin(theta0) * cos(phi0), r0 * sin(theta0) * sin(phi0), r0 * cos(theta0)};
-  struct Point p1 = {r1 * sin(theta1) * cos(phi1), r1 * sin(theta1) * sin(phi1), r1 * cos(theta1)};
-  struct Point p2 = {r2 * sin(theta2) * cos(phi2), r2 * sin(theta2) * sin(phi2), r2 * cos(theta2)};
-
-  // Compute cross product of p1 - p0 and p2 - p0
-  double cx = (p1.y - p0.y) * (p2.z - p0.z) - (p2.y - p0.y) * (p1.z - p0.z);
-  double cy = (p1.z - p0.z) * (p2.x - p0.x) - (p2.z - p0.z) * (p1.x - p0.x);
-  double cz = (p1.x - p0.x) * (p2.y - p0.y) - (p2.x - p0.x) * (p1.y - p0.y);
-  double p01 = sqrt((p1.x - p0.x) * (p1.x - p0.x) + (p1.y - p0.y) * (p1.y - p0.y) + (p1.z - p0.z) * (p1.z - p0.z));
-  double p02 = sqrt((p2.x - p0.x) * (p2.x - p0.x) + (p2.y - p0.y) * (p2.y - p0.y) + (p2.z - p0.z) * (p2.z - p0.z));
-  double p12 = sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y) + (p2.z - p1.z) * (p2.z - p1.z));
-  double denom = 2 * ((p1.x - p0.x) * (p2.x - p0.x) + (p1.y - p0.y) * (p2.y - p0.y) + (p1.z - p0.z) * (p2.z - p0.z))
-
-  // Compute object location using trilateration formula
-  objectLocation.x = p0.x + ((r0 * r0 - r1 * r1 + p01 * p01) / denom) * (p2.x - p0.x) + ((r0 * r0 - r2 * r2 + p02 * p02) / denom) * (p1.x - p0.x);
-  objectLocation.y = p0.y + ((r0 * r0 - r1 * r1 + p01 * p01) / denom) * (p2.y - p0.y) + ((r0 * r0 - r2 * r2 + p02 * p02) / denom) * (p1.y - p0.y);
-  objectLocation.z = p0.z + ((r0 * r0 - r1 * r1 + p01 * p01) / denom) * (p2.z - p0.z) + ((r0 * r0 - r2 * r2 + p02 * p02) / denom) * (p1.z - p0.z);
-
-   // Check if trilateration is valid by verifying that the object is within the sphere defined by each reference point
-   if (fabs(distance(objectLocation, referencePoints[0]) - r0) > 0.001 ||
-       fabs(distance(objectLocation, referencePoints[1]) - r1) > 0.001 ||
-       fabs(distance(objectLocation, referencePoints[2]) - r2) > 0.001) {
-        // Trilateration is invalid, set object location to (0, 0, 0)
-        objectLocation.x = 0;
-        objectLocation.y = 0;
-        objectLocation.z = 0;
-    }
-    return objectLocation;
-}
-int main(int argc, char** argv) {
-  // Set up reference points
-  struct Point referencePoints[3];
-  referencePoints[0] = (struct Point){0, 0, 0};
-  referencePoints[1] = (struct Point){10, 0, 0};
-  referencePoints[2] = (struct Point){0, 10, 0};
-
-  // Set up distances to reference points
-  double distances[3] = {10, 15, 20};
-
-  // Determine object location using trilateration
-  struct Point objectLocation = trilaterate(referencePoints, distances);
-
-  printf("Object location: (%.2f, %.2f, %.2f)\n", objectLocation.x, objectLocation.y, objectLocation.z);
-
-  return 0;
-}
-```
 #### 4.2.2 Localization through Multilateration
-If each of the LPWAN devices has a GPS time stamp, it may be possible to use the GPS data to more accurately determine the position of the device. One approach would be to use the GPS time stamps to synchronize the clocks of the LPWAN devices, and then use a technique such as multilateration to calculate the position of the device based on the time difference of arrival (TDOA) of signals from the device to the LPWAN devices.
+If each of the LPWAN devices has a GPS time stamp, it may be possible to use the GPS data to more accurately determine 
+the position of the device. One approach would be to use the GPS time stamps to synchronize the clocks of the LPWAN devices, 
+and then use a technique such as multilateration to calculate the position of the device based on the time difference of arrival 
+(TDOA) of signals from the device to the LPWAN devices.
 
-Multilateration is similar to trilateration, but it uses the TDOA of signals from the device to multiple reference points (in this case, the LPWAN devices) to calculate the device's position. By measuring the TDOA of the signals, it is possible to determine the distance between the device and each of the LPWAN devices more accurately than using techniques such as time of flight or signal strength.
+Multilateration is similar to trilateration, but it uses the TDOA of signals from the device to multiple 
+reference points (in this case, the LPWAN devices) to calculate the device's position. By measuring the TDOA of the signals, 
+it is possible to determine the distance between the device and each of the LPWAN devices more accurately than using techniques 
+such as time of flight or signal strength.
 
-Overall, using the GPS time stamps in conjunction with a technique such as multilateration can potentially provide more accurate positioning than using trilateration alone, but it may also be more complex and power-intensive. The best approach will depend on the specific requirements and constraints of the application.
-
-example code for multilateration
-```c
-#include <math.h>
-#include <stdio.h>
-
-#define NUM_REFERENCE_POINTS 3
-
-struct Point {
-  double x;
-  double y;
-  double z;
-};
-
-struct ReferencePoint {
-  struct Point location;
-  double distance;
-};
-
-// Computes the distance between two points
-double distance(struct Point a, struct Point b) {
-  return sqrt((a.x - b.x) * (a.x - b.x) +
-              (a.y - b.y) * (a.y - b.y) +
-              (a.z - b.z) * (a.z - b.z));
-}
-
-// Solves for the location of the object using multilateration
-struct Point multilaterate(struct ReferencePoint referencePoints[]) {
-  struct Point objectLocation;
-
-  // Initialize matrices
-  double A[NUM_REFERENCE_POINTS][3];
-  double b[NUM_REFERENCE_POINTS];
-
-  // Set up least squares system
-  for (int i = 0; i < NUM_REFERENCE_POINTS; i++) {
-    struct Point rp = referencePoints[i].location;
-    double d = referencePoints[i].distance;
-    A[i][0] = 2 * (rp.x - objectLocation.x);
-    A[i][1] = 2 * (rp.y - objectLocation.y);
-    A[i][2] = 2 * (rp.z - objectLocation.z);
-    b[i] = d * d - objectLocation.x * objectLocation.x - objectLocation.y * objectLocation.y - objectLocation.z * objectLocation.z + rp.x * rp.x + rp.y * rp.y + rp.z * rp.z;
-  }
-
-  // Solve least squares system
-  gsl_matrix_view m = gsl_matrix_view_array(A, NUM_REFERENCE_POINTS, 3);
-  gsl_vector_view c = gsl_vector_view_array(b, NUM_REFERENCE_POINTS);
-  gsl_vector *x = gsl_vector_alloc(3);
-  int s;
-  gsl_permutation *p = gsl_permutation_alloc(3);
-  gsl_linalg_LU_decomp(&m.matrix, p, &s);
-  gsl_linalg_LU_solve(&m.matrix, p, &c.vector, x);
-
-  // Update object location
-  objectLocation.x = gsl_vector_get(x, 0);
-  objectLocation.y = gsl_vector_get(x, 1);
-  objectLocation.z = gsl_vector_get(x, 2);
-
-  // Clean up
-  gsl_permutation_free(p);
-  gsl_vector_free(x);
-
-  return objectLocation;
-}
-
-int main(int argc, char** argv) {
-  // Set up reference points
-  struct ReferencePoint referencePoints[NUM_REFERENCE_POINTS];
-  referencePoints[0].location = (struct Point){0, 0, 0};
-  referencePoints[0].distance = 10;
-  referencePoints[1].location = (struct Point){10, 0, 0};
-  referencePoints[1].distance = 15;
-  referencePoints[2].location = (struct Point){0, 10, 0};
-  referencePoints[2].distance = 20;
-
-  // Determine object location using multilateration
-  struct Point objectLocation = multilaterate(referencePoints);
-
-  printf("Object location: (%.2f, %.2f, %.2f)\n", objectLocation.x, objectLocation.y, objectLocation.z);
-
-  return 0;
-}
-```
-This implementation uses the GNU Scientific Library (GSL) to solve a least squares system of equations to determine the location of the object. It sets up the system of equations using the reference points and distances, and then uses GSL's linear algebra functions to solve for the location of the object.
-
-Note that you will need to include the GSL header files and link against the GSL library in order to use this code. You can find more information on installing and using GSL at the following link: https://www.gnu.org/software/gsl/
+Overall, using the GPS time stamps in conjunction with a technique such as multilateration can potentially provide more accurate 
+positioning than using trilateration alone, but it may also be more complex and power-intensive. 
+The best approach will depend on the specific requirements and constraints of the application.
 
 
-## 4.3 penalties
-The previous scores are either an indication for User about the mining rate of the miner or the reliability and availability of
-miner for 3rd party users.
-We need to create protection for the system from abuse.
-in the following table we will discuss the causes of penalties
+## 5. Consensus Group
+The consensus group in our blockchain network starts with small clusters of nodes located all over the globe. 
+These small consensus groups use a consensus algorithm to validate and confirm transactions on the network and 
+maintain the integrity of the blockchain ledger.
 
-| Cause                                                            | action                                                                      | penalty                                                                                                                 | slash score                                    | How to avoid                                                                                     |
-|------------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| Faking miner location                                            | All Miners owned will be Locked                                             | Lose all Crypto connected to Miner and banned from Blockchain                                                           | 100                                            | do not fake miner location                                                                       |
-| miner is down more than 7 days and is still registered in mapper | notification will be sent to owner profile in application and through email | no benefits from mining or 3rd party using miner as gateway for the same amount of days the miner was down after 7 days | 5                                              | always try to keep miner on. if not possible notify the customer support or unregister the miner |
+As more nodes join the network and start running the consensus algorithm, 
+these small clusters begin to merge with one another, gradually growing in size and complexity. 
+Over time, these small clusters coalesce into a larger, more powerful consensus group that spans the entire network.
 
+### 5.1 why we need Consensus Groups
+This process of merging and growing is crucial to the stability and security of the network, 
+as it ensures that all nodes are working together to maintain the integrity of the blockchain. 
+By combining their computational power and expertise, these nodes are able to achieve greater consensus on 
+the state of the network, and are more resistant to attacks or failures.
 
+As the consensus group grows and evolves, it may adopt new rules or procedures for validating transactions, 
+or may incorporate new features or technologies to improve its performance. 
+However, the core goal of the consensus group remains the same: 
+to ensure that all transactions on the blockchain are valid, consistent, and secure.
 
+### 5.2 Consensus Group Ground Rules
+Each consensus process is unique and so is our process. in the following the consensus group rules will be listed.
+The first small cluster groups will be the first consensus groups which merge together to form a bigger one.
+#### 5.2.1 Decision-making Process
+The consensus decision-making process will involve two clusters of LPWAN devices agreeing upon 
+the location of each other miners location and devices covered in their area. 
+The two clusters will exchange information and use a set of rules to determine the device's location. 
+If both clusters agree, the location will be considered final. 
+If the two clusters disagree, a third cluster will be used to test and determine the device's location. 
+If the third cluster agrees with one of the previous two clusters, the different cluster will be punished. 
+If the third cluster does not agree, a fourth cluster will be used to test the location. 
+If no cluster agrees on the location, the device will be flagged and punished.
 
+#### 5.2.2 Inclusiveness
+The consensus group will take into account the amount of crypto staked, 
+GPS strength, orientation of the device, and the number of devices in the cluster. 
+These factors will be used to determine the device's location.
 
+#### 5.2.3 Accountability
+The consensus group will use the blockchain to hold the records of LPWAN devices' 
+locations and devices utilizing the network. The blockchain will also track 
+which clusters were flagged and which devices were flagged. 
+Any attempt to fake location or attack the system will result in punishment.
 
-## 5. third party application
-plug and play API
-### 5.1 trustworthy localization
-### 5.2 advantages of LPWAN against peer communications
+#### 5.2.4 Flexibility
+The cluster group can be changed easily, and it is best if the clusters are not in the same "hexagon tile." 
+This will help to ensure that the consensus group can adapt to changes in the network.
 
-## . MXC Controller
+#### 5.2.5 Shared Control
+All participants will agree to the ground rules for determining the device's location. 
+They will also commit to working together as a cluster and checking the location of other LPWAN devices. 
+Each cluster should have at least three LPWAN devices and at least one miner in 3 different hexagon tiles.
+
+#### 5.2.6 Commitment to implementation
+All LPWAN devices and devices utilizing the network will be accounted for. 
+The consensus group will ensure that all participants follow the set of rules and procedures to reach a consensus on device location.
+Miner health metrics will be used to ensure that the miners will match consensus group requirments.
+
+#### 5.2.7 Validation 
+Before the consensus group starts the decision-making process, each LPWAN device should validate 
+its own GPS location and strength. This will ensure that the data provided by each device is accurate.
+
+#### 5.2.8 Time Synchronization
+All LPWAN devices in the consensus group should have their clocks synchronized. 
+This will help to ensure that the time data used to determine the device's location is accurate.
+
+#### 5.2.9 Quorum
+The consensus group should establish a quorum for making decisions. 
+The quorum should be based on a percentage of the total number of LPWAN devices in the cluster. 
+This will help to ensure that the decision-making process is representative of the cluster's consensus.
+The more miners in a cluster, also the better their health metrics the heavier their weight.
+
+#### 5.2.10 Data Aggregation
+The consensus group should aggregate the data provided by all LPWAN devices in the cluster. 
+This will help to ensure that the decision-making process is based on all available data.
+
+#### 5.2.11 Decision Threshold
+The consensus group should establish a decision threshold for determining the device's location. 
+The decision threshold should be based on a percentage of the total number of LPWAN devices in the cluster. 
+This will help to ensure that the decision-making process is based on a consensus of the majority.
+
+#### 5.2.12 Penalty Mechanism
+The consensus group should establish a penalty mechanism for LPWAN devices or clusters 
+that do not follow the rules and procedures. 
+This will help to ensure that all participants are committed 
+to the implementation of the consensus group's decision-making process.
+
+### 6. MXC Controller
 There are lists of services that LPWAN can provide to the sensors/end devices.
 For example, an over-the-air firmware update should be multi-casted to the sensors and calculate the position, which requires no computation for the resource-limited sensors.
 Such a service requires resources of both a miner and the Supernode.
