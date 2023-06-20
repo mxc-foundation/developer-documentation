@@ -46,6 +46,8 @@ Sensor data consists of a byte signifying the sensor type, and zero or more byte
 | 19 (0x13)  | digital     | 1           | A generic digital value.<br />0: Low or OFF, 1: High or ON, -1 Unknown or Invalid. |
 | 20 (0x14)  | percent     | 1           | A generic value in percent.                                  |
 | 21 (0x15)  | powerFactor | 2 or 4      | Power factor for AC power system.<br />Value range from 0 to 1. |
+| 22 (0x16)  | accel       | 4           | Acceleration in g.                                           |
+| 23 (0x17)  | distance    | 4           | Distance in m.                                               |
 | 254 (0xfe) | uplinkPower | 1           | Exact value of TX Power in dBm.                              |
 
 
@@ -63,9 +65,9 @@ When data length is 11
 | Offset | Length | Description                                                  |
 | ------ | ------ | ------------------------------------------------------------ |
 | 0      | 1      | $GPGGA Position Fix Indicator.  Possible values are: <br />* 0 Fix not available or invalid<br /> * 1 GPS SPS Mode, fix valid<br /> * 2 Differential GPS, SPS Mode, fix valid <br />* 6 Dead Reckoning Mode, fix valid |
-| 1      | 4      | Latitude in 1/1000 of minutes, as little-endian int32. Positive is north, negative is south. To get the value in degrees, divide by 600000. |
-| 5      | 4      | Longitude in 1/1000 of minutes, as little-endian int32. Positive is east, negative is west. To get the value in degrees, divide by 600000. |
-| 9      | 2      | Altitude above geoid mean sea level in decimeters (0.1m), as little-endian int16. |
+| 1      | 4      | Latitude in 32-bits floating point number (IEEE 754). Positive is north, negative is south. |
+| 5      | 4      | Longitude in 32-bits floating point number (IEEE 754). 0 at the Prime Meridian to positive eastward and negative westward. |
+| 9      | 2      | Altitude above geoid mean sea level in decimeters (0.1m), as unsigned 16-bits integer (uint16_t) in big endian. |
 
 
 
