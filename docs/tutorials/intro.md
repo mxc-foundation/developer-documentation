@@ -8,6 +8,7 @@ sidebar_position: 1
 Developers can engage with the MXC ecosystem in a variety of ways. These forms of participation are integral to the further development and deployment of the MXProtocol.
 
 Arbitrum Contract Address: 0xaedf7656fbb47c5b97dd529ac1d0e807e051f2dd
+
 Ethereum Address: 0x5ca381bbfb58f0092df149bd3d243b08b9a8386e
 
 ## Direct Participation
